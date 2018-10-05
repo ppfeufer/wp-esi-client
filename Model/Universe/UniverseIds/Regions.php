@@ -19,56 +19,54 @@
 
 namespace WordPress\EsiClient\Model\Universe\UniverseIds;
 
-if(!\class_exists('\WordPress\EsiClient\Model\Universe\UniverseIds\Regions')) {
-    class Regions {
-        /**
-         * id
-         *
-         * @var int
-         */
-        protected $id = null;
+class Regions {
+    /**
+     * id
+     *
+     * @var int
+     */
+    protected $id = null;
 
-        /**
-         * name
-         *
-         * @var string
-         */
-        protected $name = null;
+    /**
+     * name
+     *
+     * @var string
+     */
+    protected $name = null;
 
-        /**
-         * getId
-         *
-         * @return int
-         */
-        public function getId() {
-            return $this->id;
-        }
+    /**
+     * getId
+     *
+     * @return int
+     */
+    public function getId() {
+        return $this->id;
+    }
 
-        /**
-         * setId
-         *
-         * @param int $id
-         */
-        public function setId(int $id) {
-            $this->id = $id;
-        }
+    /**
+     * setId
+     *
+     * @param int $id
+     */
+    public function setId(int $id) {
+        $this->id = $id;
+    }
 
-        /**
-         * getName
-         *
-         * @return string
-         */
-        public function getName() {
-            return $this->name;
-        }
+    /**
+     * getName
+     *
+     * @return string
+     */
+    public function getName() {
+        return $this->name;
+    }
 
-        /**
-         * setName
-         *
-         * @param string $name
-         */
-        public function setName(string $name) {
-            $this->name = $name;
-        }
+    /**
+     * setName
+     *
+     * @param string $name
+     */
+    public function setName(string $name) {
+        $this->name = $name;
     }
 }

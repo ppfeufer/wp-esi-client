@@ -19,56 +19,54 @@
 
 namespace WordPress\EsiClient\Model\Universe\UniverseTypesTypeId;
 
-if(!\class_exists('\WordPress\EsiClient\Model\Universe\UniverseTypesTypeId\DogmaEffect')) {
-    class DogmaEffect {
-        /**
-         * effectId
-         *
-         * @var int
-         */
-        protected $effectId = null;
+class DogmaEffect {
+    /**
+     * effectId
+     *
+     * @var int
+     */
+    protected $effectId = null;
 
-        /**
-         * isDefault
-         *
-         * @var bool
-         */
-        protected $isDefault = null;
+    /**
+     * isDefault
+     *
+     * @var bool
+     */
+    protected $isDefault = null;
 
-        /**
-         * getEffectId
-         *
-         * @return int
-         */
-        public function getEffectId() {
-            return $this->effectId;
-        }
+    /**
+     * getEffectId
+     *
+     * @return int
+     */
+    public function getEffectId() {
+        return $this->effectId;
+    }
 
-        /**
-         * setEffectId
-         *
-         * @param int $effectId
-         */
-        public function setEffectId(int $effectId) {
-            $this->effectId = $effectId;
-        }
+    /**
+     * setEffectId
+     *
+     * @param int $effectId
+     */
+    public function setEffectId(int $effectId) {
+        $this->effectId = $effectId;
+    }
 
-        /**
-         * getIsDefault
-         *
-         * @return bool
-         */
-        public function getIsDefault() {
-            return $this->isDefault;
-        }
+    /**
+     * getIsDefault
+     *
+     * @return bool
+     */
+    public function getIsDefault() {
+        return $this->isDefault;
+    }
 
-        /**
-         * setIsDefault
-         *
-         * @param bool $isDefault
-         */
-        public function setIsDefault(bool $isDefault) {
-            $this->isDefault = $isDefault;
-        }
+    /**
+     * setIsDefault
+     *
+     * @param bool $isDefault
+     */
+    public function setIsDefault(bool $isDefault) {
+        $this->isDefault = $isDefault;
     }
 }

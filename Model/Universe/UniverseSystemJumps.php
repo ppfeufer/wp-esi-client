@@ -19,56 +19,54 @@
 
 namespace WordPress\EsiClient\Model\Universe;
 
-if(!\class_exists('\WordPress\EsiClient\Model\Universe\UniverseSystemJumps')) {
-    class UniverseSystemJumps {
-        /**
-         * shipJumps
-         *
-         * @var int
-         */
-        protected $shipJumps = null;
+class UniverseSystemJumps {
+    /**
+     * shipJumps
+     *
+     * @var int
+     */
+    protected $shipJumps = null;
 
-        /**
-         * systemId
-         *
-         * @var int
-         */
-        protected $systemId = null;
+    /**
+     * systemId
+     *
+     * @var int
+     */
+    protected $systemId = null;
 
-        /**
-         * getShipJumps
-         *
-         * @return int
-         */
-        public function getShipJumps() {
-            return $this->shipJumps;
-        }
+    /**
+     * getShipJumps
+     *
+     * @return int
+     */
+    public function getShipJumps() {
+        return $this->shipJumps;
+    }
 
-        /**
-         * setShipJumps
-         *
-         * @param int $shipJumps
-         */
-        public function setShipJumps(int $shipJumps) {
-            $this->shipJumps = $shipJumps;
-        }
+    /**
+     * setShipJumps
+     *
+     * @param int $shipJumps
+     */
+    public function setShipJumps(int $shipJumps) {
+        $this->shipJumps = $shipJumps;
+    }
 
-        /**
-         * getSystemId
-         *
-         * @return int
-         */
-        public function getSystemId() {
-            return $this->systemId;
-        }
+    /**
+     * getSystemId
+     *
+     * @return int
+     */
+    public function getSystemId() {
+        return $this->systemId;
+    }
 
-        /**
-         * setSystemId
-         *
-         * @param int $systemId
-         */
-        public function setSystemId(int $systemId) {
-            $this->systemId = $systemId;
-        }
+    /**
+     * setSystemId
+     *
+     * @param int $systemId
+     */
+    public function setSystemId(int $systemId) {
+        $this->systemId = $systemId;
     }
 }

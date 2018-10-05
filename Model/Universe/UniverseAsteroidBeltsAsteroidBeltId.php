@@ -19,81 +19,79 @@
 
 namespace WordPress\EsiClient\Model\Universe;
 
-if(!\class_exists('\WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId')) {
-    class UniverseAsteroidBeltsAsteroidBeltId {
-        /**
-         * name
-         *
-         * @var string
-         */
-        protected $name = null;
+class UniverseAsteroidBeltsAsteroidBeltId {
+    /**
+     * name
+     *
+     * @var string
+     */
+    protected $name = null;
 
-        /**
-         * position
-         *
-         * @var \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position
-         */
-        protected $position = null;
+    /**
+     * position
+     *
+     * @var \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position
+     */
+    protected $position = null;
 
-        /**
-         * systemId
-         *
-         * @var int
-         */
-        protected $systemId = null;
+    /**
+     * systemId
+     *
+     * @var int
+     */
+    protected $systemId = null;
 
-        /**
-         * getName
-         *
-         * @return string
-         */
-        public function getName() {
-            return $this->name;
-        }
+    /**
+     * getName
+     *
+     * @return string
+     */
+    public function getName() {
+        return $this->name;
+    }
 
-        /**
-         * setName
-         *
-         * @param string $name
-         */
-        public function setName(string $name) {
-            $this->name = $name;
-        }
+    /**
+     * setName
+     *
+     * @param string $name
+     */
+    public function setName(string $name) {
+        $this->name = $name;
+    }
 
-        /**
-         * getPosition
-         *
-         * @return \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position
-         */
-        public function getPosition() {
-            return $this->position;
-        }
+    /**
+     * getPosition
+     *
+     * @return \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position
+     */
+    public function getPosition() {
+        return $this->position;
+    }
 
-        /**
-         * setPosition
-         *
-         * @param \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position $position
-         */
-        public function setPosition(\WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position $position) {
-            $this->position = $position;
-        }
+    /**
+     * setPosition
+     *
+     * @param \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position $position
+     */
+    public function setPosition(\WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position $position) {
+        $this->position = $position;
+    }
 
-        /**
-         * getSystemId
-         *
-         * @return int
-         */
-        public function getSystemId() {
-            return $this->systemId;
-        }
+    /**
+     * getSystemId
+     *
+     * @return int
+     */
+    public function getSystemId() {
+        return $this->systemId;
+    }
 
-        /**
-         * setSystemId
-         *
-         * @param int $systemId
-         */
-        public function setSystemId(int $systemId) {
-            $this->systemId = $systemId;
-        }
+    /**
+     * setSystemId
+     *
+     * @param int $systemId
+     */
+    public function setSystemId(int $systemId) {
+        $this->systemId = $systemId;
     }
 }

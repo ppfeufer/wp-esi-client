@@ -19,114 +19,112 @@
 
 namespace WordPress\EsiClient\Model\Character;
 
-if(!\class_exists('\WordPress\EsiClient\Model\Character\CharactersAffiliation')) {
-    class CharactersAffiliation {
-        /**
-         * allianceId
-         *
-         * The character's alliance ID, if their corporation is in an alliance
-         *
-         * @var int
-         */
-        protected $allianceId = null;
+class CharactersAffiliation {
+    /**
+     * allianceId
+     *
+     * The character's alliance ID, if their corporation is in an alliance
+     *
+     * @var int
+     */
+    protected $allianceId = null;
 
-        /**
-         * characterId
-         *
-         * The character's ID
-         *
-         * @var int
-         */
-        protected $characterId = null;
+    /**
+     * characterId
+     *
+     * The character's ID
+     *
+     * @var int
+     */
+    protected $characterId = null;
 
-        /**
-         * corporationId
-         *
-         * The character's corporation ID
-         *
-         * @var int
-         */
-        protected $corporationId = null;
+    /**
+     * corporationId
+     *
+     * The character's corporation ID
+     *
+     * @var int
+     */
+    protected $corporationId = null;
 
-        /**
-         * factionId
-         *
-         * The character's faction ID, if their corporation is in a faction
-         *
-         * @var int
-         */
-        protected $factionId = null;
+    /**
+     * factionId
+     *
+     * The character's faction ID, if their corporation is in a faction
+     *
+     * @var int
+     */
+    protected $factionId = null;
 
-        /**
-         * getAllianceId
-         *
-         * @return int
-         */
-        public function getAllianceId() {
-            return $this->allianceId;
-        }
+    /**
+     * getAllianceId
+     *
+     * @return int
+     */
+    public function getAllianceId() {
+        return $this->allianceId;
+    }
 
-        /**
-         * setAllianceId
-         *
-         * @param int $allianceId
-         */
-        public function setAllianceId(int $allianceId) {
-            $this->allianceId = $allianceId;
-        }
+    /**
+     * setAllianceId
+     *
+     * @param int $allianceId
+     */
+    public function setAllianceId(int $allianceId) {
+        $this->allianceId = $allianceId;
+    }
 
-        /**
-         * getCharacterId
-         *
-         * @return int
-         */
-        public function getCharacterId() {
-            return $this->characterId;
-        }
+    /**
+     * getCharacterId
+     *
+     * @return int
+     */
+    public function getCharacterId() {
+        return $this->characterId;
+    }
 
-        /**
-         * setCharacterId
-         *
-         * @param int $characterId
-         */
-        public function setCharacterId(int $characterId) {
-            $this->characterId = $characterId;
-        }
+    /**
+     * setCharacterId
+     *
+     * @param int $characterId
+     */
+    public function setCharacterId(int $characterId) {
+        $this->characterId = $characterId;
+    }
 
-        /**
-         * getCorporationId
-         *
-         * @return int
-         */
-        public function getCorporationId() {
-            return $this->corporationId;
-        }
+    /**
+     * getCorporationId
+     *
+     * @return int
+     */
+    public function getCorporationId() {
+        return $this->corporationId;
+    }
 
-        /**
-         * setCorporationId
-         *
-         * @param int $corporationId
-         */
-        public function setCorporationId(int $corporationId) {
-            $this->corporationId = $corporationId;
-        }
+    /**
+     * setCorporationId
+     *
+     * @param int $corporationId
+     */
+    public function setCorporationId(int $corporationId) {
+        $this->corporationId = $corporationId;
+    }
 
-        /**
-         * getFactionId
-         *
-         * @return int
-         */
-        public function getFactionId() {
-            return $this->factionId;
-        }
+    /**
+     * getFactionId
+     *
+     * @return int
+     */
+    public function getFactionId() {
+        return $this->factionId;
+    }
 
-        /**
-         * setFactionId
-         *
-         * @param int $factionId
-         */
-        public function setFactionId(int $factionId) {
-            $this->factionId = $factionId;
-        }
+    /**
+     * setFactionId
+     *
+     * @param int $factionId
+     */
+    public function setFactionId(int $factionId) {
+        $this->factionId = $factionId;
     }
 }

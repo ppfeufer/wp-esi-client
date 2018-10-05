@@ -19,56 +19,54 @@
 
 namespace WordPress\EsiClient\Model\Universe\UniverseTypesTypeId;
 
-if(!\class_exists('\WordPress\EsiClient\Model\Universe\UniverseTypesTypeId\DogmaAttribute')) {
-    class DogmaAttribute {
-        /**
-         * attributeId
-         *
-         * @var int
-         */
-        protected $attributeId = null;
+class DogmaAttribute {
+    /**
+     * attributeId
+     *
+     * @var int
+     */
+    protected $attributeId = null;
 
-        /**
-         * value
-         *
-         * @var float
-         */
-        protected $value = null;
+    /**
+     * value
+     *
+     * @var float
+     */
+    protected $value = null;
 
-        /**
-         * getAttributeId
-         *
-         * @return int
-         */
-        public function getAttributeId() {
-            return $this->attributeId;
-        }
+    /**
+     * getAttributeId
+     *
+     * @return int
+     */
+    public function getAttributeId() {
+        return $this->attributeId;
+    }
 
-        /**
-         * setAttributeId
-         *
-         * @param int $attributeId
-         */
-        public function setAttributeId(int $attributeId) {
-            $this->attributeId = $attributeId;
-        }
+    /**
+     * setAttributeId
+     *
+     * @param int $attributeId
+     */
+    public function setAttributeId(int $attributeId) {
+        $this->attributeId = $attributeId;
+    }
 
-        /**
-         * getValue
-         *
-         * @return float
-         */
-        public function getValue() {
-            return $this->value;
-        }
+    /**
+     * getValue
+     *
+     * @return float
+     */
+    public function getValue() {
+        return $this->value;
+    }
 
-        /**
-         * setValue
-         *
-         * @param float $value
-         */
-        public function setValue(float $value) {
-            $this->value = $value;
-        }
+    /**
+     * setValue
+     *
+     * @param float $value
+     */
+    public function setValue(float $value) {
+        $this->value = $value;
     }
 }

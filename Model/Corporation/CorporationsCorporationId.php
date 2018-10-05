@@ -19,330 +19,329 @@
 
 namespace WordPress\EsiClient\Model\Corporation;
 
-if(!\class_exists('\WordPress\EsiClient\Model\Corporation\CorporationsCorporationId')) {
-    class CorporationsCorporationId {
-        /**
-         * allianceId
-         *
-         * @var inr
-         */
-        protected $allianceId = null;
+class CorporationsCorporationId {
+    /**
+     * allianceId
+     *
+     * @var inr
+     */
+    protected $allianceId = null;
 
-        /**
-         * ceoId
-         *
-         * @var int
-         */
-        protected $ceoId = null;
+    /**
+     * ceoId
+     *
+     * @var int
+     */
+    protected $ceoId = null;
 
-        /**
-         * creatorId
-         *
-         * @var int
-         */
-        protected $creatorId = null;
+    /**
+     * creatorId
+     *
+     * @var int
+     */
+    protected $creatorId = null;
 
-        /**
-         * dateFounded
-         *
-         * @var \DateTime
-         */
-        protected $dateFounded = null;
+    /**
+     * dateFounded
+     *
+     * @var \DateTime
+     */
+    protected $dateFounded = null;
 
-        /**
-         * description
-         *
-         * @var string
-         */
-        protected $description = null;
+    /**
+     * description
+     *
+     * @var string
+     */
+    protected $description = null;
 
-        /**
-         * factionId
-         *
-         * @var int
-         */
-        protected $factionId = null;
+    /**
+     * factionId
+     *
+     * @var int
+     */
+    protected $factionId = null;
 
-        /**
-         * homeStationId
-         *
-         * @var int
-         */
-        protected $homeStationId = null;
+    /**
+     * homeStationId
+     *
+     * @var int
+     */
+    protected $homeStationId = null;
 
-        /**
-         * memberCount
-         *
-         * @var int
-         */
-        protected $memberCount = null;
+    /**
+     * memberCount
+     *
+     * @var int
+     */
+    protected $memberCount = null;
 
-        /**
-         * name
-         *
-         * @var string
-         */
-        protected $name = null;
+    /**
+     * name
+     *
+     * @var string
+     */
+    protected $name = null;
 
-        /**
-         * shares
-         *
-         * @var int
-         */
-        protected $shares = null;
-        /**
-         * taxRate
-         *
-         * @var float
-         */
-        protected $taxRate = null;
+    /**
+     * shares
+     *
+     * @var int
+     */
+    protected $shares = null;
 
-        /**
-         * ticker
-         *
-         * @var string
-         */
-        protected $ticker = null;
+    /**
+     * taxRate
+     *
+     * @var float
+     */
+    protected $taxRate = null;
 
-        /**
-         * url
-         *
-         * @var string
-         */
-        protected $url = null;
+    /**
+     * ticker
+     *
+     * @var string
+     */
+    protected $ticker = null;
 
-        /**
-         * getAllianceId
-         *
-         * @return int
-         */
-        public function getAllianceId() {
-            return $this->allianceId;
-        }
+    /**
+     * url
+     *
+     * @var string
+     */
+    protected $url = null;
 
-        /**
-         * setAllianceId
-         *
-         * @param int $allianceId
-         */
-        public function setAllianceId(int $allianceId) {
-            $this->allianceId = $allianceId;
-        }
+    /**
+     * getAllianceId
+     *
+     * @return int
+     */
+    public function getAllianceId() {
+        return $this->allianceId;
+    }
 
-        /**
-         * getCeoId
-         *
-         * @return int
-         */
-        public function getCeoId() {
-            return $this->ceoId;
-        }
+    /**
+     * setAllianceId
+     *
+     * @param int $allianceId
+     */
+    public function setAllianceId(int $allianceId) {
+        $this->allianceId = $allianceId;
+    }
 
-        /**
-         * setCeoId
-         *
-         * @param int $ceoId
-         */
-        public function setCeoId(int $ceoId) {
-            $this->ceoId = $ceoId;
-        }
+    /**
+     * getCeoId
+     *
+     * @return int
+     */
+    public function getCeoId() {
+        return $this->ceoId;
+    }
 
-        /**
-         * getCreatorId
-         *
-         * @return int
-         */
-        public function getCreatorId() {
-            return $this->creatorId;
-        }
+    /**
+     * setCeoId
+     *
+     * @param int $ceoId
+     */
+    public function setCeoId(int $ceoId) {
+        $this->ceoId = $ceoId;
+    }
 
-        /**
-         * setCreatorId
-         *
-         * @param int $creatorId
-         */
-        public function setCreatorId(int $creatorId) {
-            $this->creatorId = $creatorId;
-        }
+    /**
+     * getCreatorId
+     *
+     * @return int
+     */
+    public function getCreatorId() {
+        return $this->creatorId;
+    }
 
-        /**
-         * getDateFounded
-         *
-         * @return \DateTime
-         */
-        public function getDateFounded() {
-            return $this->dateFounded;
-        }
+    /**
+     * setCreatorId
+     *
+     * @param int $creatorId
+     */
+    public function setCreatorId(int $creatorId) {
+        $this->creatorId = $creatorId;
+    }
 
-        /**
-         * setDateFounded
-         *
-         * @param \DateTime $dateFounded
-         */
-        public function setDateFounded(\DateTime $dateFounded) {
-            $this->dateFounded = $dateFounded;
-        }
+    /**
+     * getDateFounded
+     *
+     * @return \DateTime
+     */
+    public function getDateFounded() {
+        return $this->dateFounded;
+    }
 
-        /**
-         * getDescription
-         *
-         * @return string
-         */
-        public function getDescription() {
-            return $this->description;
-        }
+    /**
+     * setDateFounded
+     *
+     * @param \DateTime $dateFounded
+     */
+    public function setDateFounded(\DateTime $dateFounded) {
+        $this->dateFounded = $dateFounded;
+    }
 
-        /**
-         * setDescription
-         *
-         * @param string $description
-         */
-        public function setDescription(string $description) {
-            $this->description = \strip_tags($description);
-        }
+    /**
+     * getDescription
+     *
+     * @return string
+     */
+    public function getDescription() {
+        return $this->description;
+    }
 
-        /**
-         * getFactionId
-         *
-         * @return int
-         */
-        public function getFactionId() {
-            return $this->factionId;
-        }
+    /**
+     * setDescription
+     *
+     * @param string $description
+     */
+    public function setDescription(string $description) {
+        $this->description = \strip_tags($description);
+    }
 
-        /**
-         * setFactionId
-         *
-         * @param int $factionId
-         */
-        public function setFactionId(int $factionId) {
-            $this->factionId = $factionId;
-        }
+    /**
+     * getFactionId
+     *
+     * @return int
+     */
+    public function getFactionId() {
+        return $this->factionId;
+    }
 
-        /**
-         * getHomeStationId
-         *
-         * @return int
-         */
-        public function getHomeStationId() {
-            return $this->homeStationId;
-        }
+    /**
+     * setFactionId
+     *
+     * @param int $factionId
+     */
+    public function setFactionId(int $factionId) {
+        $this->factionId = $factionId;
+    }
 
-        /**
-         * setHomeStationId
-         *
-         * @param int $homeStationId
-         */
-        public function setHomeStationId(int $homeStationId) {
-            $this->homeStationId = $homeStationId;
-        }
+    /**
+     * getHomeStationId
+     *
+     * @return int
+     */
+    public function getHomeStationId() {
+        return $this->homeStationId;
+    }
 
-        /**
-         * getMembercount
-         *
-         * @return int
-         */
-        public function getMembercount() {
-            return $this->memberCount;
-        }
+    /**
+     * setHomeStationId
+     *
+     * @param int $homeStationId
+     */
+    public function setHomeStationId(int $homeStationId) {
+        $this->homeStationId = $homeStationId;
+    }
 
-        /**
-         * setMemberCount
-         *
-         * @param int $memberCount
-         */
-        public function setMemberCount(int $memberCount) {
-            $this->memberCount = $memberCount;
-        }
+    /**
+     * getMembercount
+     *
+     * @return int
+     */
+    public function getMembercount() {
+        return $this->memberCount;
+    }
 
-        /**
-         * getName
-         *
-         * @return string
-         */
-        public function getName() {
-            return $this->name;
-        }
+    /**
+     * setMemberCount
+     *
+     * @param int $memberCount
+     */
+    public function setMemberCount(int $memberCount) {
+        $this->memberCount = $memberCount;
+    }
 
-        /**
-         * setName
-         *
-         * @param string $name
-         */
-        public function setName(string $name) {
-            $this->name = $name;
-        }
+    /**
+     * getName
+     *
+     * @return string
+     */
+    public function getName() {
+        return $this->name;
+    }
 
-        /**
-         * getShares
-         *
-         * @return int
-         */
-        public function getShares() {
-            return $this->shares;
-        }
+    /**
+     * setName
+     *
+     * @param string $name
+     */
+    public function setName(string $name) {
+        $this->name = $name;
+    }
 
-        /**
-         * setShares
-         *
-         * @param int $shares
-         */
-        public function setShares(int $shares) {
-            $this->shares = $shares;
-        }
+    /**
+     * getShares
+     *
+     * @return int
+     */
+    public function getShares() {
+        return $this->shares;
+    }
 
-        /**
-         * getTaxRate
-         *
-         * @return float
-         */
-        public function getTaxRate() {
-            return $this->taxRate;
-        }
+    /**
+     * setShares
+     *
+     * @param int $shares
+     */
+    public function setShares(int $shares) {
+        $this->shares = $shares;
+    }
 
-        /**
-         * setTaxRate
-         *
-         * @param float $taxRate
-         */
-        public function setTaxRate(float $taxRate) {
-            $this->taxRate = $taxRate;
-        }
+    /**
+     * getTaxRate
+     *
+     * @return float
+     */
+    public function getTaxRate() {
+        return $this->taxRate;
+    }
 
-        /**
-         * getTicker
-         *
-         * @return string
-         */
-        public function getTicker() {
-            return $this->ticker;
-        }
+    /**
+     * setTaxRate
+     *
+     * @param float $taxRate
+     */
+    public function setTaxRate(float $taxRate) {
+        $this->taxRate = $taxRate;
+    }
 
-        /**
-         * setTicker
-         *
-         * @param string $ticker
-         */
-        public function setTicker(string $ticker) {
-            $this->ticker = $ticker;
-        }
+    /**
+     * getTicker
+     *
+     * @return string
+     */
+    public function getTicker() {
+        return $this->ticker;
+    }
 
-        /**
-         * getUrl
-         *
-         * @return string
-         */
-        public function getUrl() {
-            return $this->url;
-        }
+    /**
+     * setTicker
+     *
+     * @param string $ticker
+     */
+    public function setTicker(string $ticker) {
+        $this->ticker = $ticker;
+    }
 
-        /**
-         * setUrl
-         *
-         * @param string $url
-         */
-        public function setUrl(string $url) {
-            $this->url = $url;
-        }
+    /**
+     * getUrl
+     *
+     * @return string
+     */
+    public function getUrl() {
+        return $this->url;
+    }
+
+    /**
+     * setUrl
+     *
+     * @param string $url
+     */
+    public function setUrl(string $url) {
+        $this->url = $url;
     }
 }

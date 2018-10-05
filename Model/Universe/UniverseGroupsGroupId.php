@@ -19,131 +19,129 @@
 
 namespace WordPress\EsiClient\Model\Universe;
 
-if(!\class_exists('\WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId')) {
-    class UniverseGroupsGroupId {
-        /**
-         * categoryId
-         *
-         * @var int
-         */
-        protected $categoryId = null;
+class UniverseGroupsGroupId {
+    /**
+     * categoryId
+     *
+     * @var int
+     */
+    protected $categoryId = null;
 
-        /**
-         * groupId
-         *
-         * @var int
-         */
-        protected $groupId = null;
+    /**
+     * groupId
+     *
+     * @var int
+     */
+    protected $groupId = null;
 
-        /**
-         * name
-         *
-         * @var string
-         */
-        protected $name = null;
+    /**
+     * name
+     *
+     * @var string
+     */
+    protected $name = null;
 
-        /**
-         * published
-         *
-         * @var bool
-         */
-        protected $published = null;
+    /**
+     * published
+     *
+     * @var bool
+     */
+    protected $published = null;
 
-        /**
-         * types
-         *
-         * @var array
-         */
-        protected $types = null;
+    /**
+     * types
+     *
+     * @var array
+     */
+    protected $types = null;
 
-        /**
-         * getCategoryId
-         *
-         * @return int
-         */
-        public function getCategoryId() {
-            return $this->categoryId;
-        }
+    /**
+     * getCategoryId
+     *
+     * @return int
+     */
+    public function getCategoryId() {
+        return $this->categoryId;
+    }
 
-        /**
-         * setCategoryId
-         *
-         * @param int $categoryId
-         */
-        public function setCategoryId(int $categoryId) {
-            $this->categoryId = $categoryId;
-        }
+    /**
+     * setCategoryId
+     *
+     * @param int $categoryId
+     */
+    public function setCategoryId(int $categoryId) {
+        $this->categoryId = $categoryId;
+    }
 
-        /**
-         * getGroupId
-         *
-         * @return int
-         */
-        public function getGroupId() {
-            return $this->groupId;
-        }
+    /**
+     * getGroupId
+     *
+     * @return int
+     */
+    public function getGroupId() {
+        return $this->groupId;
+    }
 
-        /**
-         * setGroupId
-         *
-         * @param int $groupId
-         */
-        public function setGroupId(int $groupId) {
-            $this->groupId = $groupId;
-        }
+    /**
+     * setGroupId
+     *
+     * @param int $groupId
+     */
+    public function setGroupId(int $groupId) {
+        $this->groupId = $groupId;
+    }
 
-        /**
-         * getName
-         *
-         * @return string
-         */
-        public function getName() {
-            return $this->name;
-        }
+    /**
+     * getName
+     *
+     * @return string
+     */
+    public function getName() {
+        return $this->name;
+    }
 
-        /**
-         * setName
-         *
-         * @param string $name
-         */
-        public function setName(string $name) {
-            $this->name = $name;
-        }
+    /**
+     * setName
+     *
+     * @param string $name
+     */
+    public function setName(string $name) {
+        $this->name = $name;
+    }
 
-        /**
-         * getPublished
-         *
-         * @return bool
-         */
-        public function getPublished() {
-            return $this->published;
-        }
+    /**
+     * getPublished
+     *
+     * @return bool
+     */
+    public function getPublished() {
+        return $this->published;
+    }
 
-        /**
-         * setPublished
-         *
-         * @param bool $published
-         */
-        public function setPublished(bool $published) {
-            $this->published = $published;
-        }
+    /**
+     * setPublished
+     *
+     * @param bool $published
+     */
+    public function setPublished(bool $published) {
+        $this->published = $published;
+    }
 
-        /**
-         * getTypes
-         *
-         * @return array
-         */
-        public function getTypes() {
-            return $this->types;
-        }
+    /**
+     * getTypes
+     *
+     * @return array
+     */
+    public function getTypes() {
+        return $this->types;
+    }
 
-        /**
-         * setTypes
-         *
-         * @param array $types
-         */
-        public function setTypes(array $types) {
-            $this->types = $types;
-        }
+    /**
+     * setTypes
+     *
+     * @param array $types
+     */
+    public function setTypes(array $types) {
+        $this->types = $types;
     }
 }
