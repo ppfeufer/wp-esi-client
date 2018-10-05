@@ -16,40 +16,37 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 namespace WordPress\EsiClient\Repository;
 
 \defined('ABSPATH') or die();
 
-if(!\class_exists('\WordPress\EsiClient\Repository\AllianceRepository')) {
-    class AllianceRepository extends \WordPress\EsiClient\Swagger {
-        /**
-         * Used ESI enpoints in this class
-         *
-         * @var array ESI enpoints
-         */
-        protected $esiEndpoints = [
-            'alliances' => 'alliances/?datasource=tranquility',
-            'alliances_allianceId' => 'alliances/{alliance_id}/?datasource=tranquility',
-            'alliances_allianceId_corporations' => 'alliances/{alliance_id}/corporations/?datasource=tranquility',
-            'alliances_allianceId_icons' => 'alliances/{alliance_id}/icons/?datasource=tranquility'
-        ];
+class AllianceRepository extends \WordPress\EsiClient\Swagger {
+    /**
+     * Used ESI enpoints in this class
+     *
+     * @var array ESI enpoints
+     */
+    protected $esiEndpoints = [
+        'alliances' => 'alliances/?datasource=tranquility',
+        'alliances_allianceId' => 'alliances/{alliance_id}/?datasource=tranquility',
+        'alliances_allianceId_corporations' => 'alliances/{alliance_id}/corporations/?datasource=tranquility',
+        'alliances_allianceId_icons' => 'alliances/{alliance_id}/icons/?datasource=tranquility'
+    ];
 
-        /**
-         * Public information about an alliance
-         *
-         * @param int $allianceID An EVE alliance ID
-         * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId
-         */
-        public function alliancesAllianceId($allianceID) {
-            $this->setEsiMethod('get');
-            $this->setEsiRoute($this->esiEndpoints['alliances_allianceId']);
-            $this->setEsiRouteParameter([
-                '/{alliance_id}/' => $allianceID
-            ]);
-            $this->setEsiVersion('v3');
+    /**
+     * Public information about an alliance
+     *
+     * @param int $allianceID An EVE alliance ID
+     * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId
+     */
+    public function alliancesAllianceId($allianceID) {
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['alliances_allianceId']);
+        $this->setEsiRouteParameter([
+            '/{alliance_id}/' => $allianceID
+        ]);
+        $this->setEsiVersion('v3');
 
-            return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId);
-        }
+        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId);
     }
 }
