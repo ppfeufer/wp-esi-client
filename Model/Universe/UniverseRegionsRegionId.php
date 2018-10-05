@@ -116,7 +116,7 @@ class UniverseRegionsRegionId {
      *
      * @param int $regionId
      */
-    public function setRegionId(int$regionId) {
+    public function setRegionId(int $regionId) {
         $this->regionId = $regionId;
     }
 }
