@@ -67,7 +67,7 @@ class Swagger {
     /**
      * Remote Helper
      *
-     * @var \WordPress\Plugins\EveOnlineIntelTool\Libs\Helper\RemoteHelper
+     * @var \WordPress\EsiClient\Helper\Helper\RemoteHelper
      */
     protected $remoteHelper = null;
 
@@ -75,7 +75,7 @@ class Swagger {
      * Constructor
      */
     public function __construct() {
-        $this->remoteHelper = \WordPress\Plugins\EveOnlineIntelTool\Libs\Helper\RemoteHelper::getInstance();
+        $this->remoteHelper = new Helper\RemoteHelper;
     }
 
     /**
@@ -86,8 +86,8 @@ class Swagger {
     public function callEsi() {
         $returnValue = null;
 
-        if(!\is_a($this->remoteHelper, '\WordPress\Plugins\EveOnlineIntelTool\Libs\Helper\RemoteHelper')) {
-            $this->remoteHelper = \WordPress\Plugins\EveOnlineIntelTool\Libs\Helper\RemoteHelper::getInstance();
+        if(!\is_a($this->remoteHelper, '\WordPress\EsiClient\Helper\Helper\RemoteHelper')) {
+            $this->remoteHelper = new Helper\RemoteHelper;
         }
 
         $esiUrl = \trailingslashit($this->getEsiUrl() . $this->getEsiVersion());
