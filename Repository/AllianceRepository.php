@@ -36,14 +36,14 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
     /**
      * List all active player alliances
      *
-     * @return \WordPress\EsiClient\Model\Alliance\Alliances
+     * @return array
      */
     public function alliances() {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['alliances']);
         $this->setEsiVersion('v1');
 
-        return $this->mapArray(\json_encode(['alliances' => $this->callEsi()]), '\WordPress\EsiClient\Model\Alliance\Alliances');
+        return \json_decode($this->callEsi());
     }
 
     /**

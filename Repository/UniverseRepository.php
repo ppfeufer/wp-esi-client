@@ -165,7 +165,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * ending at the timestamp of the Last-Modified header, excluding
      * wormhole space. Only systems with jumps will be listed
      *
-     * @return array
+     * @return array of \WordPress\EsiClient\Model\Universe\UniverseSystemJumps
      */
     public function universeSystemJumps() {
         $this->setEsiMethod('get');
@@ -180,7 +180,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * the last hour ending at the timestamp of the Last-Modified header,
      * excluding wormhole space. Only systems with kills will be listed
      *
-     * @return array
+     * @return array of \WordPress\EsiClient\Model\Universe\UniverseSystemKills
      */
     public function universeSystemKills() {
         $this->setEsiMethod('get');

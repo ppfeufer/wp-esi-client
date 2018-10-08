@@ -72,7 +72,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * Bulk lookup of character IDs to corporation, alliance and faction
      *
      * @param array $characterIds The character IDs to fetch affiliations for. All characters must exist, or none will be returned
-     * @return array
+     * @return array of \WordPress\EsiClient\Model\Character\CharactersAffiliation
      */
     public function charactersAffiliation(array $characterIds = []) {
         $this->setEsiMethod('post');

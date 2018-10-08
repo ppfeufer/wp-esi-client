@@ -38,15 +38,13 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
     /**
      * Get a list of dogma attribute ids
      *
-     * @return object
+     * @return array
      */
     public function dogmaAttributes() {
         $this->setEsiRoute($this->esiEndpoints['dogma_attributes']);
         $this->setEsiVersion('v1');
 
-        $typeData = $this->callEsi();
-
-        return $typeData;
+        return \json_decode($this->callEsi());
     }
 
     /**

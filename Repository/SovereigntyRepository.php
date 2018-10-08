@@ -36,7 +36,7 @@ class SovereigntyRepository extends \WordPress\EsiClient\Swagger {
     /**
      * Shows sovereignty data for campaigns
      *
-     * @return array
+     * @return array of \WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns
      */
     public function sovereigntyCampaigns() {
         $this->setEsiMethod('get');
@@ -49,7 +49,7 @@ class SovereigntyRepository extends \WordPress\EsiClient\Swagger {
     /**
      * Shows sovereignty information for solar systems
      *
-     * @return array
+     * @return array of \WordPress\EsiClient\Model\Sovereignty\SovereigntyMap
      */
     public function sovereigntyMap() {
         $this->setEsiMethod('get');
@@ -62,7 +62,7 @@ class SovereigntyRepository extends \WordPress\EsiClient\Swagger {
     /**
      * Shows sovereignty data for structures
      *
-     * @return array
+     * @return array of \WordPress\EsiClient\Model\Sovereignty\SovereigntyStructures
      */
     public function sovereigntyStructures() {
         $this->setEsiMethod('get');
