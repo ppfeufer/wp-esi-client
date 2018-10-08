@@ -78,7 +78,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @param int $asteroidBeltId
      * @return \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId
      */
-    public function universeAsteroidBeltsAsteroidBeltId($asteroidBeltId) {
+    public function universeAsteroidBeltsAsteroidBeltId(int $asteroidBeltId) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_asteroidBelts_asteroidBeltId']);
         $this->setEsiRouteParameter([
@@ -95,7 +95,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @param int $constellationId An EVE constellation ID
      * @return \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId
      */
-    public function universeConstellationsConstellationId($constellationId) {
+    public function universeConstellationsConstellationId(int $constellationId) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_constellations_constellationId']);
         $this->setEsiRouteParameter([
@@ -112,7 +112,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @param int $groupId An Eve item group ID
      * @return \WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId
      */
-    public function universeGroupsGroupId($groupId) {
+    public function universeGroupsGroupId(int $groupId) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_groups_groupId']);
         $this->setEsiRouteParameter([
@@ -149,7 +149,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @param int $regionId An EVE region ID
      * @return \WordPress\EsiClient\Model\Universe\UniverseRegionsRegionId
      */
-    public function universeRegionsRegionId($regionId) {
+    public function universeRegionsRegionId(int $regionId) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_regions_regionId']);
         $this->setEsiRouteParameter([
@@ -196,7 +196,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @param int $systemId An EVE solar system ID
      * @return \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId
      */
-    public function universeSystemsSystemId($systemId) {
+    public function universeSystemsSystemId(int $systemId) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_systems_systemId']);
         $this->setEsiRouteParameter([
@@ -213,7 +213,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @param int $typeId An Eve item type ID
      * @return \WordPress\EsiClient\Model\Universe\UniverseTypesTypeId
      */
-    public function universeTypesTypeId($typeId) {
+    public function universeTypesTypeId(int $typeId) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_types_typeId']);
         $this->setEsiRouteParameter([

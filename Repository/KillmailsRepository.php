@@ -38,7 +38,7 @@ class KillmailsRepository extends \WordPress\EsiClient\Swagger {
      * @param string $killmailHash The killmail hash for verification
      * @return \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId
      */
-    public function killmailsKillmailIdKillmailHash($killmailID, $killmailHash) {
+    public function killmailsKillmailIdKillmailHash(int $killmailID, string $killmailHash) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['killmails_killmailId_killmailHash']);
         $this->setEsiRouteParameter([

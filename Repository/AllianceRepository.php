@@ -52,7 +52,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
      * @param int $allianceID An EVE alliance ID
      * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId
      */
-    public function alliancesAllianceId($allianceID) {
+    public function alliancesAllianceId(int $allianceID) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['alliances_allianceId']);
         $this->setEsiRouteParameter([
@@ -82,7 +82,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
      * @param int $allianceID An EVE alliance ID
      * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons
      */
-    public function alliancesAllianceIdIcons($allianceID) {
+    public function alliancesAllianceIdIcons(int $allianceID) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['alliances_allianceId_icons']);
         $this->setEsiRouteParameter([

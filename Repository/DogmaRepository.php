@@ -55,7 +55,7 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
      * @param int $attributeId A dogma attribute ID
      * @return \WordPress\EsiClient\Model\Dogma\DogmaAttributesAttributeId
      */
-    public function dogmaAttributesAttributeId($attributeId) {
+    public function dogmaAttributesAttributeId(int $attributeId) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['dogma_attributes_attributeId']);
         $this->setEsiRouteParameter([

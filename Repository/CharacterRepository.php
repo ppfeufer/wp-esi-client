@@ -40,7 +40,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * @param int $characterID An EVE character ID
      * @return \WordPress\EsiClient\Model\Character\CharactersCharacterId
      */
-    public function charactersCharacterId($characterID) {
+    public function charactersCharacterId(int $characterID) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['characters_characterId']);
         $this->setEsiRouteParameter([
@@ -57,7 +57,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * @param array $characterIds The character IDs to fetch affiliations for. All characters must exist, or none will be returned
      * @return array
      */
-    public function charactersAffiliation($characterIds = []) {
+    public function charactersAffiliation(array $characterIds = []) {
         $this->setEsiMethod('post');
         $this->setEsiPostParameter($characterIds);
         $this->setEsiRoute($this->esiEndpoints['characters_affiliation']);
