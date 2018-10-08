@@ -34,6 +34,19 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
     ];
 
     /**
+     * List all active player alliances
+     *
+     * @return \WordPress\EsiClient\Model\Alliance\Alliances
+     */
+    public function alliances() {
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['alliances']);
+        $this->setEsiVersion('v1');
+
+        return $this->mapArray(\json_encode(['alliances' => $this->callEsi()]), '\WordPress\EsiClient\Model\Alliance\Alliances');
+    }
+
+    /**
      * Public information about an alliance
      *
      * @param int $allianceID An EVE alliance ID
@@ -48,5 +61,35 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
         $this->setEsiVersion('v3');
 
         return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId);
+    }
+
+    /**
+     * List all current member corporations of an alliance
+     *
+     * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations
+     */
+    public function alliancesAllianceIdCorporations() {
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['alliances_allianceId_corporations']);
+        $this->setEsiVersion('v1');
+
+        return $this->mapArray(\json_encode(['corporations' => $this->callEsi()]), '\WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations');
+    }
+
+    /**
+     * Public information about an alliance
+     *
+     * @param int $allianceID An EVE alliance ID
+     * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons
+     */
+    public function alliancesAllianceIdIcons($allianceID) {
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['alliances_allianceId_icons']);
+        $this->setEsiRouteParameter([
+            '/{alliance_id}/' => $allianceID
+        ]);
+        $this->setEsiVersion('v1');
+
+        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons);
     }
 }

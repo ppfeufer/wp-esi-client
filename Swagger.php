@@ -223,12 +223,13 @@ class Swagger {
     }
 
     /**
+     * mapping json to class
      *
      * @param string $jSon
      * @param object $object
      * @return object
      */
-    public function map($jSon, $object) {
+    public function map(string $jSon, $object) {
         $returnValue = null;
 
         if(!\is_null($jSon)) {
@@ -239,12 +240,20 @@ class Swagger {
         return $returnValue;
     }
 
-    public function mapArray($jSon, $class) {
+    /**
+     * mapping array to class
+     *
+     * @param string $jSon
+     * @param string $class
+     * @param array $array
+     * @return object
+     */
+    public function mapArray(string $jSon, string $class, array $array = []) {
         $returnValue = null;
 
         if(!\is_null($jSon)) {
             $jsonMapper = new \WordPress\EsiClient\Mapper\JsonMapper;
-            $returnValue = $jsonMapper->mapArray(\json_decode($jSon), [], $class);
+            $returnValue = $jsonMapper->mapArray(\json_decode($jSon), $array, $class);
         }
 
         return $returnValue;

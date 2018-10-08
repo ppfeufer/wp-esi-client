@@ -349,7 +349,7 @@ class JsonMapper {
      *
      * @return mixed Mapped $array is returned
      */
-    public function mapArray(array $json, array $array, $class = null, string $parent_key = '') {
+    public function mapArray(array $json, $array, $class = null, string $parent_key = '') {
         foreach($json as $key => $jvalue) {
             if($class === null) {
                 $array[$key] = $jvalue;
