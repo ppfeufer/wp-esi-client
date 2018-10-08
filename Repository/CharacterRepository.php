@@ -52,6 +52,23 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
     }
 
     /**
+     * Get a list of all the corporations a character has been a member of
+     *
+     * @param int $characterID An EVE character ID
+     * @return \WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory
+     */
+    public function charactersCharacterIdCorporationhistory(int $characterID) {
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['characters_characterId_corporationhistory']);
+        $this->setEsiRouteParameter([
+            '/{character_id}/' => $characterID
+        ]);
+        $this->setEsiVersion('v4');
+
+        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory);
+    }
+
+    /**
      * Bulk lookup of character IDs to corporation, alliance and faction
      *
      * @param array $characterIds The character IDs to fetch affiliations for. All characters must exist, or none will be returned
