@@ -139,8 +139,9 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         $this->setEsiPostParameter($names);
         $this->setEsiRoute($this->esiEndpoints['universe_ids']);
         $this->setEsiVersion('v1');
+        $this->setJsonMapToObject('\\WordPress\EsiClient\Model\Universe\UniverseIds');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Universe\UniverseIds);
+        return $this->callEsi();
     }
 
     /**

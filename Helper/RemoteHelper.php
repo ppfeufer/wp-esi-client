@@ -44,15 +44,22 @@ class RemoteHelper {
 
             case 'post':
                 $remoteData = \wp_remote_post($url, [
-                    'headers' => ['Content-Type' => 'application/json; charset=utf-8'],
-                    'body' => \json_encode($parameter),
+                    'headers' => [
+                        'Content-Type' => 'application/json; charset=utf-8'
+                    ],
+//                    'body' => \json_encode($parameter),
+                    'body' => $parameter,
                     'method' => 'POST'
                 ]);
                 break;
         }
 
-        if(\wp_remote_retrieve_response_code($remoteData) === 200) {
-            $returnValue = \wp_remote_retrieve_body($remoteData);
+        if($remoteData) {
+            $returnValue = [
+                'responseCode' => \wp_remote_retrieve_response_code($remoteData),
+                'responseHeader' => \wp_remote_retrieve_headers($remoteData),
+                'responseBody' => \wp_remote_retrieve_body($remoteData)
+            ];
         }
 
         return $returnValue;
