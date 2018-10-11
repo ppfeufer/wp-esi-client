@@ -72,20 +72,6 @@ class Swagger {
     protected $remoteHelper = null;
 
     /**
-     * jsonMapMethod
-     *
-     * @var string
-     */
-    protected $jsonMapMethod = 'map';
-
-    /**
-     * jsonMapToObject
-     *
-     * @var string
-     */
-    protected $jsonMapToObject = null;
-
-    /**
      * Constructor
      */
     public function __construct() {
@@ -99,7 +85,6 @@ class Swagger {
      */
     public function callEsi() {
         $returnValue = null;
-        $esiData = null;
 
         if(!\is_a($this->remoteHelper, '\WordPress\EsiClient\Helper\Helper\RemoteHelper')) {
             $this->remoteHelper = new Helper\RemoteHelper;
@@ -116,32 +101,12 @@ class Swagger {
 
         switch($this->getEsiMethod()) {
             case 'get':
-                $esiData = $this->remoteHelper->getRemoteData($callUrl);
+                $returnValue = $this->remoteHelper->getRemoteData($callUrl);
                 break;
 
             case 'post':
-                $esiData = $this->remoteHelper->getRemoteData($callUrl, $this->getEsiMethod(), $this->getEsiPostParameter());
+                $returnValue = $this->remoteHelper->getRemoteData($callUrl, $this->getEsiMethod(), $this->getEsiPostParameter());
                 break;
-        }
-
-        if(!\is_null($esiData)) {
-            if($esiData['responseCode'] === 200) {
-                if($this->getJsonMapMethod() === 'map') {
-                    $returnValue = $this->map($esiData['responseBody'], (new \ReflectionClass($this->getJsonMapToObject()))->newInstanceWithoutConstructor());
-                }
-
-                if($this->getJsonMapMethod() === 'mapArray') {
-                    $returnValue = $this->mapArray($esiData['responseBody'], $this->getJsonMapToObject());
-                }
-            }
-
-            if($esiData['responseCode'] !== 200) {
-                $returnValue = $this->map($esiData['responseBody'], new Model\Error\EsiError($esiData['responseCode']));
-            }
-
-            Utility\DebugUtility::debug($esiData);
-            Utility\DebugUtility::debug($returnValue);
-            die();
         }
 
         $this->resetFieldsToDefaults();
@@ -255,42 +220,6 @@ class Swagger {
      */
     public function setEsiVersion($esiVersion) {
         $this->esiVersion = $esiVersion;
-    }
-
-    /**
-     * getJsonMapMethod
-     *
-     * @return string
-     */
-    public function getJsonMapMethod() {
-        return $this->jsonMapMethod;
-    }
-
-    /**
-     * setJsonMapMathod
-     *
-     * @param string $jsonMapMethod
-     */
-    public function setJsonMapMethod(string $jsonMapMethod) {
-        $this->jsonMapMethod = $jsonMapMethod;
-    }
-
-    /**
-     * getJsonMapToObject
-     *
-     * @return string
-     */
-    public function getJsonMapToObject() {
-        return $this->jsonMapToObject;
-    }
-
-    /**
-     * setJsonMapToObject
-     *
-     * @param string $jsonMapToObject
-     */
-    public function setJsonMapToObject(string $jsonMapToObject) {
-        $this->jsonMapToObject = $jsonMapToObject;
     }
 
     /**

@@ -79,10 +79,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
         $this->setEsiPostParameter($characterIds);
         $this->setEsiRoute($this->esiEndpoints['characters_affiliation']);
         $this->setEsiVersion('v1');
-        $this->setJsonMapMethod('mapArray');
-        $this->jsonMapToObject('\\WordPress\EsiClient\Model\Character\CharactersAffiliation');
 
-//        return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Character\CharactersAffiliation');
-        return $this->callEsi();
+        return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Character\CharactersAffiliation');
     }
 }
