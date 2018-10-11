@@ -47,8 +47,7 @@ class RemoteHelper {
                     'headers' => [
                         'Content-Type' => 'application/json; charset=utf-8'
                     ],
-//                    'body' => \json_encode($parameter),
-                    'body' => $parameter,
+                    'body' => \json_encode($parameter),
                     'method' => 'POST'
                 ]);
                 break;
