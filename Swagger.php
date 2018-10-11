@@ -139,8 +139,8 @@ class Swagger {
                 $returnValue = $this->map($esiData['responseBody'], new Model\Error\EsiError($esiData['responseCode']));
             }
 
-            \WordPress\Plugins\EveOnlineIntelTool\Libs\Helper\DebugHelper::debug($esiData);
-            \WordPress\Plugins\EveOnlineIntelTool\Libs\Helper\DebugHelper::debug($returnValue);
+            Utility\DebugUtility::debug($esiData);
+            Utility\DebugUtility::debug($returnValue);
             die();
         }
 
