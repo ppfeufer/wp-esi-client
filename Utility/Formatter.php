@@ -22,7 +22,8 @@ namespace WordPress\EsiClient\Utility;
 /**
  * Formatter abstraction
  */
-abstract class Formatter {
+//abstract class Formatter {
+interface Formatter {
     /**
      * Flush output and send contents to the output device
      */
@@ -44,25 +45,19 @@ abstract class Formatter {
      * @param  string|array $type
      * @param  string|bool $label
      */
-    public function startContain($type, $label = false) {
-
-    }
+    public function startContain($type = '', $label = false);
 
     /**
      * Generate container ending token
      */
-    public function endContain() {
-
-    }
+    public function endContain();
 
     /**
      * Generate empty group token
      *
      * @param  string $prefix
      */
-    public function emptyGroup($prefix = '') {
-
-    }
+    public function emptyGroup($prefix = '');
 
     /**
      * Generate group start token
@@ -73,94 +68,70 @@ abstract class Formatter {
      * @param   string $prefix
      * @return  bool
      */
-    public function startGroup($prefix = '') {
-
-    }
+    public function startGroup($prefix = '');
 
     /**
      * Generate group ending token
      */
-    public function endGroup() {
-
-    }
+    public function endGroup();
 
     /**
      * Generate section title
      *
      * @param  string $title
      */
-    public function sectionTitle($title) {
-
-    }
+    public function sectionTitle($title);
 
     /**
      * Generate row start token
      */
-    public function startRow() {
-
-    }
+    public function startRow();
 
     /**
      * Generate row ending token
      */
-    public function endRow() {
-
-    }
+    public function endRow();
 
     /**
      * Column divider (cell delimiter)
      *
      * @param  int $padLen
      */
-    public function colDiv($padLen = null) {
-
-    }
+    public function colDiv($padLen = null);
 
     /**
      * Generate modifier tokens
      *
      * @param  array $items
      */
-    public function bubbles(array $items) {
-
-    }
+    public function bubbles(array $items);
 
     /**
      * Input expression start
      */
-    public function startExp() {
-
-    }
+    public function startExp();
 
     /**
      * Input expression end
      */
-    public function endExp() {
-
-    }
+    public function endExp();
 
     /**
      * Root starting token
      */
-    public function startRoot() {
-
-    }
+    public function startRoot();
 
     /**
      * Root ending token
      */
-    public function endRoot() {
-
-    }
+    public function endRoot();
 
     /**
      * Separator token
      *
      * @param  string $label
      */
-    public function sep($label = ' ') {
-
-    }
+    public function sep($label = ' ');
 
     /**
      * Resolve cache request
@@ -174,16 +145,12 @@ abstract class Formatter {
      * @param   string $id
      * @return  bool
      */
-    public function didCache($id) {
-        return false;
-    }
+    public function didCache($id);
 
     /**
      * Ends cache capturing for the given ID
      *
      * @param  string $id
      */
-    public function cacheLock($id) {
-
-    }
+    public function cacheLock($id);
 }

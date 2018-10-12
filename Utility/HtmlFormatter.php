@@ -22,7 +22,7 @@ namespace WordPress\EsiClient\Utility;
  * Generates the output in HTML5 format
  *
  */
-class HtmlFormatter extends Formatter {
+class HtmlFormatter implements Formatter {
     /**
      * Actual output
      *
@@ -188,7 +188,7 @@ class HtmlFormatter extends Formatter {
         //$this->out .= sprintf('<%1$s%2$s %3$s>%4$s</%1$s>', $this->def['base'], $typeStr, $tip, $text);
     }
 
-    public function startContain($type, $label = false) {
+    public function startContain($type = '', $label = false) {
         if(!\is_array($type)) {
             $type = (array) $type;
         }
@@ -285,7 +285,8 @@ class HtmlFormatter extends Formatter {
 
     public function endExp() {
         if(\WordPress\EsiClient\Utility\DebugUtility::config('showBacktrace') && ($trace = \WordPress\EsiClient\Utility\DebugUtility::getBacktrace())) {
-            $docRoot = isset($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] : '';
+            $serverDocumentRoot = \filter_input(\INPUT_SERVER, 'DOCUMENT_ROOT');
+            $docRoot = isset($serverDocumentRoot) ? $serverDocumentRoot : '';
             $path = \strpos($trace['file'], $docRoot) !== 0 ? $trace['file'] : \ltrim(\str_replace($docRoot, '', $trace['file']), '/');
 
             $this->out .= "<{$this->def['base']} data-backtrace>{$path}:{$trace['line']}</{$this->def['base']}>";
@@ -302,10 +303,10 @@ class HtmlFormatter extends Formatter {
         $this->out .= "</{$this->def['base']}>";
 
         // process tooltips
-        $tipHtml = '';
         foreach($this->tips as $idx => $meta) {
-
+            $idx = false; // don't need that one here ...
             $tip = '';
+
             if(!\is_array($meta)) {
                 $meta = ['title' => $meta];
             }

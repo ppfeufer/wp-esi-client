@@ -154,9 +154,8 @@ class DebugUtility {
             }
         }
 
-        if($format instanceof Formatter) {
-            $this->fmt = $format;
-        } else {
+        $this->fmt = $format;
+        if(!\is_a($this->fmt, '\WordPress\EsiClient\Utility\Formatter')) {
             $format = isset(static::$config['formatters'][$format]) ? static::$config['formatters'][$format] : '\WordPress\EsiClient\Utility\\' . \ucfirst($format) . 'Formatter';
 
             if(!\class_exists($format)) {
@@ -246,7 +245,6 @@ class DebugUtility {
     static function debugPlainText() {
         $args = \func_get_args();
         $options = [];
-        $output = '';
         $expressions = self::getInputExpressions($options);
         $capture = \in_array('@', $options, true);
         $ref = new DebugUtility((\php_sapi_name() !== 'cli') || $capture ? 'text' : 'cliText');
@@ -448,7 +446,7 @@ class DebugUtility {
 
                 \end($tags[$tag]);
 
-                $pointer = &$tags[$tag][key($tags[$tag])];
+                $pointer = &$tags[$tag][\key($tags[$tag])];
 
                 continue;
             }
@@ -476,7 +474,7 @@ class DebugUtility {
 
             \end($tags[$tag]);
 
-            $pointer = &$tags[$tag][key($tags[$tag])][$lastIdx];
+            $pointer = &$tags[$tag][\key($tags[$tag])][$lastIdx];
         }
 
         // split title from the description texts at the nearest 2x new-line combination
@@ -802,7 +800,7 @@ class DebugUtility {
      * @return  double
      */
     public static function getTime($precision = 4) {
-        return round(static::$time, $precision);
+        return \round(static::$time, $precision);
     }
 
     /**
@@ -815,6 +813,10 @@ class DebugUtility {
         $trace = \defined('DEBUG_BACKTRACE_IGNORE_ARGS') ? \debug_backtrace(\DEBUG_BACKTRACE_IGNORE_ARGS) : \debug_backtrace();
 
         while($callee = \array_pop($trace)) {
+            $file = null;
+            $function = null;
+            $line = null;
+
             // extract only the information we neeed
             $callee = \array_intersect_key($callee, \array_fill_keys(['file', 'function', 'line'], false));
 
@@ -842,6 +844,10 @@ class DebugUtility {
         // if more queries calls were made on the same line
         static $lineInst = [];
 
+        $file = null;
+        $function = null;
+        $line = null;
+
         $trace = static::getBacktrace();
 
         if(!$trace) {
@@ -850,8 +856,8 @@ class DebugUtility {
 
         \extract($trace);
 
-        $code = \file($file);
-        $code = $code[$line - 1]; // multiline expressions not supported!
+        $codeArray = \file($file);
+        $code = $codeArray[$line - 1]; // multiline expressions not supported!
         $instIndx = 0;
         $tokens = \token_get_all("<?php {$code}");
 
@@ -1131,7 +1137,7 @@ class DebugUtility {
                 $args[] = $reflector->getDeclaringClass()->getName();
             }
 
-            $args = array_map(function($text) {
+            $args = \array_map(function($text) {
                 return \str_replace('_', '-', \ltrim(\strtolower($text), '\\_'));
             }, $args);
 
@@ -1283,7 +1289,7 @@ class DebugUtility {
                         $keyLen = $encoding && ($encoding !== 'ASCII') ? static::strLen($key) . '; ' . $encoding : static::strLen($key);
                         $keyInfo = "{$keyInfo}({$keyLen})";
                     } else {
-                        $keyLen = strlen($key);
+                        $keyLen = \strlen($key);
                     }
 
                     $this->fmt->startRow();
@@ -1447,22 +1453,21 @@ class DebugUtility {
                             $flags = [];
                             $perms = $file->getPerms();
 
+                            $flags['0'] = 'u';
                             if(($perms & 0xC000) === 0xC000) {       // socket
-                                $flags[] = 's';
+                                $flags['0'] = 's';
                             } elseif(($perms & 0xA000) === 0xA000) {   // symlink
-                                $flags[] = 'l';
+                                $flags['0'] = 'l';
                             } elseif(($perms & 0x8000) === 0x8000) {   // regular
-                                $flags[] = '-';
+                                $flags['0'] = '-';
                             } elseif(($perms & 0x6000) === 0x6000) {   // block special
-                                $flags[] = 'b';
+                                $flags['0'] = 'b';
                             } elseif(($perms & 0x4000) === 0x4000) {   // directory
-                                $flags[] = 'd';
+                                $flags['0'] = 'd';
                             } elseif(($perms & 0x2000) === 0x2000) {   // character special
-                                $flags[] = 'c';
+                                $flags['0'] = 'c';
                             } elseif(($perms & 0x1000) === 0x1000) {   // FIFO pipe
-                                $flags[] = 'p';
-                            } else {                                   // unknown
-                                $flags[] = 'u';
+                                $flags['0'] = 'p';
                             }
 
                             // owner
@@ -1500,13 +1505,13 @@ class DebugUtility {
                             $this->fmt->endContain();
                         }
 
-                        if(!$isClass && interface_exists($subject, false)) {
+                        if(!$isClass && \interface_exists($subject, false)) {
                             $this->fmt->startContain('interface', true);
                             $this->fromReflector(new ReflectionClass($subject));
                             $this->fmt->endContain('interface');
                         }
 
-                        if(function_exists($subject)) {
+                        if(\function_exists($subject)) {
                             $this->fmt->startContain('function', true);
                             $this->fromReflector(new ReflectionFunction($subject));
                             $this->fmt->endContain('function');
@@ -1620,8 +1625,6 @@ class DebugUtility {
                                 $components = $this->splitRegex($subject);
 
                                 if($components) {
-                                    $regex = '';
-
                                     $this->fmt->startContain('regex', true);
 
                                     foreach($components as $component) {
@@ -1710,7 +1713,7 @@ class DebugUtility {
         // @see http://stackoverflow.com/questions/15672287/strange-behavior-of-reflectiongetproperties-with-numeric-keys
         if(!static::$env['is54']) {
             $props = \array_values(\array_filter($props, function($prop) use($subject) {
-                return !$prop->isPublic() || property_exists($subject, $prop->name);
+                return !$prop->isPublic() || \property_exists($subject, $prop->name);
             }));
         }
 
@@ -2230,7 +2233,7 @@ class DebugUtility {
      * @param   int $padType
      * @return  string
      */
-    protected static function strPad($input, $padLen, $padStr = ' ', $padType = STR_PAD_RIGHT) {
+    protected static function strPad($input, $padLen, $padStr = ' ', $padType = \STR_PAD_RIGHT) {
         $diff = \strlen($input) - static::strLen($input);
 
         return \str_pad($input, $padLen + $diff, $padStr, $padType);

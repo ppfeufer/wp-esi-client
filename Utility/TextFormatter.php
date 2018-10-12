@@ -23,7 +23,7 @@ namespace WordPress\EsiClient\Utility;
  * Generates the output in plain text format
  *
  */
-class TextFormatter extends Formatter {
+class TextFormatter implements Formatter {
     /**
      * Actual output
      *
@@ -100,7 +100,7 @@ class TextFormatter extends Formatter {
         $this->out .= isset($formatMap[$type[0]]) ? \sprintf($formatMap[$type[0]], $type[0], $text, $meta) : $text;
     }
 
-    public function startContain($type, $label = false) {
+    public function startContain($type = '', $label = false) {
         if(!\is_array($type)) {
             $type = (array) $type;
         }
@@ -191,5 +191,21 @@ class TextFormatter extends Formatter {
         if(($timeout = \WordPress\EsiClient\Utility\DebugUtility::getTimeoutPoint()) > 0) {
             $this->out .= \sprintf("\n-- Listing incomplete. Timed-out after %4.2fs -- \n", $timeout);
         }
+    }
+
+    public function cacheLock($id) {
+        ;
+    }
+
+    public function didCache($id): bool {
+        ;
+    }
+
+    public function endContain() {
+        ;
+    }
+
+    public function startExp() {
+        ;
     }
 }

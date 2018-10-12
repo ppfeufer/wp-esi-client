@@ -168,13 +168,20 @@ class JsonMapper {
             list($hasProperty, $accessor, $type) = $this->arInspectedClasses[$strClassName][$key];
 
             if(!$hasProperty) {
+                $isHandled = false;
+
                 if($this->bExceptionOnUndefinedProperty) {
+                    $isHandled = true;
                     throw new Exception('JSON property "' . $key . '" does not exist in object of type ' . $strClassName);
                 } else if($this->undefinedPropertyHandler !== null) {
+                    $isHandled = true;
+
                     \call_user_func(
                         $this->undefinedPropertyHandler, $object, $key, $jvalue
                     );
-                } else {
+                }
+                
+                if($isHandled === false) {
                     $this->log('info', 'Property {property} does not exist in {class}', ['property' => $key, 'class' => $strClassName]);
                 }
 
