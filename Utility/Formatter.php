@@ -22,7 +22,6 @@ namespace WordPress\EsiClient\Utility;
 /**
  * Formatter abstraction
  */
-//abstract class Formatter {
 interface Formatter {
     /**
      * Flush output and send contents to the output device
