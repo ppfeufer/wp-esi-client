@@ -65,7 +65,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId);
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId);
         }
 
         return $returnValue;
