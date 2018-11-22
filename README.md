@@ -64,17 +64,17 @@ function updateEsiClient(string $version = null) {
     // check if ZipArchive is available
     $hasZipArchive = (\class_exists('ZipArchive')) ? true : false;
 
-    // the ESI client zip file
-    $esiClientMasterZip = 'https://github.com/ppfeufer/wp-esi-client/archive/master.zip';
+    $remoteZipFile = 'https://github.com/ppfeufer/wp-esi-client/archive/master.zip';
+    $dirInZipFile = '/wp-esi-client-master';
 
-    if(!\is_null($version)) {
-        $esiClientMasterZip = 'https://github.com/ppfeufer/wp-esi-client/archive/v' . $version . '.zip';
+    if(!is_null($version)) {
+        $remoteZipFile = 'https://github.com/ppfeufer/wp-esi-client/archive/v' . $version . '.zip';
+        $dirInZipFile = '/wp-esi-client-' . $version;
     }
 
     $esiClientZipFile = WP_CONTENT_DIR . '/uploads/EsiClient.zip';
 
-    // get the zip file
-    wp_remote_get($esiClientMasterZip, [
+    wp_remote_get($remoteZipFile, [
         'timeout' => 300,
         'stream' => true,
         'filename' => $esiClientZipFile
@@ -112,7 +112,7 @@ function updateEsiClient(string $version = null) {
     }
 
     // rename folder
-    rename(WP_CONTENT_DIR . '/wp-esi-client-master', WP_CONTENT_DIR . '/EsiClient/');
+    rename(\WP_CONTENT_DIR . $dirInZipFile, \WP_CONTENT_DIR . '/EsiClient/');
 
     // remove temp zip file
     unlink($esiClientZipFile);

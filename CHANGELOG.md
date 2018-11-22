@@ -3,7 +3,8 @@
 
 ## [In Development](https://github.com/ppfeufer/eve-online-intel-tool/tree/development)
 [Full Changelog](https://github.com/ppfeufer/eve-online-intel-tool/compare/v20181122...development)
-- in development
+### Fixed
+- Catching null values in case ESI or a certain end point is down
 
 ## [v20181122](https://github.com/ppfeufer/eve-online-intel-tool/tag/v20181122) - 2018-11-22
 [Full Changelog](https://github.com/ppfeufer/eve-online-intel-tool/compare/v20181005...v20181122)
