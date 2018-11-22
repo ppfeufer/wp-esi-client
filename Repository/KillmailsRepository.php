@@ -39,6 +39,8 @@ class KillmailsRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId
      */
     public function killmailsKillmailIdKillmailHash(int $killmailID, string $killmailHash) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['killmails_killmailId_killmailHash']);
         $this->setEsiRouteParameter([
@@ -47,6 +49,12 @@ class KillmailsRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v1');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId);
+        }
+
+        return $returnValue;
     }
 }

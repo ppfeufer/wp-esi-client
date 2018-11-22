@@ -41,6 +41,8 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Character\CharactersCharacterId
      */
     public function charactersCharacterId(int $characterID) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['characters_characterId']);
         $this->setEsiRouteParameter([
@@ -48,7 +50,13 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v4');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Character\CharactersCharacterId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Character\CharactersCharacterId);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -58,6 +66,8 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory
      */
     public function charactersCharacterIdCorporationhistory(int $characterID) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['characters_characterId_corporationhistory']);
         $this->setEsiRouteParameter([
@@ -65,7 +75,13 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v4');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -75,12 +91,20 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * @return array of \WordPress\EsiClient\Model\Character\CharactersAffiliation
      */
     public function charactersAffiliation(array $characterIds = []) {
+        $returnValue = null;
+
         $this->setEsiMethod('post');
         $this->setEsiPostParameter($characterIds);
         $this->setEsiRoute($this->esiEndpoints['characters_affiliation']);
         $this->setEsiVersion('v1');
 
-        return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Character\CharactersAffiliation');
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Character\CharactersAffiliation');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -90,6 +114,8 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait
      */
     public function charactersCharacterIdPortrait(int $characterID) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['characters_characterId_portrait']);
         $this->setEsiRouteParameter([
@@ -97,6 +123,12 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v2');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait);
+        }
+
+        return $returnValue;
     }
 }

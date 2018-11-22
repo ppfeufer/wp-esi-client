@@ -39,11 +39,19 @@ class SovereigntyRepository extends \WordPress\EsiClient\Swagger {
      * @return array of \WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns
      */
     public function sovereigntyCampaigns() {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['sovereignty_campaigns']);
         $this->setEsiVersion('v1');
 
-        return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns');
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -52,11 +60,19 @@ class SovereigntyRepository extends \WordPress\EsiClient\Swagger {
      * @return array of \WordPress\EsiClient\Model\Sovereignty\SovereigntyMap
      */
     public function sovereigntyMap() {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['sovereignty_map']);
         $this->setEsiVersion('v1');
 
-        return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyMap');
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -65,10 +81,18 @@ class SovereigntyRepository extends \WordPress\EsiClient\Swagger {
      * @return array of \WordPress\EsiClient\Model\Sovereignty\SovereigntyStructures
      */
     public function sovereigntyStructures() {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['sovereignty_structures']);
         $this->setEsiVersion('v1');
 
-        return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyStructures');
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns');
+        }
+
+        return $returnValue;
     }
 }

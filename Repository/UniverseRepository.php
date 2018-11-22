@@ -65,11 +65,19 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return array of \WordPress\EsiClient\Model\Universe\UniverseAncestries
      */
     public function universeAncestries() {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_ancestries']);
         $this->setEsiVersion('v1');
 
-        return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Universe\UniverseAncestries');
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Universe\UniverseAncestries');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -79,6 +87,8 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId
      */
     public function universeAsteroidBeltsAsteroidBeltId(int $asteroidBeltId) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_asteroidBelts_asteroidBeltId']);
         $this->setEsiRouteParameter([
@@ -86,7 +96,13 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v1');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -96,6 +112,8 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId
      */
     public function universeConstellationsConstellationId(int $constellationId) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_constellations_constellationId']);
         $this->setEsiRouteParameter([
@@ -103,7 +121,13 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v1');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -113,6 +137,8 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId
      */
     public function universeGroupsGroupId(int $groupId) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_groups_groupId']);
         $this->setEsiRouteParameter([
@@ -120,7 +146,13 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v1');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -135,12 +167,20 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Universe\UniverseIds
      */
     public function universeIds(array $names) {
+        $returnValue = null;
+
         $this->setEsiMethod('post');
         $this->setEsiPostParameter($names);
         $this->setEsiRoute($this->esiEndpoints['universe_ids']);
         $this->setEsiVersion('v1');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Universe\UniverseIds);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseIds);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -150,6 +190,8 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Universe\UniverseRegionsRegionId
      */
     public function universeRegionsRegionId(int $regionId) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_regions_regionId']);
         $this->setEsiRouteParameter([
@@ -157,7 +199,13 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v1');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Universe\UniverseRegionsRegionId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseRegionsRegionId);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -168,11 +216,19 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return array of \WordPress\EsiClient\Model\Universe\UniverseSystemJumps
      */
     public function universeSystemJumps() {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_systemJumps']);
         $this->setEsiVersion('v1');
 
-        return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Universe\UniverseSystemJumps');
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Universe\UniverseSystemJumps');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -183,11 +239,19 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return array of \WordPress\EsiClient\Model\Universe\UniverseSystemKills
      */
     public function universeSystemKills() {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_systemKills']);
         $this->setEsiVersion('v2');
 
-        return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Universe\UniverseSystemKills');
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Universe\UniverseSystemKills');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -197,6 +261,8 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId
      */
     public function universeSystemsSystemId(int $systemId) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_systems_systemId']);
         $this->setEsiRouteParameter([
@@ -204,7 +270,13 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v4');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -214,6 +286,8 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Universe\UniverseTypesTypeId
      */
     public function universeTypesTypeId(int $typeId) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_types_typeId']);
         $this->setEsiRouteParameter([
@@ -221,6 +295,12 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v3');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Universe\UniverseTypesTypeId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseTypesTypeId);
+        }
+
+        return $returnValue;
     }
 }
