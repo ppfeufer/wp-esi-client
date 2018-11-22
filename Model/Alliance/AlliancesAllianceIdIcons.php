@@ -69,4 +69,14 @@ class AlliancesAllianceIdIcons {
     public function setPx64x64(string $px64x64) {
         $this->px64x64 = \preg_replace('/http:\/\//', 'https://', $px64x64);
     }
+
+    /**
+     * getPx32x32
+     * -=[ Workaround until CCP implements 32px logos ]=-
+     *
+     * @return string
+     */
+    public function getPx32x32() {
+        return \preg_replace('/_64.png/', '_32.png', $this->px64x64);
+    }
 }
