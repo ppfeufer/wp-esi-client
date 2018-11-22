@@ -168,13 +168,20 @@ class JsonMapper {
             list($hasProperty, $accessor, $type) = $this->arInspectedClasses[$strClassName][$key];
 
             if(!$hasProperty) {
+                $isHandled = false;
+
                 if($this->bExceptionOnUndefinedProperty) {
+                    $isHandled = true;
                     throw new Exception('JSON property "' . $key . '" does not exist in object of type ' . $strClassName);
                 } else if($this->undefinedPropertyHandler !== null) {
+                    $isHandled = true;
+
                     \call_user_func(
                         $this->undefinedPropertyHandler, $object, $key, $jvalue
                     );
-                } else {
+                }
+                
+                if($isHandled === false) {
                     $this->log('info', 'Property {property} does not exist in {class}', ['property' => $key, 'class' => $strClassName]);
                 }
 
@@ -349,7 +356,7 @@ class JsonMapper {
      *
      * @return mixed Mapped $array is returned
      */
-    public function mapArray(array $json, array $array, $class = null, string $parent_key = '') {
+    public function mapArray(array $json, $array, $class = null, string $parent_key = '') {
         foreach($json as $key => $jvalue) {
             if($class === null) {
                 $array[$key] = $jvalue;

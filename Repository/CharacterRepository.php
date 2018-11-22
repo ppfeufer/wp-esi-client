@@ -40,7 +40,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * @param int $characterID An EVE character ID
      * @return \WordPress\EsiClient\Model\Character\CharactersCharacterId
      */
-    public function charactersCharacterId($characterID) {
+    public function charactersCharacterId(int $characterID) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['characters_characterId']);
         $this->setEsiRouteParameter([
@@ -52,17 +52,51 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
     }
 
     /**
+     * Get a list of all the corporations a character has been a member of
+     *
+     * @param int $characterID An EVE character ID
+     * @return \WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory
+     */
+    public function charactersCharacterIdCorporationhistory(int $characterID) {
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['characters_characterId_corporationhistory']);
+        $this->setEsiRouteParameter([
+            '/{character_id}/' => $characterID
+        ]);
+        $this->setEsiVersion('v4');
+
+        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory);
+    }
+
+    /**
      * Bulk lookup of character IDs to corporation, alliance and faction
      *
      * @param array $characterIds The character IDs to fetch affiliations for. All characters must exist, or none will be returned
-     * @return array
+     * @return array of \WordPress\EsiClient\Model\Character\CharactersAffiliation
      */
-    public function charactersAffiliation($characterIds = []) {
+    public function charactersAffiliation(array $characterIds = []) {
         $this->setEsiMethod('post');
         $this->setEsiPostParameter($characterIds);
         $this->setEsiRoute($this->esiEndpoints['characters_affiliation']);
         $this->setEsiVersion('v1');
 
         return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Character\CharactersAffiliation');
+    }
+
+    /**
+     * Get character portraits
+     *
+     * @param int $characterID An EVE character ID
+     * @return \WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait
+     */
+    public function charactersCharacterIdPortrait(int $characterID) {
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['characters_characterId_portrait']);
+        $this->setEsiRouteParameter([
+            '/{character_id}/' => $characterID
+        ]);
+        $this->setEsiVersion('v2');
+
+        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait);
     }
 }

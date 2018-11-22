@@ -60,14 +60,17 @@ function checkEsiClientForUpdates() {
 Now the actual update function ...
 
 ```php
-function updateEsiClient() {
+function updateEsiClient(string $version = null) {
     // check if ZipArchive is available
     $hasZipArchive = (\class_exists('ZipArchive')) ? true : false;
 
-    // the ESI client master zip file
+    // the ESI client zip file
     $esiClientMasterZip = 'https://github.com/ppfeufer/wp-esi-client/archive/master.zip';
 
-    // tem local name
+    if(!\is_null($version)) {
+        $esiClientMasterZip = 'https://github.com/ppfeufer/wp-esi-client/archive/v' . $version . '.zip';
+    }
+
     $esiClientZipFile = WP_CONTENT_DIR . '/uploads/EsiClient.zip';
 
     // get the zip file
@@ -90,7 +93,7 @@ function updateEsiClient() {
             throw new Exception('PHP-ZIP: Unable to open the Esi Client zip file');
         }
 
-        if(!$zip->extractTo(\WP_CONTENT_DIR)) {
+        if(!$zip->extractTo(WP_CONTENT_DIR)) {
             throw new Exception('PHP-ZIP: Unable to extract Esi Client zip file');
         }
 

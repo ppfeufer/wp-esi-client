@@ -40,7 +40,7 @@ class CorporationRepository extends \WordPress\EsiClient\Swagger {
      * @param int $corporationID An EVE corporation ID
      * @return \WordPress\EsiClient\Model\Corporation\CorporationsCorporationId
      */
-    public function corporationsCorporationId($corporationID) {
+    public function corporationsCorporationId(int $corporationID) {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['corporations_corporationId']);
         $this->setEsiRouteParameter([
@@ -49,5 +49,22 @@ class CorporationRepository extends \WordPress\EsiClient\Swagger {
         $this->setEsiVersion('v4');
 
         return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Corporation\CorporationsCorporationId);
+    }
+
+    /**
+     * Get corporation logos
+     *
+     * @param int $corporationID An EVE corporation ID
+     * @return \WordPress\EsiClient\Model\Corporation\CorporationsCorporationIdIcons
+     */
+    public function corporationsCorporationIdIcons(int $corporationID) {
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['corporations_corporationId_icons']);
+        $this->setEsiRouteParameter([
+            '/{corporation_id}/' => $corporationID
+        ]);
+        $this->setEsiVersion('v1');
+
+        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Corporation\CorporationsCorporationIdIcons);
     }
 }
