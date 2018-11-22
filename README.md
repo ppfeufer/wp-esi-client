@@ -62,7 +62,7 @@ Now the actual update function ...
 ```php
 function updateEsiClient(string $version = null) {
     // check if ZipArchive is available
-    $hasZipArchive = (\class_exists('ZipArchive')) ? true : false;
+    $hasZipArchive = (class_exists('ZipArchive')) ? true : false;
 
     $remoteZipFile = 'https://github.com/ppfeufer/wp-esi-client/archive/master.zip';
     $dirInZipFile = '/wp-esi-client-master';
