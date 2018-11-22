@@ -84,7 +84,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * Get information on an asteroid belt
      *
      * @param int $asteroidBeltId
-     * @return \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId
+     * @return \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId
      */
     public function universeAsteroidBeltsAsteroidBeltId(int $asteroidBeltId) {
         $returnValue = null;
@@ -99,7 +99,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId);
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId);
         }
 
         return $returnValue;

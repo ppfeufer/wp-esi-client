@@ -69,7 +69,7 @@ class SovereigntyRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns');
+            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyMap');
         }
 
         return $returnValue;
@@ -90,7 +90,7 @@ class SovereigntyRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns');
+            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyStructures');
         }
 
         return $returnValue;
