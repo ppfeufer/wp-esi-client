@@ -77,7 +77,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
     }
 
     /**
-     * Public information about an alliance
+     * Get alliance logos
      *
      * @param int $allianceID An EVE alliance ID
      * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons

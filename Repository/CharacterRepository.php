@@ -82,4 +82,21 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
 
         return $this->mapArray($this->callEsi(), '\\WordPress\EsiClient\Model\Character\CharactersAffiliation');
     }
+
+    /**
+     * Get character portraits
+     *
+     * @param int $characterID An EVE character ID
+     * @return \WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait
+     */
+    public function charactersCharacterIdPortrait(int $characterID) {
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['characters_characterId_portrait']);
+        $this->setEsiRouteParameter([
+            '/{character_id}/' => $characterID
+        ]);
+        $this->setEsiVersion('v2');
+
+        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait);
+    }
 }
