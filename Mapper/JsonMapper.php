@@ -100,7 +100,7 @@ class JsonMapper {
      *
      * @var boolean
      */
-    public $bIgnoreVisibility = false;
+    public $bIgnoreVisibility = true;
 
     /**
      * Override class names that JsonMapper uses to create objects.
@@ -180,7 +180,7 @@ class JsonMapper {
                         $this->undefinedPropertyHandler, $object, $key, $jvalue
                     );
                 }
-                
+
                 if($isHandled === false) {
                     $this->log('info', 'Property {property} does not exist in {class}', ['property' => $key, 'class' => $strClassName]);
                 }

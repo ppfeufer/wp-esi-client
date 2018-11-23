@@ -17,56 +17,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace WordPress\EsiClient\Model\Universe\UniverseIds;
+namespace WordPress\EsiClient\Model\Alliance;
 
-class InventoryTypes {
+class Alliances {
     /**
-     * id
+     * alliances
      *
-     * @var int
-     */
-    protected $id = null;
-
-    /**
-     * name
+     * List of Alliance IDs
      *
-     * @var string
+     * @var array
      */
-    protected $name = null;
+    protected $alliances = null;
 
     /**
-     * getId
+     * getAlliances
      *
-     * @return int
+     * @return array
      */
-    public function getId() {
-        return $this->id;
+    public function getAlliances() {
+        return $this->alliances;
     }
 
     /**
-     * setId
+     * setAlliances
      *
-     * @param int $id
+     * @param array $alliances
      */
-    protected function setId(int $id) {
-        $this->id = $id;
-    }
-
-    /**
-     * getName
-     *
-     * @return string
-     */
-    public function getName() {
-        return $this->name;
-    }
-
-    /**
-     * setName
-     *
-     * @param string $name
-     */
-    protected function setName(string $name) {
-        $this->name = $name;
+    protected function setAlliances(array $alliances) {
+        $this->alliances = $alliances;
     }
 }

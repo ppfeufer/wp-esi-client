@@ -17,56 +17,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace WordPress\EsiClient\Model\Universe\UniverseIds;
+namespace WordPress\EsiClient\Model\Dogma;
 
-class InventoryTypes {
+class DogmaEffects {
     /**
-     * id
+     * effects
      *
-     * @var int
-     */
-    protected $id = null;
-
-    /**
-     * name
+     * A list of dogma effect ids
      *
-     * @var string
+     * @var array
      */
-    protected $name = null;
+    protected $effects = null;
 
     /**
-     * getId
+     * getEffects
      *
-     * @return int
+     * @return array
      */
-    public function getId() {
-        return $this->id;
+    public function getEffects() {
+        return $this->effects;
     }
 
     /**
-     * setId
+     * setEffects
      *
-     * @param int $id
+     * @param array $effects
      */
-    protected function setId(int $id) {
-        $this->id = $id;
-    }
-
-    /**
-     * getName
-     *
-     * @return string
-     */
-    public function getName() {
-        return $this->name;
-    }
-
-    /**
-     * setName
-     *
-     * @param string $name
-     */
-    protected function setName(string $name) {
-        $this->name = $name;
+    protected function setEffects(array $effects) {
+        $this->effects = $effects;
     }
 }

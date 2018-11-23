@@ -78,7 +78,7 @@ class UniverseAncestries {
      *
      * @param int $bloodlineId The bloodline associated with this ancestry
      */
-    public function setBloodlineId(int $bloodlineId) {
+    protected function setBloodlineId(int $bloodlineId) {
         $this->bloodlineId = $bloodlineId;
     }
 
@@ -96,7 +96,7 @@ class UniverseAncestries {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    protected function setDescription(string $description) {
         $this->description = $description;
     }
 
@@ -114,7 +114,7 @@ class UniverseAncestries {
      *
      * @param int $iconId
      */
-    public function setIconId(int $iconId) {
+    protected function setIconId(int $iconId) {
         $this->iconId = $iconId;
     }
 
@@ -132,7 +132,7 @@ class UniverseAncestries {
      *
      * @param int $id
      */
-    public function setId(int $id) {
+    protected function setId(int $id) {
         $this->id = $id;
     }
 
@@ -150,7 +150,7 @@ class UniverseAncestries {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -168,7 +168,7 @@ class UniverseAncestries {
      *
      * @param string $shortDescription
      */
-    public function setShortDescription(string $shortDescription) {
+    protected function setShortDescription(string $shortDescription) {
         $this->shortDescription = $shortDescription;
     }
 }

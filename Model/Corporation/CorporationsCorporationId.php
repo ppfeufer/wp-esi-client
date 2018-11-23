@@ -23,6 +23,8 @@ class CorporationsCorporationId {
     /**
      * allianceId
      *
+     * ID of the alliance that corporation is a member of, if any
+     *
      * @var inr
      */
     protected $allianceId = null;
@@ -79,6 +81,8 @@ class CorporationsCorporationId {
     /**
      * name
      *
+     * The full name of the corporation
+     *
      * @var string
      */
     protected $name = null;
@@ -99,6 +103,8 @@ class CorporationsCorporationId {
 
     /**
      * ticker
+     *
+     * The short name of the corporation
      *
      * @var string
      */
@@ -125,7 +131,7 @@ class CorporationsCorporationId {
      *
      * @param int $allianceId
      */
-    public function setAllianceId(int $allianceId) {
+    protected function setAllianceId(int $allianceId) {
         $this->allianceId = $allianceId;
     }
 
@@ -143,7 +149,7 @@ class CorporationsCorporationId {
      *
      * @param int $ceoId
      */
-    public function setCeoId(int $ceoId) {
+    protected function setCeoId(int $ceoId) {
         $this->ceoId = $ceoId;
     }
 
@@ -161,7 +167,7 @@ class CorporationsCorporationId {
      *
      * @param int $creatorId
      */
-    public function setCreatorId(int $creatorId) {
+    protected function setCreatorId(int $creatorId) {
         $this->creatorId = $creatorId;
     }
 
@@ -179,7 +185,7 @@ class CorporationsCorporationId {
      *
      * @param \DateTime $dateFounded
      */
-    public function setDateFounded(\DateTime $dateFounded) {
+    protected function setDateFounded(\DateTime $dateFounded) {
         $this->dateFounded = $dateFounded;
     }
 
@@ -197,7 +203,7 @@ class CorporationsCorporationId {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    protected function setDescription(string $description) {
         $this->description = \strip_tags($description);
     }
 
@@ -215,7 +221,7 @@ class CorporationsCorporationId {
      *
      * @param int $factionId
      */
-    public function setFactionId(int $factionId) {
+    protected function setFactionId(int $factionId) {
         $this->factionId = $factionId;
     }
 
@@ -233,7 +239,7 @@ class CorporationsCorporationId {
      *
      * @param int $homeStationId
      */
-    public function setHomeStationId(int $homeStationId) {
+    protected function setHomeStationId(int $homeStationId) {
         $this->homeStationId = $homeStationId;
     }
 
@@ -251,7 +257,7 @@ class CorporationsCorporationId {
      *
      * @param int $memberCount
      */
-    public function setMemberCount(int $memberCount) {
+    protected function setMemberCount(int $memberCount) {
         $this->memberCount = $memberCount;
     }
 
@@ -269,7 +275,7 @@ class CorporationsCorporationId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -287,7 +293,7 @@ class CorporationsCorporationId {
      *
      * @param int $shares
      */
-    public function setShares(int $shares) {
+    protected function setShares(int $shares) {
         $this->shares = $shares;
     }
 
@@ -305,7 +311,7 @@ class CorporationsCorporationId {
      *
      * @param float $taxRate
      */
-    public function setTaxRate(float $taxRate) {
+    protected function setTaxRate(float $taxRate) {
         $this->taxRate = $taxRate;
     }
 
@@ -323,7 +329,7 @@ class CorporationsCorporationId {
      *
      * @param string $ticker
      */
-    public function setTicker(string $ticker) {
+    protected function setTicker(string $ticker) {
         $this->ticker = $ticker;
     }
 
@@ -341,7 +347,7 @@ class CorporationsCorporationId {
      *
      * @param string $url
      */
-    public function setUrl(string $url) {
+    protected function setUrl(string $url) {
         $this->url = $url;
     }
 }

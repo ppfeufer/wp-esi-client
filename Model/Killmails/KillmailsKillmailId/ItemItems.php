@@ -70,7 +70,7 @@ class ItemItems {
      *
      * @param int $flag
      */
-    public function setFlag(int $flag) {
+    protected function setFlag(int $flag) {
         $this->flag = $flag;
     }
 
@@ -88,7 +88,7 @@ class ItemItems {
      *
      * @param int $itemTypeId
      */
-    public function setItemTypeId(int $itemTypeId) {
+    protected function setItemTypeId(int $itemTypeId) {
         $this->itemTypeId = $itemTypeId;
     }
 
@@ -106,7 +106,7 @@ class ItemItems {
      *
      * @param int $quantityDestroyed
      */
-    public function setQuantityDestroyed(int $quantityDestroyed = null) {
+    protected function setQuantityDestroyed(int $quantityDestroyed = null) {
         $this->quantityDestroyed = $quantityDestroyed;
     }
 
@@ -124,7 +124,7 @@ class ItemItems {
      *
      * @param int $quantityDropped
      */
-    public function setQuantityDropped(int $quantityDropped = null) {
+    protected function setQuantityDropped(int $quantityDropped = null) {
         $this->quantityDropped = $quantityDropped;
     }
 
@@ -142,7 +142,7 @@ class ItemItems {
      *
      * @param int $singleton
      */
-    public function setSingleton(int $singleton) {
+    protected function setSingleton(int $singleton) {
         $this->singleton = $singleton;
     }
 }

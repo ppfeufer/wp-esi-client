@@ -21,6 +21,15 @@ namespace WordPress\EsiClient\Model\Character;
 
 class CharactersCharacterId {
     /**
+     * allianceId
+     *
+     * The character's alliance ID
+     *
+     * @var int
+     */
+    protected $allianceId = null;
+
+    /**
      * ancestryId
      *
      * @var int
@@ -29,6 +38,8 @@ class CharactersCharacterId {
 
     /**
      * birthday
+     *
+     * Creation date of the character
      *
      * @var \DateTime
      */
@@ -44,6 +55,8 @@ class CharactersCharacterId {
     /**
      * corporationId
      *
+     * The character's corporation ID
+     *
      * @var int
      */
     protected $corporationId = null;
@@ -54,6 +67,15 @@ class CharactersCharacterId {
      * @var string
      */
     protected $description = null;
+
+    /**
+     * factionId
+     *
+     * ID of the faction the character is fighting for, if the character is enlisted in Factional Warfare
+     *
+     * @var int
+     */
+    protected $factionId = null;
 
     /**
      * gender
@@ -84,6 +106,24 @@ class CharactersCharacterId {
     protected $securityStatus = null;
 
     /**
+     * getAllianceId
+     *
+     * @return int
+     */
+    public function getAllianceId() {
+        return $this->allianceId;
+    }
+
+    /**
+     * setAllianceId
+     *
+     * @param int $allianceId
+     */
+    protected function setAllianceId(int $allianceId) {
+        $this->allianceId = $allianceId;
+    }
+
+    /**
      * getAncestryId
      *
      * @return int
@@ -97,7 +137,7 @@ class CharactersCharacterId {
      *
      * @param int $ancestryId
      */
-    public function setAncestryId(int $ancestryId) {
+    protected function setAncestryId(int $ancestryId) {
         $this->ancestryId = $ancestryId;
     }
 
@@ -115,7 +155,7 @@ class CharactersCharacterId {
      *
      * @param \DateTime $birthday
      */
-    public function setBirthday(\DateTime $birthday) {
+    protected function setBirthday(\DateTime $birthday) {
         $this->birhday = $birthday;
     }
 
@@ -133,7 +173,7 @@ class CharactersCharacterId {
      *
      * @param int $bloodlineId
      */
-    public function setBloodlineId(int $bloodlineId) {
+    protected function setBloodlineId(int $bloodlineId) {
         $this->bloodlineId = $bloodlineId;
     }
 
@@ -151,7 +191,7 @@ class CharactersCharacterId {
      *
      * @param int $corporationId
      */
-    public function setCorporationId(int $corporationId) {
+    protected function setCorporationId(int $corporationId) {
         $this->corporationId = $corporationId;
     }
 
@@ -169,8 +209,26 @@ class CharactersCharacterId {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    protected function setDescription(string $description) {
         $this->description = \strip_tags($description);
+    }
+
+    /**
+     * getFactionId
+     *
+     * @return int
+     */
+    public function getFactionId() {
+        return $this->factionId;
+    }
+
+    /**
+     * setFactionId
+     *
+     * @param int $factionId
+     */
+    protected function setFactionId(int $factionId) {
+        $this->factionId = $factionId;
     }
 
     /**
@@ -187,7 +245,7 @@ class CharactersCharacterId {
      *
      * @param string $gender
      */
-    public function setGender(string $gender) {
+    protected function setGender(string $gender) {
         $this->gender = $gender;
     }
 
@@ -205,7 +263,7 @@ class CharactersCharacterId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -223,7 +281,7 @@ class CharactersCharacterId {
      *
      * @param int $raceId
      */
-    public function setRaceId(int $raceId) {
+    protected function setRaceId(int $raceId) {
         $this->raceId = $raceId;
     }
 
@@ -241,7 +299,7 @@ class CharactersCharacterId {
      *
      * @param float $securityStatus
      */
-    public function setSecurityStatus(float $securityStatus) {
+    protected function setSecurityStatus(float $securityStatus) {
         $this->securityStatus = $securityStatus;
     }
 }

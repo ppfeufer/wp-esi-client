@@ -48,7 +48,7 @@ class UniverseSystemJumps {
      *
      * @param int $shipJumps
      */
-    public function setShipJumps(int $shipJumps) {
+    protected function setShipJumps(int $shipJumps) {
         $this->shipJumps = $shipJumps;
     }
 
@@ -66,7 +66,7 @@ class UniverseSystemJumps {
      *
      * @param int $systemId
      */
-    public function setSystemId(int $systemId) {
+    protected function setSystemId(int $systemId) {
         $this->systemId = $systemId;
     }
 }

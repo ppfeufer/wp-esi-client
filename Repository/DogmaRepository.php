@@ -38,13 +38,37 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
     /**
      * Get a list of dogma attribute ids
      *
-     * @return array
+     * @return \WordPress\EsiClient\Model\Dogma\DogmaAttributes
      */
     public function dogmaAttributes() {
         $this->setEsiRoute($this->esiEndpoints['dogma_attributes']);
         $this->setEsiVersion('v1');
 
-        return \json_decode($this->callEsi());
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray(\json_encode(['attributes' => $esiData]), '\WordPress\EsiClient\Model\Dogma\DogmaAttributes');
+        }
+
+        return $returnValue;
+    }
+
+    /**
+     * Get a list of dogma attribute ids
+     *
+     * @return \WordPress\EsiClient\Model\Dogma\DogmaEffects
+     */
+    public function dogmaEffects() {
+        $this->setEsiRoute($this->esiEndpoints['dogma_effects']);
+        $this->setEsiVersion('v1');
+
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray(\json_encode(['effects' => $esiData]), '\WordPress\EsiClient\Model\Dogma\DogmaEffects');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -54,6 +78,8 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Dogma\DogmaAttributesAttributeId
      */
     public function dogmaAttributesAttributeId(int $attributeId) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['dogma_attributes_attributeId']);
         $this->setEsiRouteParameter([
@@ -61,6 +87,12 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v1');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Dogma\DogmaAttributesAttributeId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Dogma\DogmaAttributesAttributeId);
+        }
+
+        return $returnValue;
     }
 }

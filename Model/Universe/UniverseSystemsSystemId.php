@@ -106,7 +106,7 @@ class UniverseSystemsSystemId {
      *
      * @param int $constellationId
      */
-    public function setConstellationId(int $constellationId) {
+    protected function setConstellationId(int $constellationId) {
         $this->constellationId = $constellationId;
     }
 
@@ -124,7 +124,7 @@ class UniverseSystemsSystemId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -142,7 +142,7 @@ class UniverseSystemsSystemId {
      *
      * @param array $planets
      */
-    public function setPlanets(array $planets) {
+    protected function setPlanets(array $planets) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->planets = $mapper->mapArray($planets, [], '\\WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Planets');
@@ -162,7 +162,7 @@ class UniverseSystemsSystemId {
      *
      * @param \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Position $position
      */
-    public function setPosition(\WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Position $position) {
+    protected function setPosition(\WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Position $position) {
         $this->position = $position;
     }
 
@@ -180,7 +180,7 @@ class UniverseSystemsSystemId {
      *
      * @param string $securityClass
      */
-    public function setSecurityClass(string $securityClass) {
+    protected function setSecurityClass(string $securityClass) {
         $this->securityClass = $securityClass;
     }
 
@@ -198,7 +198,7 @@ class UniverseSystemsSystemId {
      *
      * @param float $securityStatus
      */
-    public function setSecurityStatus(float $securityStatus) {
+    protected function setSecurityStatus(float $securityStatus) {
         $this->securityStatus = $securityStatus;
     }
 
@@ -216,7 +216,7 @@ class UniverseSystemsSystemId {
      *
      * @param int $starId
      */
-    public function setStarId(int $starId) {
+    protected function setStarId(int $starId) {
         $this->starId = $starId;
     }
 
@@ -234,7 +234,7 @@ class UniverseSystemsSystemId {
      *
      * @param array $stargates
      */
-    public function setStargates(array $stargates) {
+    protected function setStargates(array $stargates) {
         $this->stargates = $stargates;
     }
 
@@ -252,7 +252,7 @@ class UniverseSystemsSystemId {
      *
      * @param array $stations
      */
-    public function setStations(array $stations) {
+    protected function setStations(array $stations) {
         $this->stations = $stations;
     }
 
@@ -270,7 +270,7 @@ class UniverseSystemsSystemId {
      *
      * @param int $systemId
      */
-    public function setSystemId(int $systemId) {
+    protected function setSystemId(int $systemId) {
         $this->systemId = $systemId;
     }
 }

@@ -23,12 +23,16 @@ class AlliancesAllianceId {
     /**
      * creatorCorpId
      *
+     * ID of the corporation that created the alliance
+     *
      * @var int
      */
     protected $creatorCorporationId = null;
 
     /**
      * creatorId
+     *
+     * ID of the character that created the alliance
      *
      * @var int
      */
@@ -44,12 +48,25 @@ class AlliancesAllianceId {
     /**
      * executorCorpId
      *
+     * The executor corporation ID, if this alliance is not closed
+     *
      * @var int
      */
     protected $executorCorporationId = null;
 
     /**
+     * factionId
+     *
+     * Faction ID this alliance is fighting for, if this alliance is enlisted in factional warfare
+     *
+     * @var int
+     */
+    protected $factionId = null;
+
+    /**
      * name
+     *
+     * The full name of the alliance
      *
      * @var string
      */
@@ -57,6 +74,8 @@ class AlliancesAllianceId {
 
     /**
      * ticker
+     *
+     * The short name of the alliance
      *
      * @var string
      */
@@ -76,7 +95,7 @@ class AlliancesAllianceId {
      *
      * @param int $creatorCorpId
      */
-    public function setCreatorCorporationId(int $creatorCorpId) {
+    protected function setCreatorCorporationId(int $creatorCorpId) {
         $this->creatorCorporationId = $creatorCorpId;
     }
 
@@ -94,7 +113,7 @@ class AlliancesAllianceId {
      *
      * @param int $creatorId
      */
-    public function setCreatorId(int $creatorId) {
+    protected function setCreatorId(int $creatorId) {
         $this->creatorId = $creatorId;
     }
 
@@ -112,7 +131,7 @@ class AlliancesAllianceId {
      *
      * @param \DateTime $dateFounded
      */
-    public function setDateFounded(\DateTime $dateFounded) {
+    protected function setDateFounded(\DateTime $dateFounded) {
         $this->dateFounded = $dateFounded;
     }
 
@@ -130,8 +149,26 @@ class AlliancesAllianceId {
      *
      * @param int $executorCorpId
      */
-    public function setExecutorCorporationId(int $executorCorpId) {
+    protected function setExecutorCorporationId(int $executorCorpId) {
         $this->executorCorporationId = $executorCorpId;
+    }
+
+    /**
+     * getFactionId
+     *
+     * @return int
+     */
+    public function getFactionId() {
+        return $this->factionId;
+    }
+
+    /**
+     * setFactionId
+     *
+     * @param int $factionId
+     */
+    protected function setFactionId(int $factionId) {
+        $this->factionId = $factionId;
     }
 
     /**
@@ -148,7 +185,7 @@ class AlliancesAllianceId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -166,7 +203,7 @@ class AlliancesAllianceId {
      *
      * @param string $ticker
      */
-    public function setTicker(string $ticker) {
+    protected function setTicker(string $ticker) {
         $this->ticker = $ticker;
     }
 }

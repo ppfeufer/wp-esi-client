@@ -48,7 +48,7 @@ class Participants {
      *
      * @param int $allianceId
      */
-    public function setAllianceId(int $allianceId) {
+    protected function setAllianceId(int $allianceId) {
         $this->allianceId = $allianceId;
     }
 
@@ -66,7 +66,7 @@ class Participants {
      *
      * @param float $score
      */
-    public function setScore(float $score) {
+    protected function setScore(float $score) {
         $this->score = $score;
     }
 }

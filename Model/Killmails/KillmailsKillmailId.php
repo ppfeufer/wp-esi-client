@@ -30,12 +30,16 @@ class KillmailsKillmailId {
     /**
      * killmailId
      *
+     * ID of the killmail
+     *
      * @var int
      */
     protected $killmailId = null;
 
     /**
      * killmailTime
+     *
+     * Time that the victim was killed and the killmail generated
      *
      * @var \DateTime
      */
@@ -44,12 +48,16 @@ class KillmailsKillmailId {
     /**
      * moonId
      *
+     * Moon if the kill took place at one
+     *
      * @var int
      */
     protected $moonId = null;
 
     /**
      * solarSystemId
+     *
+     * Solar system that the kill took place in
      *
      * @var int
      */
@@ -64,6 +72,8 @@ class KillmailsKillmailId {
 
     /**
      * warId
+     *
+     * War if the killmail is generated in relation to an official war
      *
      * @var int
      */
@@ -83,7 +93,7 @@ class KillmailsKillmailId {
      *
      * @param array $attackers
      */
-    public function setAttackers(array $attackers) {
+    protected function setAttackers(array $attackers) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->attackers = $mapper->mapArray($attackers, [], '\\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Attacker');
@@ -103,7 +113,7 @@ class KillmailsKillmailId {
      *
      * @param int $killmailId
      */
-    public function setKillmailId(int $killmailId) {
+    protected function setKillmailId(int $killmailId) {
         $this->killmailId = $killmailId;
     }
 
@@ -121,7 +131,7 @@ class KillmailsKillmailId {
      *
      * @param \DateTime $killmailTime
      */
-    public function setKillmailTime(\DateTime $killmailTime) {
+    protected function setKillmailTime(\DateTime $killmailTime) {
         $this->killmailTime = $killmailTime;
     }
 
@@ -139,7 +149,7 @@ class KillmailsKillmailId {
      *
      * @param int $moonId
      */
-    public function setMoonId(int $moonId) {
+    protected function setMoonId(int $moonId) {
         $this->moonId = $moonId;
     }
 
@@ -157,7 +167,7 @@ class KillmailsKillmailId {
      *
      * @param int $solarSystemId
      */
-    public function setSolarSystemId(int $solarSystemId) {
+    protected function setSolarSystemId(int $solarSystemId) {
         $this->solarSystemId = $solarSystemId;
     }
 
@@ -175,7 +185,7 @@ class KillmailsKillmailId {
      *
      * @param \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Victim $victim
      */
-    public function setVictim(\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Victim $victim) {
+    protected function setVictim(\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Victim $victim) {
         $this->victim = $victim;
     }
 
@@ -193,7 +203,7 @@ class KillmailsKillmailId {
      *
      * @param int $warId
      */
-    public function setWarId(int $warId) {
+    protected function setWarId(int $warId) {
         $this->warId = $warId;
     }
 }

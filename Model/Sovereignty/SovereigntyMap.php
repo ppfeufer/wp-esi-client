@@ -62,7 +62,7 @@ class SovereigntyMap {
      *
      * @param int $allianceId
      */
-    public function setAllianceId(int $allianceId) {
+    protected function setAllianceId(int $allianceId) {
         $this->allianceId = $allianceId;
     }
 
@@ -80,7 +80,7 @@ class SovereigntyMap {
      *
      * @param int $corporationId
      */
-    public function setCorporationId(int $corporationId) {
+    protected function setCorporationId(int $corporationId) {
         $this->corporationId = $corporationId;
     }
 
@@ -98,7 +98,7 @@ class SovereigntyMap {
      *
      * @param int $factionId
      */
-    public function setFactionId(int $factionId) {
+    protected function setFactionId(int $factionId) {
         $this->factionId = $factionId;
     }
 
@@ -116,7 +116,7 @@ class SovereigntyMap {
      *
      * @param int $systemId
      */
-    public function setSystemId(int $systemId) {
+    protected function setSystemId(int $systemId) {
         $this->systemId = $systemId;
     }
 }

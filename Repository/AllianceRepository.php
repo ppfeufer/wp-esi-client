@@ -36,14 +36,22 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
     /**
      * List all active player alliances
      *
-     * @return array
+     * @return \WordPress\EsiClient\Model\Alliance\Alliances
      */
     public function alliances() {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['alliances']);
         $this->setEsiVersion('v1');
 
-        return \json_decode($this->callEsi());
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray(\json_encode(['alliances' => $esiData]), '\WordPress\EsiClient\Model\Alliance\Alliances');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -53,6 +61,8 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId
      */
     public function alliancesAllianceId(int $allianceID) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['alliances_allianceId']);
         $this->setEsiRouteParameter([
@@ -60,7 +70,13 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v3');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId);
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -69,11 +85,19 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations
      */
     public function alliancesAllianceIdCorporations() {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['alliances_allianceId_corporations']);
         $this->setEsiVersion('v1');
 
-        return $this->mapArray(\json_encode(['corporations' => $this->callEsi()]), '\WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations');
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray(\json_encode(['corporations' => $esiData]), '\WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -83,6 +107,8 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
      * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons
      */
     public function alliancesAllianceIdIcons(int $allianceID) {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['alliances_allianceId_icons']);
         $this->setEsiRouteParameter([
@@ -90,6 +116,12 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
         ]);
         $this->setEsiVersion('v1');
 
-        return $this->map($this->callEsi(), new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons);
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            return $this->map($esiData, new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons);
+        }
+
+        return $returnValue;
     }
 }

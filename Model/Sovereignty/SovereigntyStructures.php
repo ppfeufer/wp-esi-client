@@ -23,6 +23,8 @@ class SovereigntyStructures {
     /**
      * allianceId
      *
+     * The alliance that owns the structure.
+     *
      * @var int
      */
     protected $allianceId = null;
@@ -30,11 +32,16 @@ class SovereigntyStructures {
     /**
      * solarSystemId
      *
+     * Solar system in which the structure is located.
+     *
      * @var int
      */
     protected $solarSystemId = null;
+
     /**
      * structureId
+     *
+     * Unique item ID for this structure.
      *
      * @var int
      */
@@ -43,12 +50,20 @@ class SovereigntyStructures {
     /**
      * structureTypeId
      *
+     * A reference to the type of structure this is.
+     *
      * @var int
      */
     protected $structureTypeId = null;
 
     /**
      * vulnerabilityOccupancyLevel
+     *
+     * The occupancy level for the next or current vulnerability window.
+     * This takes into account all development indexes and capital system
+     * bonuses. Also known as Activity Defense Multiplier from in the client.
+     * It increases the time that attackers must spend using their
+     * entosis links on the structure.
      *
      * @var float
      */
@@ -57,12 +72,26 @@ class SovereigntyStructures {
     /**
      * vulnerableEndTime
      *
+     * The time at which the next or current vulnerability window ends.
+     * At the end of a vulnerability window the next window is recalculated
+     * and locked in along with the vulnerabilityOccupancyLevel.
+     * If the structure is not in 100% entosis control of the defender,
+     * it will go in to ‘overtime’ and stay vulnerable for as long as that
+     * situation persists.
+     * Only once the defenders have 100% entosis control and has the
+     * vulnerableEndTime passed does the vulnerability interval expire and
+     * a new one is calculated.
+     *
      * @var \DateTime
      */
     protected $vulnerableEndTime = null;
 
     /**
      * vulnerableStartTime
+     *
+     * The next time at which the structure will become vulnerable.
+     * Or the start time of the current window if current time is between
+     * this and vulnerableEndTime.
      *
      * @var \DateTime
      */
@@ -82,7 +111,7 @@ class SovereigntyStructures {
      *
      * @param int $allianceId
      */
-    public function setAllianceId(int $allianceId) {
+    protected function setAllianceId(int $allianceId) {
         $this->allianceId = $allianceId;
     }
 
@@ -100,7 +129,7 @@ class SovereigntyStructures {
      *
      * @param int $solarSystemId
      */
-    public function setSolarSystemId(int $solarSystemId) {
+    protected function setSolarSystemId(int $solarSystemId) {
         $this->solarSystemId = $solarSystemId;
     }
 
@@ -118,7 +147,7 @@ class SovereigntyStructures {
      *
      * @param int $structureId
      */
-    public function setStructureId(int $structureId) {
+    protected function setStructureId(int $structureId) {
         $this->structureId = $structureId;
     }
 
@@ -136,7 +165,7 @@ class SovereigntyStructures {
      *
      * @param int $structureTypeId
      */
-    public function setStructureTypeId(int $structureTypeId) {
+    protected function setStructureTypeId(int $structureTypeId) {
         $this->structureTypeId = $structureTypeId;
     }
 
@@ -154,7 +183,7 @@ class SovereigntyStructures {
      *
      * @param float $vulnerabilityOccupancyLevel
      */
-    public function setVulnerabilityOccupancyLevel(float $vulnerabilityOccupancyLevel) {
+    protected function setVulnerabilityOccupancyLevel(float $vulnerabilityOccupancyLevel) {
         $this->vulnerabilityOccupancyLevel = $vulnerabilityOccupancyLevel;
     }
 
@@ -172,7 +201,7 @@ class SovereigntyStructures {
      *
      * @param \DateTime $vulnerableEndTime
      */
-    public function setVulnerableEndTime(\DateTime $vulnerableEndTime) {
+    protected function setVulnerableEndTime(\DateTime $vulnerableEndTime) {
         $this->vulnerableEndTime = $vulnerableEndTime;
     }
 
@@ -190,7 +219,7 @@ class SovereigntyStructures {
      *
      * @param \DateTime $vulnerableStartTime
      */
-    public function setVulnerableStartTime(\DateTime $vulnerableStartTime) {
+    protected function setVulnerableStartTime(\DateTime $vulnerableStartTime) {
         $this->vulnerableStartTime = $vulnerableStartTime;
     }
 }

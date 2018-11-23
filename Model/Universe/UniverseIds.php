@@ -104,7 +104,7 @@ class UniverseIds {
      *
      * @param array $agents
      */
-    public function setAgents(array $agents) {
+    protected function setAgents(array $agents) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->agents = $mapper->mapArray($agents, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\Agents');
@@ -124,7 +124,7 @@ class UniverseIds {
      *
      * @param array $alliances
      */
-    public function setAlliances(array $alliances) {
+    protected function setAlliances(array $alliances) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->alliances = $mapper->mapArray($alliances, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\Alliances');
@@ -144,7 +144,7 @@ class UniverseIds {
      *
      * @param array $characters
      */
-    public function setCharacters(array $characters) {
+    protected function setCharacters(array $characters) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->characters = $mapper->mapArray($characters, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\Characters');
@@ -164,7 +164,7 @@ class UniverseIds {
      *
      * @param array $constellations
      */
-    public function setConstellations(array $constellations) {
+    protected function setConstellations(array $constellations) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->constellations = $mapper->mapArray($constellations, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\Constellations');
@@ -184,7 +184,7 @@ class UniverseIds {
      *
      * @param array $corporations
      */
-    public function setCorporations(array $corporations) {
+    protected function setCorporations(array $corporations) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->corporations = $mapper->mapArray($corporations, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\Corporations');
@@ -204,7 +204,7 @@ class UniverseIds {
      *
      * @param array $factions
      */
-    public function setFactions(array $factions) {
+    protected function setFactions(array $factions) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->factions = $mapper->mapArray($factions, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\Factions');
@@ -224,7 +224,7 @@ class UniverseIds {
      *
      * @param array $inventoryTypes
      */
-    public function setInventoryTypes(array $inventoryTypes) {
+    protected function setInventoryTypes(array $inventoryTypes) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->inventoryTypes = $mapper->mapArray($inventoryTypes, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\InventoryTypes');
@@ -244,7 +244,7 @@ class UniverseIds {
      *
      * @param array $regions
      */
-    public function setRegions(array $regions) {
+    protected function setRegions(array $regions) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->regions = $mapper->mapArray($regions, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\Regions');
@@ -264,7 +264,7 @@ class UniverseIds {
      *
      * @param array $stations
      */
-    public function setStations(array $stations) {
+    protected function setStations(array $stations) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->stations = $mapper->mapArray($stations, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\Stations');
@@ -284,7 +284,7 @@ class UniverseIds {
      *
      * @param array $systems
      */
-    public function setSystems(array $systems) {
+    protected function setSystems(array $systems) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->systems = $mapper->mapArray($systems, [], '\\WordPress\EsiClient\Model\Universe\UniverseIds\Systems');

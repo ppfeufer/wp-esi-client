@@ -48,7 +48,7 @@ class DogmaEffect {
      *
      * @param int $effectId
      */
-    public function setEffectId(int $effectId) {
+    protected function setEffectId(int $effectId) {
         $this->effectId = $effectId;
     }
 
@@ -66,7 +66,7 @@ class DogmaEffect {
      *
      * @param bool $isDefault
      */
-    public function setIsDefault(bool $isDefault) {
+    protected function setIsDefault(bool $isDefault) {
         $this->isDefault = $isDefault;
     }
 }

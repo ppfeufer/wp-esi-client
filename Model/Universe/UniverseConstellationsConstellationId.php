@@ -46,6 +46,8 @@ class UniverseConstellationsConstellationId {
     /**
      * regionId
      *
+     * The region this constellation is in
+     *
      * @var int
      */
     protected $regionId = null;
@@ -71,7 +73,7 @@ class UniverseConstellationsConstellationId {
      *
      * @param int $constellationId
      */
-    public function setConstellationId(int $constellationId) {
+    protected function setConstellationId(int $constellationId) {
         $this->constellationId = $constellationId;
     }
 
@@ -89,7 +91,7 @@ class UniverseConstellationsConstellationId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -107,7 +109,7 @@ class UniverseConstellationsConstellationId {
      *
      * @param \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position $position
      */
-    public function setPosition(\WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position $position) {
+    protected function setPosition(\WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position $position) {
         $this->position = $position;
     }
 
@@ -125,7 +127,7 @@ class UniverseConstellationsConstellationId {
      *
      * @param int $regionId
      */
-    public function setRegionId(int $regionId) {
+    protected function setRegionId(int $regionId) {
         $this->regionId = $regionId;
     }
 
@@ -143,7 +145,7 @@ class UniverseConstellationsConstellationId {
      *
      * @param array $systems
      */
-    public function setSystems(array $systems) {
+    protected function setSystems(array $systems) {
         $this->systems = $systems;
     }
 }

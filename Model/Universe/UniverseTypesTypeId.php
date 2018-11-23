@@ -72,6 +72,8 @@ class UniverseTypesTypeId {
     /**
      * marketGroupId
      *
+     * This only exists for types that can be put on the market
+     *
      * @var int
      */
     protected $marketGroupId = null;
@@ -146,7 +148,7 @@ class UniverseTypesTypeId {
      *
      * @param float $capacity
      */
-    public function setCapacity(float $capacity) {
+    protected function setCapacity(float $capacity) {
         $this->capacity = $capacity;
     }
 
@@ -164,7 +166,7 @@ class UniverseTypesTypeId {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    protected function setDescription(string $description) {
         $this->description = $description;
     }
 
@@ -182,7 +184,7 @@ class UniverseTypesTypeId {
      *
      * @param array $dogmaAttributes
      */
-    public function setDogmaAttributes(array $dogmaAttributes) {
+    protected function setDogmaAttributes(array $dogmaAttributes) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->dogmaAttributes = $mapper->mapArray($dogmaAttributes, [], '\\WordPress\EsiClient\Model\Universe\UniverseTypesTypeId\DogmaAttribute');
@@ -202,7 +204,7 @@ class UniverseTypesTypeId {
      *
      * @param array $dogmaEffects
      */
-    public function setDogmaEffects(array $dogmaEffects) {
+    protected function setDogmaEffects(array $dogmaEffects) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->dogmaEffects = $mapper->mapArray($dogmaEffects, [], '\\WordPress\EsiClient\Model\Universe\UniverseTypesTypeId\DogmaEffect');
@@ -222,7 +224,7 @@ class UniverseTypesTypeId {
      *
      * @param int $graphicId
      */
-    public function setGraphicId(int $graphicId) {
+    protected function setGraphicId(int $graphicId) {
         $this->graphicId = $graphicId;
     }
 
@@ -240,7 +242,7 @@ class UniverseTypesTypeId {
      *
      * @param int $groupId
      */
-    public function setGroupId(int $groupId) {
+    protected function setGroupId(int $groupId) {
         $this->groupId = $groupId;
     }
 
@@ -258,7 +260,7 @@ class UniverseTypesTypeId {
      *
      * @param int $iconId
      */
-    public function setIconId(int $iconId) {
+    protected function setIconId(int $iconId) {
         $this->iconId = $iconId;
     }
 
@@ -276,7 +278,7 @@ class UniverseTypesTypeId {
      *
      * @param int $marketGroupId
      */
-    public function setMarketGroupId(int $marketGroupId) {
+    protected function setMarketGroupId(int $marketGroupId) {
         $this->marketGroupId = $marketGroupId;
     }
 
@@ -294,7 +296,7 @@ class UniverseTypesTypeId {
      *
      * @param float $mass
      */
-    public function setMass(float $mass) {
+    protected function setMass(float $mass) {
         $this->mass = $mass;
     }
 
@@ -312,7 +314,7 @@ class UniverseTypesTypeId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -330,7 +332,7 @@ class UniverseTypesTypeId {
      *
      * @param float $packagedVolume
      */
-    public function setPackedVolume(float $packagedVolume) {
+    protected function setPackedVolume(float $packagedVolume) {
         $this->packagedVolume = $packagedVolume;
     }
 
@@ -348,7 +350,7 @@ class UniverseTypesTypeId {
      *
      * @param int $portionSize
      */
-    public function setPortionSize(int $portionSize) {
+    protected function setPortionSize(int $portionSize) {
         $this->portionSize = $portionSize;
     }
 
@@ -366,7 +368,7 @@ class UniverseTypesTypeId {
      *
      * @param bool $published
      */
-    public function setPublished(bool $published) {
+    protected function setPublished(bool $published) {
         $this->published = $published;
     }
 
@@ -384,7 +386,7 @@ class UniverseTypesTypeId {
      *
      * @param float $radius
      */
-    public function setRadius(float $radius) {
+    protected function setRadius(float $radius) {
         $this->radius = $radius;
     }
 
@@ -402,7 +404,7 @@ class UniverseTypesTypeId {
      *
      * @param int $typeId
      */
-    public function setTypeId(int $typeId) {
+    protected function setTypeId(int $typeId) {
         $this->typeId = $typeId;
     }
 
@@ -420,7 +422,7 @@ class UniverseTypesTypeId {
      *
      * @param float $volume
      */
-    public function setVolume(float $volume) {
+    protected function setVolume(float $volume) {
         $this->volume = $volume;
     }
 }
