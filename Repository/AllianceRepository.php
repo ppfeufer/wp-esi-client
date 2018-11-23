@@ -36,14 +36,22 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
     /**
      * List all active player alliances
      *
-     * @return array
+     * @return \WordPress\EsiClient\Model\Alliance\Alliances
      */
     public function alliances() {
+        $returnValue = null;
+
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['alliances']);
         $this->setEsiVersion('v1');
 
-        return \json_decode($this->callEsi());
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray(\json_encode(['alliances' => $esiData]), '\WordPress\EsiClient\Model\Alliance\Alliances');
+        }
+
+        return $returnValue;
     }
 
     /**
@@ -82,7 +90,6 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['alliances_allianceId_corporations']);
         $this->setEsiVersion('v1');
-
 
         $esiData = $this->callEsi();
 

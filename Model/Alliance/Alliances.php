@@ -19,31 +19,31 @@
 
 namespace WordPress\EsiClient\Model\Alliance;
 
-class AlliancesAllianceIdCorporations {
+class Alliances {
     /**
-     * corporations
+     * alliances
      *
-     * List of corporation IDs
+     * List of Alliance IDs
      *
      * @var array
      */
-    protected $corporations = null;
+    protected $alliances = null;
 
     /**
-     * getCorporations
+     * getAlliances
      *
      * @return array
      */
-    public function getCorporations() {
-        return $this->corporations;
+    public function getAlliances() {
+        return $this->alliances;
     }
 
     /**
-     * setCorporations
+     * setAlliances
      *
-     * @param array $corporations
+     * @param array $alliances
      */
-    protected function setCorporations(array $corporations) {
-        $this->corporations = $corporations;
+    protected function setAlliances(array $alliances) {
+        $this->alliances = $alliances;
     }
 }

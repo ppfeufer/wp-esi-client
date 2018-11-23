@@ -5,6 +5,7 @@
 [Full Changelog](https://github.com/ppfeufer/eve-online-intel-tool/compare/v20181122...development)
 ### Added
 - factionId to AlliancesAllianceId Model
+- Alliances Model
 
 ### Changed
 - Setter should be protected. In order to prevent tempering with our ESI objects, setter should be protected so accidentally accessing them is not possible.
