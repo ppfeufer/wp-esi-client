@@ -23,7 +23,7 @@ class DogmaEffects {
     /**
      * effects
      *
-     * A list of dogma attribute ids
+     * A list of dogma effect ids
      *
      * @var array
      */
