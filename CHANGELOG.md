@@ -5,6 +5,7 @@
 [Full Changelog](https://github.com/ppfeufer/eve-online-intel-tool/compare/v20181122...development)
 ### Added
 - Alliances Model
+- DogmaAttributes Model
 - factionId to AlliancesAllianceId Model
 - factionId and allianceId to CharactersCharacterId Model
 

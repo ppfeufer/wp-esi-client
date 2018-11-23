@@ -23,6 +23,8 @@ class CorporationsCorporationId {
     /**
      * allianceId
      *
+     * ID of the alliance that corporation is a member of, if any
+     *
      * @var inr
      */
     protected $allianceId = null;
@@ -79,6 +81,8 @@ class CorporationsCorporationId {
     /**
      * name
      *
+     * The full name of the corporation
+     *
      * @var string
      */
     protected $name = null;
@@ -99,6 +103,8 @@ class CorporationsCorporationId {
 
     /**
      * ticker
+     *
+     * The short name of the corporation
      *
      * @var string
      */
