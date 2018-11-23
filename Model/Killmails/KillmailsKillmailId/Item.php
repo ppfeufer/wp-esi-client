@@ -46,12 +46,16 @@ class Item {
     /**
      * quantityDestroyed
      *
+     * How many of the item were destroyed if any
+     *
      * @var int
      */
     protected $quantityDestroyed = null;
 
     /**
      * quantityDropped
+     *
+     * How many of the item were dropped if any
      *
      * @var int
      */

@@ -44,6 +44,8 @@ class Victim {
     /**
      * damageTaken
      *
+     * How much total damage was taken by the victim
+     *
      * @var int
      */
     protected $damageTaken = null;
@@ -71,6 +73,8 @@ class Victim {
 
     /**
      * shipTypeId
+     *
+     * The ship that the victim was piloting and was destroyed
      *
      * @var int
      */

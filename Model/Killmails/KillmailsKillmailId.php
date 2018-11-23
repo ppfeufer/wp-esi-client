@@ -30,12 +30,16 @@ class KillmailsKillmailId {
     /**
      * killmailId
      *
+     * ID of the killmail
+     *
      * @var int
      */
     protected $killmailId = null;
 
     /**
      * killmailTime
+     *
+     * Time that the victim was killed and the killmail generated
      *
      * @var \DateTime
      */
@@ -44,12 +48,16 @@ class KillmailsKillmailId {
     /**
      * moonId
      *
+     * Moon if the kill took place at one
+     *
      * @var int
      */
     protected $moonId = null;
 
     /**
      * solarSystemId
+     *
+     * Solar system that the kill took place in
      *
      * @var int
      */
@@ -64,6 +72,8 @@ class KillmailsKillmailId {
 
     /**
      * warId
+     *
+     * War if the killmail is generated in relation to an official war
      *
      * @var int
      */
