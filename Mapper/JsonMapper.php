@@ -252,9 +252,8 @@ class JsonMapper {
                     $proptype = $this->getFullNamespace($proptype, $strNs);
                 }
 
-                if($proptype === 'array') {
-                    $array = [];
-                } else {
+                $array = [];
+                if($proptype !== 'array') {
                     $array = $this->createInstance($proptype, false, $jvalue);
                 }
             } else {
