@@ -21,6 +21,15 @@ namespace WordPress\EsiClient\Model\Character;
 
 class CharactersCharacterId {
     /**
+     * allianceId
+     *
+     * The character's alliance ID
+     *
+     * @var int
+     */
+    protected $allianceId = null;
+
+    /**
      * ancestryId
      *
      * @var int
@@ -29,6 +38,8 @@ class CharactersCharacterId {
 
     /**
      * birthday
+     *
+     * Creation date of the character
      *
      * @var \DateTime
      */
@@ -44,6 +55,8 @@ class CharactersCharacterId {
     /**
      * corporationId
      *
+     * The character's corporation ID
+     *
      * @var int
      */
     protected $corporationId = null;
@@ -54,6 +67,15 @@ class CharactersCharacterId {
      * @var string
      */
     protected $description = null;
+
+    /**
+     * factionId
+     *
+     * ID of the faction the character is fighting for, if the character is enlisted in Factional Warfare
+     *
+     * @var int
+     */
+    protected $factionId = null;
 
     /**
      * gender
@@ -82,6 +104,24 @@ class CharactersCharacterId {
      * @var float
      */
     protected $securityStatus = null;
+
+    /**
+     * getAllianceId
+     *
+     * @return int
+     */
+    public function getAllianceId() {
+        return $this->allianceId;
+    }
+
+    /**
+     * setAllianceId
+     *
+     * @param int $allianceId
+     */
+    protected function setAllianceId(int $allianceId) {
+        $this->allianceId = $allianceId;
+    }
 
     /**
      * getAncestryId
@@ -171,6 +211,24 @@ class CharactersCharacterId {
      */
     protected function setDescription(string $description) {
         $this->description = \strip_tags($description);
+    }
+
+    /**
+     * getFactionId
+     *
+     * @return int
+     */
+    public function getFactionId() {
+        return $this->factionId;
+    }
+
+    /**
+     * setFactionId
+     *
+     * @param int $factionId
+     */
+    protected function setFactionId(int $factionId) {
+        $this->factionId = $factionId;
     }
 
     /**
