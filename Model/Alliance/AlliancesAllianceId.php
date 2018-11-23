@@ -23,12 +23,16 @@ class AlliancesAllianceId {
     /**
      * creatorCorpId
      *
+     * ID of the corporation that created the alliance
+     *
      * @var int
      */
     protected $creatorCorporationId = null;
 
     /**
      * creatorId
+     *
+     * ID of the character that created the alliance
      *
      * @var int
      */
@@ -44,12 +48,25 @@ class AlliancesAllianceId {
     /**
      * executorCorpId
      *
+     * The executor corporation ID, if this alliance is not closed
+     *
      * @var int
      */
     protected $executorCorporationId = null;
 
     /**
+     * factionId
+     *
+     * Faction ID this alliance is fighting for, if this alliance is enlisted in factional warfare
+     *
+     * @var int
+     */
+    protected $factionId = null;
+
+    /**
      * name
+     *
+     * The full name of the alliance
      *
      * @var string
      */
@@ -57,6 +74,8 @@ class AlliancesAllianceId {
 
     /**
      * ticker
+     *
+     * The short name of the alliance
      *
      * @var string
      */
@@ -132,6 +151,24 @@ class AlliancesAllianceId {
      */
     protected function setExecutorCorporationId(int $executorCorpId) {
         $this->executorCorporationId = $executorCorpId;
+    }
+
+    /**
+     * getFactionId
+     *
+     * @return int
+     */
+    public function getFactionId() {
+        return $this->factionId;
+    }
+
+    /**
+     * setFactionId
+     *
+     * @param int $factionId
+     */
+    protected function setFactionId(int $factionId) {
+        $this->factionId = $factionId;
     }
 
     /**
