@@ -54,6 +54,24 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
     }
 
     /**
+     * Get a list of dogma attribute ids
+     *
+     * @return \WordPress\EsiClient\Model\Dogma\DogmaEffects
+     */
+    public function dogmaEffects() {
+        $this->setEsiRoute($this->esiEndpoints['dogma_effects']);
+        $this->setEsiVersion('v1');
+
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->mapArray(\json_encode(['effects' => $esiData]), '\WordPress\EsiClient\Model\Dogma\DogmaEffects');
+        }
+
+        return $returnValue;
+    }
+
+    /**
      * Get information on a dogma attribute
      *
      * @param int $attributeId A dogma attribute ID

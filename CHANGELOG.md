@@ -6,6 +6,7 @@
 ### Added
 - Alliances Model
 - DogmaAttributes Model
+- DogmaEffects Model
 - factionId to AlliancesAllianceId Model
 - factionId and allianceId to CharactersCharacterId Model
 
