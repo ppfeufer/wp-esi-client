@@ -104,7 +104,7 @@ class SovereigntyCampaigns {
      *
      * @param float $attackersScore
      */
-    public function setAttackersScore(float $attackersScore) {
+    protected function setAttackersScore(float $attackersScore) {
         $this->attackersScore = $attackersScore;
     }
 
@@ -122,7 +122,7 @@ class SovereigntyCampaigns {
      *
      * @param int $campaignId
      */
-    public function setCampaignId(int $campaignId) {
+    protected function setCampaignId(int $campaignId) {
         $this->campaignId = $campaignId;
     }
 
@@ -140,7 +140,7 @@ class SovereigntyCampaigns {
      *
      * @param int $constellationId
      */
-    public function setConstellationId(int $constellationId) {
+    protected function setConstellationId(int $constellationId) {
         $this->constellationId = $constellationId;
     }
 
@@ -158,7 +158,7 @@ class SovereigntyCampaigns {
      *
      * @param int $defenderId
      */
-    public function setDefenderId(int $defenderId) {
+    protected function setDefenderId(int $defenderId) {
         $this->defenderId = $defenderId;
     }
 
@@ -176,7 +176,7 @@ class SovereigntyCampaigns {
      *
      * @param float $defenderScore
      */
-    public function setDefenderScore(float $defenderScore) {
+    protected function setDefenderScore(float $defenderScore) {
         $this->defenderScore = $defenderScore;
     }
 
@@ -194,7 +194,7 @@ class SovereigntyCampaigns {
      *
      * @param \WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants $participants
      */
-    public function setParticipants(SovereigntyCampaigns\Participants $participants) {
+    protected function setParticipants(SovereigntyCampaigns\Participants $participants) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->agents = $mapper->mapArray($participants, [], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants');
@@ -214,7 +214,7 @@ class SovereigntyCampaigns {
      *
      * @param int $solarSystemId
      */
-    public function setSolarSystemId(int $solarSystemId) {
+    protected function setSolarSystemId(int $solarSystemId) {
         $this->solarSystemId = $solarSystemId;
     }
 
@@ -232,7 +232,7 @@ class SovereigntyCampaigns {
      *
      * @param \DateTime $startTime
      */
-    public function setStartTime(\DateTime $startTime) {
+    protected function setStartTime(\DateTime $startTime) {
         $this->startTime = $startTime;
     }
 
@@ -250,7 +250,7 @@ class SovereigntyCampaigns {
      *
      * @param int $structureId
      */
-    public function setStructureId(int $structureId) {
+    protected function setStructureId(int $structureId) {
         $this->structureId = $structureId;
     }
 }

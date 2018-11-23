@@ -104,7 +104,7 @@ class EsiError {
      *
      * @param string $error
      */
-    public function setError(string $error) {
+    protected function setError(string $error) {
         $this->error = $error;
     }
 
@@ -122,7 +122,7 @@ class EsiError {
      *
      * @param int $ssoStatus
      */
-    public function setSsoStatus(int $ssoStatus) {
+    protected function setSsoStatus(int $ssoStatus) {
         $this->ssoStatus = $ssoStatus;
     }
 
@@ -140,7 +140,7 @@ class EsiError {
      *
      * @param int $timeout
      */
-    public function setTimeout(int $timeout) {
+    protected function setTimeout(int $timeout) {
         $this->timeout = $timeout;
     }
 

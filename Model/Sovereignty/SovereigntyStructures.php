@@ -82,7 +82,7 @@ class SovereigntyStructures {
      *
      * @param int $allianceId
      */
-    public function setAllianceId(int $allianceId) {
+    protected function setAllianceId(int $allianceId) {
         $this->allianceId = $allianceId;
     }
 
@@ -100,7 +100,7 @@ class SovereigntyStructures {
      *
      * @param int $solarSystemId
      */
-    public function setSolarSystemId(int $solarSystemId) {
+    protected function setSolarSystemId(int $solarSystemId) {
         $this->solarSystemId = $solarSystemId;
     }
 
@@ -118,7 +118,7 @@ class SovereigntyStructures {
      *
      * @param int $structureId
      */
-    public function setStructureId(int $structureId) {
+    protected function setStructureId(int $structureId) {
         $this->structureId = $structureId;
     }
 
@@ -136,7 +136,7 @@ class SovereigntyStructures {
      *
      * @param int $structureTypeId
      */
-    public function setStructureTypeId(int $structureTypeId) {
+    protected function setStructureTypeId(int $structureTypeId) {
         $this->structureTypeId = $structureTypeId;
     }
 
@@ -154,7 +154,7 @@ class SovereigntyStructures {
      *
      * @param float $vulnerabilityOccupancyLevel
      */
-    public function setVulnerabilityOccupancyLevel(float $vulnerabilityOccupancyLevel) {
+    protected function setVulnerabilityOccupancyLevel(float $vulnerabilityOccupancyLevel) {
         $this->vulnerabilityOccupancyLevel = $vulnerabilityOccupancyLevel;
     }
 
@@ -172,7 +172,7 @@ class SovereigntyStructures {
      *
      * @param \DateTime $vulnerableEndTime
      */
-    public function setVulnerableEndTime(\DateTime $vulnerableEndTime) {
+    protected function setVulnerableEndTime(\DateTime $vulnerableEndTime) {
         $this->vulnerableEndTime = $vulnerableEndTime;
     }
 
@@ -190,7 +190,7 @@ class SovereigntyStructures {
      *
      * @param \DateTime $vulnerableStartTime
      */
-    public function setVulnerableStartTime(\DateTime $vulnerableStartTime) {
+    protected function setVulnerableStartTime(\DateTime $vulnerableStartTime) {
         $this->vulnerableStartTime = $vulnerableStartTime;
     }
 }

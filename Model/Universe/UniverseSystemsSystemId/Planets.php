@@ -55,7 +55,7 @@ class Planets {
      *
      * @param array $asteroidBelts
      */
-    public function setAsteroidBelts(array $asteroidBelts) {
+    protected function setAsteroidBelts(array $asteroidBelts) {
         $this->asteroidBelts = $asteroidBelts;
     }
 
@@ -73,7 +73,7 @@ class Planets {
      *
      * @param array $moons
      */
-    public function setMoons(array $moons) {
+    protected function setMoons(array $moons) {
         $this->moons = $moons;
     }
 
@@ -91,7 +91,7 @@ class Planets {
      *
      * @param int $planetId
      */
-    public function setPlanetId(int $planetId) {
+    protected function setPlanetId(int $planetId) {
         $this->planetId = $planetId;
     }
 }

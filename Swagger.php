@@ -234,6 +234,7 @@ class Swagger {
 
         if(!\is_null($jSon)) {
             $jsonMapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+
             $returnValue = $jsonMapper->map(\json_decode($jSon), $object);
         }
 
@@ -253,6 +254,7 @@ class Swagger {
 
         if(!\is_null($jSon)) {
             $jsonMapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+
             $returnValue = $jsonMapper->mapArray(\json_decode($jSon), $array, $class);
         }
 

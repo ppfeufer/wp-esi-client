@@ -55,7 +55,7 @@ class CorporationsCorporationIdIcons {
      *
      * @param string $px256x256
      */
-    public function setPx256x256(string $px256x256) {
+    protected function setPx256x256(string $px256x256) {
         $this->px256x256 = \preg_replace('/http:\/\//', 'https://', $px256x256);
     }
 
@@ -73,7 +73,7 @@ class CorporationsCorporationIdIcons {
      *
      * @param string $px128x128
      */
-    public function setPx128x128(string $px128x128) {
+    protected function setPx128x128(string $px128x128) {
         $this->px128x128 = \preg_replace('/http:\/\//', 'https://', $px128x128);
     }
 
@@ -91,7 +91,7 @@ class CorporationsCorporationIdIcons {
      *
      * @param string $px64x64
      */
-    public function setPx64x64(string $px64x64) {
+    protected function setPx64x64(string $px64x64) {
         $this->px64x64 = \preg_replace('/http:\/\//', 'https://', $px64x64);
     }
 

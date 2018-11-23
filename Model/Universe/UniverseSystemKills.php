@@ -62,7 +62,7 @@ class UniverseSystemKills {
      *
      * @param int $npcKills
      */
-    public function setNpcKills(int $npcKills) {
+    protected function setNpcKills(int $npcKills) {
         $this->npcKills = $npcKills;
     }
 
@@ -80,7 +80,7 @@ class UniverseSystemKills {
      *
      * @param int $podKills
      */
-    public function setPodKills(int $podKills) {
+    protected function setPodKills(int $podKills) {
         $this->podKills = $podKills;
     }
 
@@ -98,7 +98,7 @@ class UniverseSystemKills {
      *
      * @param int $shipKills
      */
-    public function setShipKills(int $shipKills) {
+    protected function setShipKills(int $shipKills) {
         $this->shipKills = $shipKills;
     }
 
@@ -116,7 +116,7 @@ class UniverseSystemKills {
      *
      * @param int $systemId
      */
-    public function setSystemId(int $systemId) {
+    protected function setSystemId(int $systemId) {
         $this->systemId = $systemId;
     }
 }

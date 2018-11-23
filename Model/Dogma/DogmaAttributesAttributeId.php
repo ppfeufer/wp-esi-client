@@ -104,7 +104,7 @@ class DogmaAttributesAttributeId {
      *
      * @param int $attributeId
      */
-    public function setAttributeId(int $attributeId) {
+    protected function setAttributeId(int $attributeId) {
         $this->attributeId = $attributeId;
     }
 
@@ -122,7 +122,7 @@ class DogmaAttributesAttributeId {
      *
      * @param float $defaultValue
      */
-    public function setDefaultValue(float $defaultValue) {
+    protected function setDefaultValue(float $defaultValue) {
         $this->defaultValue = $defaultValue;
     }
 
@@ -140,7 +140,7 @@ class DogmaAttributesAttributeId {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    protected function setDescription(string $description) {
         $this->description = $description;
     }
 
@@ -158,7 +158,7 @@ class DogmaAttributesAttributeId {
      *
      * @param string $displayName
      */
-    public function setDisplayName(string $displayName) {
+    protected function setDisplayName(string $displayName) {
         $this->displayName = $displayName;
     }
 
@@ -176,7 +176,7 @@ class DogmaAttributesAttributeId {
      *
      * @param bool $highIsGood
      */
-    public function setHighIsGood(bool $highIsGood) {
+    protected function setHighIsGood(bool $highIsGood) {
         $this->highIsGood = $highIsGood;
     }
 
@@ -194,7 +194,7 @@ class DogmaAttributesAttributeId {
      *
      * @param int $iconId
      */
-    public function setIconId(int $iconId) {
+    protected function setIconId(int $iconId) {
         $this->iconId = $iconId;
     }
 
@@ -212,7 +212,7 @@ class DogmaAttributesAttributeId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -230,7 +230,7 @@ class DogmaAttributesAttributeId {
      *
      * @param bool $published
      */
-    public function setPublished(bool $published) {
+    protected function setPublished(bool $published) {
         $this->published = $published;
     }
 
@@ -248,7 +248,7 @@ class DogmaAttributesAttributeId {
      *
      * @param bool $stackable
      */
-    public function setStackable(bool $stackable) {
+    protected function setStackable(bool $stackable) {
         $this->stackable = $stackable;
     }
 
@@ -266,7 +266,7 @@ class DogmaAttributesAttributeId {
      *
      * @param int $unitId
      */
-    public function setUnitId(int $unitId) {
+    protected function setUnitId(int $unitId) {
         $this->unitId = $unitId;
     }
 }

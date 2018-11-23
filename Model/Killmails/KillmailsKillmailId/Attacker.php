@@ -105,7 +105,7 @@ class Attacker {
      *
      * @param int $allianceId
      */
-    public function setAllianceId(int $allianceId) {
+    protected function setAllianceId(int $allianceId) {
         $this->allianceId = $allianceId;
     }
 
@@ -123,7 +123,7 @@ class Attacker {
      *
      * @param int $characterId
      */
-    public function setCharacterId(int $characterId) {
+    protected function setCharacterId(int $characterId) {
         $this->characterId = $characterId;
     }
 
@@ -141,7 +141,7 @@ class Attacker {
      *
      * @param int $corporationId
      */
-    public function setCorporationId(int $corporationId) {
+    protected function setCorporationId(int $corporationId) {
         $this->corporationId = $corporationId;
     }
 
@@ -159,7 +159,7 @@ class Attacker {
      *
      * @param int $damageDone
      */
-    public function setDamageDone(int $damageDone) {
+    protected function setDamageDone(int $damageDone) {
         $this->damageDone = $damageDone;
     }
 
@@ -177,7 +177,7 @@ class Attacker {
      *
      * @param int $factionId
      */
-    public function setFactionId(int $factionId) {
+    protected function setFactionId(int $factionId) {
         $this->factionId = $factionId;
     }
 
@@ -199,7 +199,7 @@ class Attacker {
      *
      * @param bool $finalBlow
      */
-    public function setFinalBlow(bool $finalBlow) {
+    protected function setFinalBlow(bool $finalBlow) {
         $this->finalBlow = $finalBlow;
     }
 
@@ -221,7 +221,7 @@ class Attacker {
      *
      * @param float $securityStatus
      */
-    public function setSecurityStatus(float $securityStatus) {
+    protected function setSecurityStatus(float $securityStatus) {
         $this->securityStatus = $securityStatus;
     }
 
@@ -243,7 +243,7 @@ class Attacker {
      *
      * @param int $shipTypeId
      */
-    public function setShipTypeId(int $shipTypeId) {
+    protected function setShipTypeId(int $shipTypeId) {
         $this->shipTypeId = $shipTypeId;
     }
 
@@ -265,7 +265,7 @@ class Attacker {
      *
      * @param int $weaponTypeId
      */
-    public function setWeaponTypeId(int $weaponTypeId) {
+    protected function setWeaponTypeId(int $weaponTypeId) {
         $this->weaponTypeId = $weaponTypeId;
     }
 }

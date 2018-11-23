@@ -48,7 +48,7 @@ class Agents {
      *
      * @param int $id
      */
-    public function setId(int $id) {
+    protected function setId(int $id) {
         $this->id = $id;
     }
 
@@ -66,7 +66,7 @@ class Agents {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 }

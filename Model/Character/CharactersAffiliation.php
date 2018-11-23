@@ -70,7 +70,7 @@ class CharactersAffiliation {
      *
      * @param int $allianceId
      */
-    public function setAllianceId(int $allianceId) {
+    protected function setAllianceId(int $allianceId) {
         $this->allianceId = $allianceId;
     }
 
@@ -88,7 +88,7 @@ class CharactersAffiliation {
      *
      * @param int $characterId
      */
-    public function setCharacterId(int $characterId) {
+    protected function setCharacterId(int $characterId) {
         $this->characterId = $characterId;
     }
 
@@ -106,7 +106,7 @@ class CharactersAffiliation {
      *
      * @param int $corporationId
      */
-    public function setCorporationId(int $corporationId) {
+    protected function setCorporationId(int $corporationId) {
         $this->corporationId = $corporationId;
     }
 
@@ -124,7 +124,7 @@ class CharactersAffiliation {
      *
      * @param int $factionId
      */
-    public function setFactionId(int $factionId) {
+    protected function setFactionId(int $factionId) {
         $this->factionId = $factionId;
     }
 }

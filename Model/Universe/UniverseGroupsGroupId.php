@@ -69,7 +69,7 @@ class UniverseGroupsGroupId {
      *
      * @param int $categoryId
      */
-    public function setCategoryId(int $categoryId) {
+    protected function setCategoryId(int $categoryId) {
         $this->categoryId = $categoryId;
     }
 
@@ -87,7 +87,7 @@ class UniverseGroupsGroupId {
      *
      * @param int $groupId
      */
-    public function setGroupId(int $groupId) {
+    protected function setGroupId(int $groupId) {
         $this->groupId = $groupId;
     }
 
@@ -105,7 +105,7 @@ class UniverseGroupsGroupId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -123,7 +123,7 @@ class UniverseGroupsGroupId {
      *
      * @param bool $published
      */
-    public function setPublished(bool $published) {
+    protected function setPublished(bool $published) {
         $this->published = $published;
     }
 
@@ -141,7 +141,7 @@ class UniverseGroupsGroupId {
      *
      * @param array $types
      */
-    public function setTypes(array $types) {
+    protected function setTypes(array $types) {
         $this->types = $types;
     }
 }

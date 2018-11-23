@@ -55,7 +55,7 @@ class Position {
      *
      * @param double $x
      */
-    public function setX($x) {
+    protected function setX($x) {
         $this->x = $x;
     }
 
@@ -73,7 +73,7 @@ class Position {
      *
      * @param double $y
      */
-    public function sety($y) {
+    protected function sety($y) {
         $this->y = $y;
     }
 
@@ -91,7 +91,7 @@ class Position {
      *
      * @param double $z
      */
-    public function setZ($z) {
+    protected function setZ($z) {
         $this->z = $z;
     }
 }

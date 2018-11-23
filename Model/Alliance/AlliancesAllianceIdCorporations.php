@@ -41,7 +41,7 @@ class AlliancesAllianceIdCorporations {
      *
      * @param array $corporations
      */
-    public function setCorporations(array $corporations) {
+    protected function setCorporations(array $corporations) {
         $this->corporations = $corporations;
     }
 }

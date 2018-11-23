@@ -97,7 +97,7 @@ class CharactersCharacterId {
      *
      * @param int $ancestryId
      */
-    public function setAncestryId(int $ancestryId) {
+    protected function setAncestryId(int $ancestryId) {
         $this->ancestryId = $ancestryId;
     }
 
@@ -115,7 +115,7 @@ class CharactersCharacterId {
      *
      * @param \DateTime $birthday
      */
-    public function setBirthday(\DateTime $birthday) {
+    protected function setBirthday(\DateTime $birthday) {
         $this->birhday = $birthday;
     }
 
@@ -133,7 +133,7 @@ class CharactersCharacterId {
      *
      * @param int $bloodlineId
      */
-    public function setBloodlineId(int $bloodlineId) {
+    protected function setBloodlineId(int $bloodlineId) {
         $this->bloodlineId = $bloodlineId;
     }
 
@@ -151,7 +151,7 @@ class CharactersCharacterId {
      *
      * @param int $corporationId
      */
-    public function setCorporationId(int $corporationId) {
+    protected function setCorporationId(int $corporationId) {
         $this->corporationId = $corporationId;
     }
 
@@ -169,7 +169,7 @@ class CharactersCharacterId {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    protected function setDescription(string $description) {
         $this->description = \strip_tags($description);
     }
 
@@ -187,7 +187,7 @@ class CharactersCharacterId {
      *
      * @param string $gender
      */
-    public function setGender(string $gender) {
+    protected function setGender(string $gender) {
         $this->gender = $gender;
     }
 
@@ -205,7 +205,7 @@ class CharactersCharacterId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -223,7 +223,7 @@ class CharactersCharacterId {
      *
      * @param int $raceId
      */
-    public function setRaceId(int $raceId) {
+    protected function setRaceId(int $raceId) {
         $this->raceId = $raceId;
     }
 
@@ -241,7 +241,7 @@ class CharactersCharacterId {
      *
      * @param float $securityStatus
      */
-    public function setSecurityStatus(float $securityStatus) {
+    protected function setSecurityStatus(float $securityStatus) {
         $this->securityStatus = $securityStatus;
     }
 }

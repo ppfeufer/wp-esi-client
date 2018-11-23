@@ -77,7 +77,7 @@ class Item {
      *
      * @param int $flag
      */
-    public function setFlag(int $flag) {
+    protected function setFlag(int $flag) {
         $this->flag = $flag;
     }
 
@@ -95,7 +95,7 @@ class Item {
      *
      * @param int $itemTypeId
      */
-    public function setItemTypeId(int $itemTypeId) {
+    protected function setItemTypeId(int $itemTypeId) {
         $this->itemTypeId = $itemTypeId;
     }
 
@@ -113,7 +113,7 @@ class Item {
      *
      * @param array $items
      */
-    public function setItems(array $items) {
+    protected function setItems(array $items) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->items = $mapper->mapArray($items, [], '\\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\ItemItems');
@@ -133,7 +133,7 @@ class Item {
      *
      * @param int $quantityDestroyed
      */
-    public function setQuantityDestroyed(int $quantityDestroyed = null) {
+    protected function setQuantityDestroyed(int $quantityDestroyed = null) {
         $this->quantityDestroyed = $quantityDestroyed;
     }
 
@@ -151,7 +151,7 @@ class Item {
      *
      * @param int $quantityDropped
      */
-    public function setQuantityDropped(int $quantityDropped = null) {
+    protected function setQuantityDropped(int $quantityDropped = null) {
         $this->quantityDropped = $quantityDropped;
     }
 
@@ -169,7 +169,7 @@ class Item {
      *
      * @param int $singleton
      */
-    public function setSingleton(int $singleton) {
+    protected function setSingleton(int $singleton) {
         $this->singleton = $singleton;
     }
 }

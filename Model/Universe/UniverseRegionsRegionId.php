@@ -62,7 +62,7 @@ class UniverseRegionsRegionId {
      *
      * @param array $constellations
      */
-    public function setConstellations(array $constellations) {
+    protected function setConstellations(array $constellations) {
         $this->constellations = $constellations;
     }
 
@@ -80,7 +80,7 @@ class UniverseRegionsRegionId {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    protected function setDescription(string $description) {
         $this->description = $description;
     }
 
@@ -98,7 +98,7 @@ class UniverseRegionsRegionId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -116,7 +116,7 @@ class UniverseRegionsRegionId {
      *
      * @param int $regionId
      */
-    public function setRegionId(int $regionId) {
+    protected function setRegionId(int $regionId) {
         $this->regionId = $regionId;
     }
 }

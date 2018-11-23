@@ -48,7 +48,7 @@ class DogmaAttribute {
      *
      * @param int $attributeId
      */
-    public function setAttributeId(int $attributeId) {
+    protected function setAttributeId(int $attributeId) {
         $this->attributeId = $attributeId;
     }
 
@@ -66,7 +66,7 @@ class DogmaAttribute {
      *
      * @param float $value
      */
-    public function setValue(float $value) {
+    protected function setValue(float $value) {
         $this->value = $value;
     }
 }

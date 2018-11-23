@@ -55,7 +55,7 @@ class UniverseAsteroidBeltsAsteroidBeltId {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    protected function setName(string $name) {
         $this->name = $name;
     }
 
@@ -73,7 +73,7 @@ class UniverseAsteroidBeltsAsteroidBeltId {
      *
      * @param \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position $position
      */
-    public function setPosition(\WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position $position) {
+    protected function setPosition(\WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position $position) {
         $this->position = $position;
     }
 
@@ -91,7 +91,7 @@ class UniverseAsteroidBeltsAsteroidBeltId {
      *
      * @param int $systemId
      */
-    public function setSystemId(int $systemId) {
+    protected function setSystemId(int $systemId) {
         $this->systemId = $systemId;
     }
 }

@@ -62,7 +62,7 @@ class CharactersCharacterIdCorporationhistory {
      *
      * @param int $corporationId
      */
-    public function setCorporationId(int $corporationId) {
+    protected function setCorporationId(int $corporationId) {
         $this->corporatoinId = $corporationId;
     }
 
@@ -80,7 +80,7 @@ class CharactersCharacterIdCorporationhistory {
      *
      * @param bool $isDeleted
      */
-    public function setIsDeleted(bool $isDeleted) {
+    protected function setIsDeleted(bool $isDeleted) {
         $this->isDeleted = $isDeleted;
     }
 
@@ -98,7 +98,7 @@ class CharactersCharacterIdCorporationhistory {
      *
      * @param int $recordId
      */
-    public function setRecordId(int $recordId) {
+    protected function setRecordId(int $recordId) {
         $this->recordId = $recordId;
     }
 
@@ -116,7 +116,7 @@ class CharactersCharacterIdCorporationhistory {
      *
      * @param \DateTime $startDate
      */
-    public function setStartDate(\DateTime $startDate) {
+    protected function setStartDate(\DateTime $startDate) {
         $this->startDate = $startDate;
     }
 }

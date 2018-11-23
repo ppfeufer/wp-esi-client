@@ -90,7 +90,7 @@ class Victim {
      *
      * @param int $allianceId
      */
-    public function setAllianceId(int $allianceId) {
+    protected function setAllianceId(int $allianceId) {
         $this->allianceId = $allianceId;
     }
 
@@ -108,7 +108,7 @@ class Victim {
      *
      * @param int $characterId
      */
-    public function setCharacterId(int $characterId) {
+    protected function setCharacterId(int $characterId) {
         $this->characterId = $characterId;
     }
 
@@ -126,7 +126,7 @@ class Victim {
      *
      * @param int $corporationId
      */
-    public function setCorporationId(int $corporationId) {
+    protected function setCorporationId(int $corporationId) {
         $this->corporationId = $corporationId;
     }
 
@@ -144,7 +144,7 @@ class Victim {
      *
      * @param int $damageTaken
      */
-    public function setDamageTaken(int $damageTaken) {
+    protected function setDamageTaken(int $damageTaken) {
         $this->damageTaken = $damageTaken;
     }
 
@@ -162,7 +162,7 @@ class Victim {
      *
      * @param int $factionId
      */
-    public function setFactionId(int $factionId) {
+    protected function setFactionId(int $factionId) {
         $this->factionId = $factionId;
     }
 
@@ -180,7 +180,7 @@ class Victim {
      *
      * @param array $items
      */
-    public function setItems(array $items) {
+    protected function setItems(array $items) {
         $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
 
         $this->items = $mapper->mapArray($items, [], '\\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Item');
@@ -200,7 +200,7 @@ class Victim {
      *
      * @param \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Position $position
      */
-    public function setPosition(\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Position $position) {
+    protected function setPosition(\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Position $position) {
         $this->position = $position;
     }
 
@@ -222,7 +222,7 @@ class Victim {
      *
      * @param int $shipTypeId
      */
-    public function setShipTypeId(int $shipTypeId) {
+    protected function setShipTypeId(int $shipTypeId) {
         $this->shipTypeId = $shipTypeId;
     }
 }
