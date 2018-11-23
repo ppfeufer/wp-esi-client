@@ -2,7 +2,11 @@
 # Change Log
 
 ## [In Development](https://github.com/ppfeufer/eve-online-intel-tool/tree/development)
-[Full Changelog](https://github.com/ppfeufer/eve-online-intel-tool/compare/v20181122...development)
+[Full Changelog](https://github.com/ppfeufer/eve-online-intel-tool/compare/v20181123...development)
+- in development
+
+## [v20181123](https://github.com/ppfeufer/eve-online-intel-tool/tag/v20181123) - 2018-11-23
+[Full Changelog](https://github.com/ppfeufer/eve-online-intel-tool/compare/v20181122...v20181123)
 ### Added
 - Alliances Model
 - DogmaAttributes Model
