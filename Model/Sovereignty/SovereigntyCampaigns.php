@@ -23,12 +23,16 @@ class SovereigntyCampaigns {
     /**
      * attackersScore
      *
+     * Score for all attacking parties, only present in Defense Events.
+     *
      * @var float
      */
     protected $attackersScore = null;
 
     /**
      * campaignId
+     *
+     * Unique ID for this campaign.
      *
      * @var int
      */
@@ -37,12 +41,16 @@ class SovereigntyCampaigns {
     /**
      * constellationId
      *
+     * The constellation in which the campaign will take place.
+     *
      * @var int
      */
     protected $constellationId = null;
 
     /**
      * defenderId
+     *
+     * Defending alliance, only present in Defense Events
      *
      * @var int
      */
@@ -51,12 +59,16 @@ class SovereigntyCampaigns {
     /**
      * defenderScore
      *
+     * Score for the defending alliance, only present in Defense Events.
+     *
      * @var float
      */
     protected $defenderScore = null;
 
     /**
      * eventType
+     *
+     * Type of event this campaign is for. tcu_defense, ihub_defense and station_defense are referred to as "Defense Events", station_freeport as "Freeport Events".
      *
      * @var string
      */
@@ -65,12 +77,16 @@ class SovereigntyCampaigns {
     /**
      * participants
      *
+     * Alliance participating and their respective scores, only present in Freeport Events.
+     *
      * @var \WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants
      */
     protected $participants = null;
 
     /**
      * solarSystemId
+     *
+     * The solar system the structure is located in.
      *
      * @var int
      */
@@ -79,12 +95,16 @@ class SovereigntyCampaigns {
     /**
      * startTime
      *
+     * Time the event is scheduled to start.
+     *
      * @var \DateTime
      */
     protected $startTime = null;
 
     /**
      * structureId
+     *
+     * The structure item ID that is related to this campaign.
      *
      * @var int
      */
