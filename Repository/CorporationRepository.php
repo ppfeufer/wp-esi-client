@@ -19,9 +19,13 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use WordPress\EsiClient\Model\Corporation\CorporationsCorporationId;
+use WordPress\EsiClient\Model\Corporation\CorporationsCorporationIdIcons;
+use WordPress\EsiClient\Swagger;
+
 \defined('ABSPATH') or die();
 
-class CorporationRepository extends \WordPress\EsiClient\Swagger {
+class CorporationRepository extends Swagger {
     /**
      * Used ESI enpoints in this class
      *
@@ -38,7 +42,7 @@ class CorporationRepository extends \WordPress\EsiClient\Swagger {
      * Public information about a corporation
      *
      * @param int $corporationID An EVE corporation ID
-     * @return \WordPress\EsiClient\Model\Corporation\CorporationsCorporationId
+     * @return CorporationsCorporationId
      */
     public function corporationsCorporationId(int $corporationID) {
         $returnValue = null;
@@ -53,7 +57,7 @@ class CorporationRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Corporation\CorporationsCorporationId);
+            $returnValue = $this->map($esiData, new CorporationsCorporationId);
         }
 
         return $returnValue;
@@ -63,7 +67,7 @@ class CorporationRepository extends \WordPress\EsiClient\Swagger {
      * Get corporation logos
      *
      * @param int $corporationID An EVE corporation ID
-     * @return \WordPress\EsiClient\Model\Corporation\CorporationsCorporationIdIcons
+     * @return CorporationsCorporationIdIcons
      */
     public function corporationsCorporationIdIcons(int $corporationID) {
         $returnValue = null;
@@ -78,7 +82,7 @@ class CorporationRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Corporation\CorporationsCorporationIdIcons);
+            $returnValue = $this->map($esiData, new CorporationsCorporationIdIcons);
         }
 
         return $returnValue;

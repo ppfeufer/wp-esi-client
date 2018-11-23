@@ -19,6 +19,10 @@
 
 namespace WordPress\EsiClient\Model\Sovereignty;
 
+use DateTime;
+use WordPress\EsiClient\Mapper\JsonMapper;
+use WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants;
+
 class SovereigntyCampaigns {
     /**
      * attackersScore
@@ -79,7 +83,7 @@ class SovereigntyCampaigns {
      *
      * Alliance participating and their respective scores, only present in Freeport Events.
      *
-     * @var \WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants
+     * @var Participants
      */
     protected $participants = null;
 
@@ -97,7 +101,7 @@ class SovereigntyCampaigns {
      *
      * Time the event is scheduled to start.
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $startTime = null;
 
@@ -203,7 +207,7 @@ class SovereigntyCampaigns {
     /**
      * getParticipants
      *
-     * @return \WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants
+     * @return Participants
      */
     public function getParticipants() {
         return $this->participants;
@@ -212,10 +216,10 @@ class SovereigntyCampaigns {
     /**
      * setParticipants
      *
-     * @param \WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants $participants
+     * @param Participants $participants
      */
-    protected function setParticipants(SovereigntyCampaigns\Participants $participants) {
-        $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+    protected function setParticipants(Participants $participants) {
+        $mapper = new JsonMapper;
 
         $this->agents = $mapper->mapArray($participants, [], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants');
     }
@@ -241,7 +245,7 @@ class SovereigntyCampaigns {
     /**
      * getStartTime
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getStartTime() {
         return $this->startTime;
@@ -250,9 +254,9 @@ class SovereigntyCampaigns {
     /**
      * setStartTime
      *
-     * @param \DateTime $startTime
+     * @param DateTime $startTime
      */
-    protected function setStartTime(\DateTime $startTime) {
+    protected function setStartTime(DateTime $startTime) {
         $this->startTime = $startTime;
     }
 

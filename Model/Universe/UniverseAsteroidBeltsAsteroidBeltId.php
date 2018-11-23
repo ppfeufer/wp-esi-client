@@ -19,6 +19,8 @@
 
 namespace WordPress\EsiClient\Model\Universe;
 
+use WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position;
+
 class UniverseAsteroidBeltsAsteroidBeltId {
     /**
      * name
@@ -30,7 +32,7 @@ class UniverseAsteroidBeltsAsteroidBeltId {
     /**
      * position
      *
-     * @var \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position
+     * @var Position
      */
     protected $position = null;
 
@@ -64,7 +66,7 @@ class UniverseAsteroidBeltsAsteroidBeltId {
     /**
      * getPosition
      *
-     * @return \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position
+     * @return Position
      */
     public function getPosition() {
         return $this->position;
@@ -73,9 +75,9 @@ class UniverseAsteroidBeltsAsteroidBeltId {
     /**
      * setPosition
      *
-     * @param \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position $position
+     * @param Position $position
      */
-    protected function setPosition(\WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position $position) {
+    protected function setPosition(Position $position) {
         $this->position = $position;
     }
 

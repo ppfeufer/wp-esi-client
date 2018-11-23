@@ -19,6 +19,9 @@
 
 namespace WordPress\EsiClient\Model\Universe;
 
+use WordPress\EsiClient\Mapper\JsonMapper;
+use WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Position;
+
 class UniverseSystemsSystemId {
     /**
      * constellationId
@@ -46,7 +49,7 @@ class UniverseSystemsSystemId {
     /**
      * position
      *
-     * @var \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Position
+     * @var Position
      */
     protected $position = null;
 
@@ -143,7 +146,7 @@ class UniverseSystemsSystemId {
      * @param array $planets
      */
     protected function setPlanets(array $planets) {
-        $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+        $mapper = new JsonMapper;
 
         $this->planets = $mapper->mapArray($planets, [], '\\WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Planets');
     }
@@ -151,7 +154,7 @@ class UniverseSystemsSystemId {
     /**
      * getPosition
      *
-     * @return \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Position
+     * @return Position
      */
     public function getPosition() {
         return $this->position;
@@ -160,9 +163,9 @@ class UniverseSystemsSystemId {
     /**
      * setPosition
      *
-     * @param \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Position $position
+     * @param Position $position
      */
-    protected function setPosition(\WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Position $position) {
+    protected function setPosition(Position $position) {
         $this->position = $position;
     }
 

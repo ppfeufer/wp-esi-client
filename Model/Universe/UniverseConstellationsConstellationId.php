@@ -19,6 +19,8 @@
 
 namespace WordPress\EsiClient\Model\Universe;
 
+use WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position;
+
 class UniverseConstellationsConstellationId {
     /**
      * constellationId
@@ -39,7 +41,7 @@ class UniverseConstellationsConstellationId {
     /**
      * position
      *
-     * @var \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position
+     * @var Position
      */
     protected $position = null;
 
@@ -98,7 +100,7 @@ class UniverseConstellationsConstellationId {
     /**
      * getPosition
      *
-     * @return \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position
+     * @return Position
      */
     public function getPosition() {
         return $this->position;
@@ -107,9 +109,9 @@ class UniverseConstellationsConstellationId {
     /**
      * setPosition
      *
-     * @param \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position $position
+     * @param Position $position
      */
-    protected function setPosition(\WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position $position) {
+    protected function setPosition(Position $position) {
         $this->position = $position;
     }
 

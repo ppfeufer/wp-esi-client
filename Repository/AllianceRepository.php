@@ -18,9 +18,15 @@
  */
 namespace WordPress\EsiClient\Repository;
 
+use WordPress\EsiClient\Model\Alliance\Alliances;
+use WordPress\EsiClient\Model\Alliance\AlliancesAllianceId;
+use WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations;
+use WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons;
+use WordPress\EsiClient\Swagger;
+
 \defined('ABSPATH') or die();
 
-class AllianceRepository extends \WordPress\EsiClient\Swagger {
+class AllianceRepository extends Swagger {
     /**
      * Used ESI enpoints in this class
      *
@@ -36,7 +42,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
     /**
      * List all active player alliances
      *
-     * @return \WordPress\EsiClient\Model\Alliance\Alliances
+     * @return Alliances
      */
     public function alliances() {
         $returnValue = null;
@@ -48,7 +54,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray(\json_encode(['alliances' => $esiData]), '\WordPress\EsiClient\Model\Alliance\Alliances');
+            $returnValue = $this->mapArray(\json_encode(['alliances' => $esiData]), '\\WordPress\EsiClient\Model\Alliance\Alliances');
         }
 
         return $returnValue;
@@ -58,7 +64,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
      * Public information about an alliance
      *
      * @param int $allianceID An EVE alliance ID
-     * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId
+     * @return AlliancesAllianceId
      */
     public function alliancesAllianceId(int $allianceID) {
         $returnValue = null;
@@ -73,7 +79,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceId);
+            $returnValue = $this->map($esiData, new AlliancesAllianceId);
         }
 
         return $returnValue;
@@ -82,7 +88,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
     /**
      * List all current member corporations of an alliance
      *
-     * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations
+     * @return AlliancesAllianceIdCorporations
      */
     public function alliancesAllianceIdCorporations() {
         $returnValue = null;
@@ -94,7 +100,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray(\json_encode(['corporations' => $esiData]), '\WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations');
+            $returnValue = $this->mapArray(\json_encode(['corporations' => $esiData]), '\\WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations');
         }
 
         return $returnValue;
@@ -104,7 +110,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
      * Get alliance logos
      *
      * @param int $allianceID An EVE alliance ID
-     * @return \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons
+     * @return AlliancesAllianceIdIcons
      */
     public function alliancesAllianceIdIcons(int $allianceID) {
         $returnValue = null;
@@ -119,7 +125,7 @@ class AllianceRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            return $this->map($esiData, new \WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons);
+            return $this->map($esiData, new AlliancesAllianceIdIcons);
         }
 
         return $returnValue;

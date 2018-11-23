@@ -19,6 +19,8 @@
 
 namespace WordPress\EsiClient\Model\Sovereignty;
 
+use DateTime;
+
 class SovereigntyStructures {
     /**
      * allianceId
@@ -82,7 +84,7 @@ class SovereigntyStructures {
      * vulnerableEndTime passed does the vulnerability interval expire and
      * a new one is calculated.
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $vulnerableEndTime = null;
 
@@ -93,7 +95,7 @@ class SovereigntyStructures {
      * Or the start time of the current window if current time is between
      * this and vulnerableEndTime.
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $vulnerableStartTime = null;
 
@@ -190,7 +192,7 @@ class SovereigntyStructures {
     /**
      * getVulnerableEndTime
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getVulnerableEndTime() {
         return $this->vulnerableEndTime;
@@ -199,16 +201,16 @@ class SovereigntyStructures {
     /**
      * setVulnerableEndTime
      *
-     * @param \DateTime $vulnerableEndTime
+     * @param DateTime $vulnerableEndTime
      */
-    protected function setVulnerableEndTime(\DateTime $vulnerableEndTime) {
+    protected function setVulnerableEndTime(DateTime $vulnerableEndTime) {
         $this->vulnerableEndTime = $vulnerableEndTime;
     }
 
     /**
      * getVulnerableStartTime
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getVulnerableStartTime() {
         return $this->vulnerableStartTime;
@@ -217,9 +219,9 @@ class SovereigntyStructures {
     /**
      * setVulnerableStartTime
      *
-     * @param \DateTime $vulnerableStartTime
+     * @param DateTime $vulnerableStartTime
      */
-    protected function setVulnerableStartTime(\DateTime $vulnerableStartTime) {
+    protected function setVulnerableStartTime(DateTime $vulnerableStartTime) {
         $this->vulnerableStartTime = $vulnerableStartTime;
     }
 }

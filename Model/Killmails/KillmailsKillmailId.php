@@ -19,6 +19,10 @@
 
 namespace WordPress\EsiClient\Model\Killmails;
 
+use DateTime;
+use WordPress\EsiClient\Mapper\JsonMapper;
+use WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Victim;
+
 class KillmailsKillmailId {
     /**
      * attackers
@@ -41,7 +45,7 @@ class KillmailsKillmailId {
      *
      * Time that the victim was killed and the killmail generated
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $killmailTime = null;
 
@@ -66,7 +70,7 @@ class KillmailsKillmailId {
     /**
      * victim
      *
-     * @var \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Victim
+     * @var Victim
      */
     protected $victim = null;
 
@@ -94,7 +98,7 @@ class KillmailsKillmailId {
      * @param array $attackers
      */
     protected function setAttackers(array $attackers) {
-        $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+        $mapper = new JsonMapper;
 
         $this->attackers = $mapper->mapArray($attackers, [], '\\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Attacker');
     }
@@ -120,7 +124,7 @@ class KillmailsKillmailId {
     /**
      * getKillmailTime
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getKillmailTime() {
         return $this->killmailTime;
@@ -129,9 +133,9 @@ class KillmailsKillmailId {
     /**
      * setKillmailTime
      *
-     * @param \DateTime $killmailTime
+     * @param DateTime $killmailTime
      */
-    protected function setKillmailTime(\DateTime $killmailTime) {
+    protected function setKillmailTime(DateTime $killmailTime) {
         $this->killmailTime = $killmailTime;
     }
 
@@ -174,7 +178,7 @@ class KillmailsKillmailId {
     /**
      * getVictim
      *
-     * @return \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Victim
+     * @return Victim
      */
     public function getVictim() {
         return $this->victim;
@@ -183,9 +187,9 @@ class KillmailsKillmailId {
     /**
      * setVictim
      *
-     * @param \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Victim $victim
+     * @param Victim $victim
      */
-    protected function setVictim(\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Victim $victim) {
+    protected function setVictim(Victim $victim) {
         $this->victim = $victim;
     }
 

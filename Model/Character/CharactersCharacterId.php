@@ -19,6 +19,8 @@
 
 namespace WordPress\EsiClient\Model\Character;
 
+use DateTime;
+
 class CharactersCharacterId {
     /**
      * allianceId
@@ -41,7 +43,7 @@ class CharactersCharacterId {
      *
      * Creation date of the character
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $birhday = null;
 
@@ -144,7 +146,7 @@ class CharactersCharacterId {
     /**
      * getBirthday
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getBirthday() {
         return $this->birhday;
@@ -153,9 +155,9 @@ class CharactersCharacterId {
     /**
      * setBirthday
      *
-     * @param \DateTime $birthday
+     * @param DateTime $birthday
      */
-    protected function setBirthday(\DateTime $birthday) {
+    protected function setBirthday(DateTime $birthday) {
         $this->birhday = $birthday;
     }
 

@@ -19,9 +19,14 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use WordPress\EsiClient\Model\Character\CharactersCharacterId;
+use WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory;
+use WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait;
+use WordPress\EsiClient\Swagger;
+
 \defined('ABSPATH') or die();
 
-class CharacterRepository extends \WordPress\EsiClient\Swagger {
+class CharacterRepository extends Swagger {
     /**
      * Used ESI enpoints in this class
      *
@@ -38,7 +43,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * Public information about a character
      *
      * @param int $characterID An EVE character ID
-     * @return \WordPress\EsiClient\Model\Character\CharactersCharacterId
+     * @return CharactersCharacterId
      */
     public function charactersCharacterId(int $characterID) {
         $returnValue = null;
@@ -53,7 +58,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Character\CharactersCharacterId);
+            $returnValue = $this->map($esiData, new CharactersCharacterId);
         }
 
         return $returnValue;
@@ -63,7 +68,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * Get a list of all the corporations a character has been a member of
      *
      * @param int $characterID An EVE character ID
-     * @return \WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory
+     * @return CharactersCharacterIdCorporationhistory
      */
     public function charactersCharacterIdCorporationhistory(int $characterID) {
         $returnValue = null;
@@ -78,7 +83,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory);
+            $returnValue = $this->map($esiData, new CharactersCharacterIdCorporationhistory);
         }
 
         return $returnValue;
@@ -111,7 +116,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
      * Get character portraits
      *
      * @param int $characterID An EVE character ID
-     * @return \WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait
+     * @return CharactersCharacterIdPortrait
      */
     public function charactersCharacterIdPortrait(int $characterID) {
         $returnValue = null;
@@ -126,7 +131,7 @@ class CharacterRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait);
+            $returnValue = $this->map($esiData, new CharactersCharacterIdPortrait);
         }
 
         return $returnValue;
