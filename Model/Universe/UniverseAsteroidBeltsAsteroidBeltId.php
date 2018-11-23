@@ -37,6 +37,8 @@ class UniverseAsteroidBeltsAsteroidBeltId {
     /**
      * systemId
      *
+     * The solar system this asteroid belt is in
+     *
      * @var int
      */
     protected $systemId = null;

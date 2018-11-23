@@ -46,6 +46,8 @@ class UniverseConstellationsConstellationId {
     /**
      * regionId
      *
+     * The region this constellation is in
+     *
      * @var int
      */
     protected $regionId = null;

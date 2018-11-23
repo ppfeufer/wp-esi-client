@@ -72,6 +72,8 @@ class UniverseTypesTypeId {
     /**
      * marketGroupId
      *
+     * This only exists for types that can be put on the market
+     *
      * @var int
      */
     protected $marketGroupId = null;

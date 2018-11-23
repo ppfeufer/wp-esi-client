@@ -23,6 +23,8 @@ class UniverseSystemKills {
     /**
      * npcKills
      *
+     * Number of NPC ships killed in this system
+     *
      * @var int
      */
     protected $npcKills = null;
@@ -30,12 +32,16 @@ class UniverseSystemKills {
     /**
      * podKills
      *
+     * Number of pods killed in this system
+     *
      * @var int
      */
     protected $podKills = null;
 
     /**
      * shipKills
+     *
+     * Number of player ships killed in this system
      *
      * @var int
      */
