@@ -19,6 +19,8 @@
 
 namespace WordPress\EsiClient\Model\Killmails\KillmailsKillmailId;
 
+use WordPress\EsiClient\Mapper\JsonMapper;
+
 class Victim {
     /**
      * allianceId
@@ -67,7 +69,7 @@ class Victim {
     /**
      * position
      *
-     * @var \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Position
+     * @var Position
      */
     protected $position = null;
 
@@ -185,7 +187,7 @@ class Victim {
      * @param array $items
      */
     protected function setItems(array $items) {
-        $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+        $mapper = new JsonMapper;
 
         $this->items = $mapper->mapArray($items, [], '\\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Item');
     }
@@ -193,7 +195,7 @@ class Victim {
     /**
      * getPosition
      *
-     * @return \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Position
+     * @return Position
      */
     public function getPosition() {
         return $this->position;
@@ -202,9 +204,9 @@ class Victim {
     /**
      * setPosition
      *
-     * @param \WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Position $position
+     * @param Position $position
      */
-    protected function setPosition(\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Position $position) {
+    protected function setPosition(Position $position) {
         $this->position = $position;
     }
 

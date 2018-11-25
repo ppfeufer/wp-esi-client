@@ -19,9 +19,14 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use WordPress\EsiClient\Model\Dogma\DogmaAttributes;
+use WordPress\EsiClient\Model\Dogma\DogmaAttributesAttributeId;
+use WordPress\EsiClient\Model\Dogma\DogmaEffects;
+use WordPress\EsiClient\Swagger;
+
 \defined('ABSPATH') or die();
 
-class DogmaRepository extends \WordPress\EsiClient\Swagger {
+class DogmaRepository extends Swagger {
     /**
      * Used ESI enpoints in this class
      *
@@ -38,7 +43,7 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
     /**
      * Get a list of dogma attribute ids
      *
-     * @return \WordPress\EsiClient\Model\Dogma\DogmaAttributes
+     * @return DogmaAttributes
      */
     public function dogmaAttributes() {
         $this->setEsiRoute($this->esiEndpoints['dogma_attributes']);
@@ -56,7 +61,7 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
     /**
      * Get a list of dogma attribute ids
      *
-     * @return \WordPress\EsiClient\Model\Dogma\DogmaEffects
+     * @return DogmaEffects
      */
     public function dogmaEffects() {
         $this->setEsiRoute($this->esiEndpoints['dogma_effects']);
@@ -75,7 +80,7 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
      * Get information on a dogma attribute
      *
      * @param int $attributeId A dogma attribute ID
-     * @return \WordPress\EsiClient\Model\Dogma\DogmaAttributesAttributeId
+     * @return DogmaAttributesAttributeId
      */
     public function dogmaAttributesAttributeId(int $attributeId) {
         $returnValue = null;
@@ -90,7 +95,7 @@ class DogmaRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Dogma\DogmaAttributesAttributeId);
+            $returnValue = $this->map($esiData, new DogmaAttributesAttributeId);
         }
 
         return $returnValue;

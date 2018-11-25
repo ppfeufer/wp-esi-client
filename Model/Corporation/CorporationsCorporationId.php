@@ -19,13 +19,15 @@
 
 namespace WordPress\EsiClient\Model\Corporation;
 
+use DateTime;
+
 class CorporationsCorporationId {
     /**
      * allianceId
      *
      * ID of the alliance that corporation is a member of, if any
      *
-     * @var inr
+     * @var int
      */
     protected $allianceId = null;
 
@@ -46,7 +48,7 @@ class CorporationsCorporationId {
     /**
      * dateFounded
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $dateFounded = null;
 
@@ -174,7 +176,7 @@ class CorporationsCorporationId {
     /**
      * getDateFounded
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getDateFounded() {
         return $this->dateFounded;
@@ -183,9 +185,9 @@ class CorporationsCorporationId {
     /**
      * setDateFounded
      *
-     * @param \DateTime $dateFounded
+     * @param DateTime $dateFounded
      */
-    protected function setDateFounded(\DateTime $dateFounded) {
+    protected function setDateFounded(DateTime $dateFounded) {
         $this->dateFounded = $dateFounded;
     }
 

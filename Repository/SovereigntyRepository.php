@@ -19,9 +19,11 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use WordPress\EsiClient\Swagger;
+
 \defined('ABSPATH') or die();
 
-class SovereigntyRepository extends \WordPress\EsiClient\Swagger {
+class SovereigntyRepository extends Swagger {
     /**
      * Used ESI enpoints in this class
      *

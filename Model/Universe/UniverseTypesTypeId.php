@@ -19,6 +19,8 @@
 
 namespace WordPress\EsiClient\Model\Universe;
 
+use WordPress\EsiClient\Mapper\JsonMapper;
+
 class UniverseTypesTypeId {
     /**
      * capacity
@@ -185,7 +187,7 @@ class UniverseTypesTypeId {
      * @param array $dogmaAttributes
      */
     protected function setDogmaAttributes(array $dogmaAttributes) {
-        $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+        $mapper = new JsonMapper;
 
         $this->dogmaAttributes = $mapper->mapArray($dogmaAttributes, [], '\\WordPress\EsiClient\Model\Universe\UniverseTypesTypeId\DogmaAttribute');
     }
@@ -205,7 +207,7 @@ class UniverseTypesTypeId {
      * @param array $dogmaEffects
      */
     protected function setDogmaEffects(array $dogmaEffects) {
-        $mapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+        $mapper = new JsonMapper;
 
         $this->dogmaEffects = $mapper->mapArray($dogmaEffects, [], '\\WordPress\EsiClient\Model\Universe\UniverseTypesTypeId\DogmaEffect');
     }

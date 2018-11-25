@@ -19,6 +19,8 @@
 
 namespace WordPress\EsiClient\Model\Character;
 
+use DateTime;
+
 class CharactersCharacterIdCorporationhistory {
     /**
      * corporationId
@@ -44,7 +46,7 @@ class CharactersCharacterIdCorporationhistory {
     /**
      * startDate
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $startDate = null;
 
@@ -105,7 +107,7 @@ class CharactersCharacterIdCorporationhistory {
     /**
      * getStartDate
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getStartDate() {
         return $this->startDate;
@@ -114,9 +116,9 @@ class CharactersCharacterIdCorporationhistory {
     /**
      * setStartDate
      *
-     * @param \DateTime $startDate
+     * @param DateTime $startDate
      */
-    protected function setStartDate(\DateTime $startDate) {
+    protected function setStartDate(DateTime $startDate) {
         $this->startDate = $startDate;
     }
 }

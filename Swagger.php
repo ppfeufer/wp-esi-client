@@ -19,6 +19,9 @@
 
 namespace WordPress\EsiClient;
 
+use WordPress\EsiClient\Helper\RemoteHelper;
+use WordPress\EsiClient\Mapper\JsonMapper;
+
 \defined('ABSPATH') or die();
 
 class Swagger {
@@ -67,7 +70,7 @@ class Swagger {
     /**
      * Remote Helper
      *
-     * @var \WordPress\EsiClient\Helper\Helper\RemoteHelper
+     * @var RemoteHelper
      */
     protected $remoteHelper = null;
 
@@ -75,19 +78,19 @@ class Swagger {
      * Constructor
      */
     public function __construct() {
-        $this->remoteHelper = new Helper\RemoteHelper;
+        $this->remoteHelper = new RemoteHelper;
     }
 
     /**
      * Call ESI
      *
-     * @return stdClass Object
+     * @return object ESI response as object
      */
     public function callEsi() {
         $returnValue = null;
 
         if(!\is_a($this->remoteHelper, '\WordPress\EsiClient\Helper\Helper\RemoteHelper')) {
-            $this->remoteHelper = new Helper\RemoteHelper;
+            $this->remoteHelper = new RemoteHelper;
         }
 
         $esiUrl = \trailingslashit($this->getEsiUrl() . $this->getEsiVersion());
@@ -233,7 +236,7 @@ class Swagger {
         $returnValue = null;
 
         if(!\is_null($jSon)) {
-            $jsonMapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+            $jsonMapper = new JsonMapper;
 
             $returnValue = $jsonMapper->map(\json_decode($jSon), $object);
         }
@@ -253,7 +256,7 @@ class Swagger {
         $returnValue = null;
 
         if(!\is_null($jSon)) {
-            $jsonMapper = new \WordPress\EsiClient\Mapper\JsonMapper;
+            $jsonMapper = new JsonMapper;
 
             $returnValue = $jsonMapper->mapArray(\json_decode($jSon), $array, $class);
         }

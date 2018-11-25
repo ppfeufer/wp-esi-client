@@ -19,6 +19,8 @@
 
 namespace WordPress\EsiClient\Model\Alliance;
 
+use DateTime;
+
 class AlliancesAllianceId {
     /**
      * creatorCorpId
@@ -41,7 +43,7 @@ class AlliancesAllianceId {
     /**
      * dateFounded
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $dateFounded = null;
 
@@ -120,7 +122,7 @@ class AlliancesAllianceId {
     /**
      * getDateFounded
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getDateFounded() {
         return $this->dateFounded;
@@ -129,9 +131,9 @@ class AlliancesAllianceId {
     /**
      * setDateFounded
      *
-     * @param \DateTime $dateFounded
+     * @param DateTime $dateFounded
      */
-    protected function setDateFounded(\DateTime $dateFounded) {
+    protected function setDateFounded(DateTime $dateFounded) {
         $this->dateFounded = $dateFounded;
     }
 

@@ -2,8 +2,13 @@
 # Change Log
 
 ## [In Development](https://github.com/ppfeufer/wp-esi-client/tree/development)
-[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181123...development)
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181125...development)
 - in development
+
+## [v20181125](https://github.com/ppfeufer/wp-esi-client/tag/v20181123) - 2018-11-25
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181123...v20181125)
+### Changed
+- Some improvements and code cleanup
 
 ## [v20181123](https://github.com/ppfeufer/wp-esi-client/tag/v20181123) - 2018-11-23
 [Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181122...v20181123)

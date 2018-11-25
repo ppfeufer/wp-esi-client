@@ -19,9 +19,18 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId;
+use WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId;
+use WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId;
+use WordPress\EsiClient\Model\Universe\UniverseIds;
+use WordPress\EsiClient\Model\Universe\UniverseRegionsRegionId;
+use WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId;
+use WordPress\EsiClient\Model\Universe\UniverseTypesTypeId;
+use WordPress\EsiClient\Swagger;
+
 \defined('ABSPATH') or die();
 
-class UniverseRepository extends \WordPress\EsiClient\Swagger {
+class UniverseRepository extends Swagger {
     /**
      * Used ESI enpoints in this class
      *
@@ -84,7 +93,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * Get information on an asteroid belt
      *
      * @param int $asteroidBeltId
-     * @return \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId
+     * @return UniverseAsteroidBeltsAsteroidBeltId
      */
     public function universeAsteroidBeltsAsteroidBeltId(int $asteroidBeltId) {
         $returnValue = null;
@@ -99,7 +108,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId);
+            $returnValue = $this->map($esiData, new UniverseAsteroidBeltsAsteroidBeltId);
         }
 
         return $returnValue;
@@ -109,7 +118,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * Get information on a constellation
      *
      * @param int $constellationId An EVE constellation ID
-     * @return \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId
+     * @return UniverseConstellationsConstellationId
      */
     public function universeConstellationsConstellationId(int $constellationId) {
         $returnValue = null;
@@ -124,7 +133,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId);
+            $returnValue = $this->map($esiData, new UniverseConstellationsConstellationId);
         }
 
         return $returnValue;
@@ -134,7 +143,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * Get information on an item group
      *
      * @param int $groupId An Eve item group ID
-     * @return \WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId
+     * @return UniverseGroupsGroupId
      */
     public function universeGroupsGroupId(int $groupId) {
         $returnValue = null;
@@ -149,7 +158,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId);
+            $returnValue = $this->map($esiData, new UniverseGroupsGroupId);
         }
 
         return $returnValue;
@@ -164,7 +173,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * All names searched for are cached for 12 hours
      *
      * @param array $names The names to resolve
-     * @return \WordPress\EsiClient\Model\Universe\UniverseIds
+     * @return UniverseIds
      */
     public function universeIds(array $names) {
         $returnValue = null;
@@ -177,7 +186,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseIds);
+            $returnValue = $this->map($esiData, new UniverseIds);
         }
 
         return $returnValue;
@@ -187,7 +196,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * Get information on a region
      *
      * @param int $regionId An EVE region ID
-     * @return \WordPress\EsiClient\Model\Universe\UniverseRegionsRegionId
+     * @return UniverseRegionsRegionId
      */
     public function universeRegionsRegionId(int $regionId) {
         $returnValue = null;
@@ -202,7 +211,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseRegionsRegionId);
+            $returnValue = $this->map($esiData, new UniverseRegionsRegionId);
         }
 
         return $returnValue;
@@ -258,7 +267,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * Get information on a solar system
      *
      * @param int $systemId An EVE solar system ID
-     * @return \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId
+     * @return UniverseSystemsSystemId
      */
     public function universeSystemsSystemId(int $systemId) {
         $returnValue = null;
@@ -273,7 +282,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId);
+            $returnValue = $this->map($esiData, new UniverseSystemsSystemId);
         }
 
         return $returnValue;
@@ -283,7 +292,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
      * Get information on a type
      *
      * @param int $typeId An Eve item type ID
-     * @return \WordPress\EsiClient\Model\Universe\UniverseTypesTypeId
+     * @return UniverseTypesTypeId
      */
     public function universeTypesTypeId(int $typeId) {
         $returnValue = null;
@@ -298,7 +307,7 @@ class UniverseRepository extends \WordPress\EsiClient\Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new \WordPress\EsiClient\Model\Universe\UniverseTypesTypeId);
+            $returnValue = $this->map($esiData, new UniverseTypesTypeId);
         }
 
         return $returnValue;
