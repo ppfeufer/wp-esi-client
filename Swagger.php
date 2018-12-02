@@ -37,7 +37,7 @@ class Swagger {
      *
      * @var string
      */
-    protected $esiVersion = 'latest/';
+    protected $esiVersion = 'latest';
 
     /**
      * ESI method

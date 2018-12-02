@@ -2,8 +2,13 @@
 # Change Log
 
 ## [In Development](https://github.com/ppfeufer/wp-esi-client/tree/development)
-[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181125...development)
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181202...development)
 - in development
+
+## [v20181202](https://github.com/ppfeufer/wp-esi-client/tag/v20181202) - 2018-12-02
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181125...v20181202)
+### Added
+- Model for status endpoint » https://esi.evetech.net/ui?version=meta#/Meta/get_status
 
 ## [v20181125](https://github.com/ppfeufer/wp-esi-client/tag/v20181123) - 2018-11-25
 [Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181123...v20181125)
