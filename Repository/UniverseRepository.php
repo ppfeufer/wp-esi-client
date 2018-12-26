@@ -20,6 +20,7 @@
 namespace WordPress\EsiClient\Repository;
 
 use WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId;
+use WordPress\EsiClient\Model\Universe\UniverseCategoriesCategoryId;
 use WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId;
 use WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId;
 use WordPress\EsiClient\Model\Universe\UniverseIds;
@@ -159,6 +160,31 @@ class UniverseRepository extends Swagger {
 
         if(!\is_null($esiData)) {
             $returnValue = $this->map($esiData, new UniverseGroupsGroupId);
+        }
+
+        return $returnValue;
+    }
+
+    /**
+     * Get information on an item group
+     *
+     * @param int $categoryId An Eve item group ID
+     * @return UniverseGroupsGroupId
+     */
+    public function universeCategoriesCategoryId(int $categoryId) {
+        $returnValue = null;
+
+        $this->setEsiMethod('get');
+        $this->setEsiRoute($this->esiEndpoints['universe_categories_categoryId']);
+        $this->setEsiRouteParameter([
+            '/{category_id}/' => $categoryId
+        ]);
+        $this->setEsiVersion('v1');
+
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new UniverseCategoriesCategoryId);
         }
 
         return $returnValue;
