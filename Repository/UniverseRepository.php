@@ -38,25 +38,25 @@ class UniverseRepository extends Swagger {
      * @var array ESI enpoints
      */
     protected $esiEndpoints = [
-        'universe_ancestries' => 'universe/ancestries/?datasource=tranquility',
+        'universe_ancestries' => 'universe/ancestries/?datasource=tranquility&language={language}',
         'universe_asteroidBelts_asteroidBeltId' => 'universe/asteroid_belts/{asteroid_belt_id}/?datasource=tranquility',
-        'universe_bloodlines' => 'universe/bloodlines/?datasource=tranquility',
+        'universe_bloodlines' => 'universe/bloodlines/?datasource=tranquility&language={language}',
         'universe_categories' => 'universe/categories/?datasource=tranquility',
-        'universe_categories_categoryId' => 'universe/categories/{category_id}/?datasource=tranquility',
+        'universe_categories_categoryId' => 'universe/categories/{category_id}/?datasource=tranquility&language={language}',
         'universe_constellations' => 'universe/constellations/?datasource=tranquility',
-        'universe_constellations_constellationId' => 'universe/constellations/{constellation_id}/?datasource=tranquility',
-        'universe_factions' => 'universe/factions/?datasource=tranquility',
+        'universe_constellations_constellationId' => 'universe/constellations/{constellation_id}/?datasource=tranquility&language={language}',
+        'universe_factions' => 'universe/factions/?datasource=tranquility&language={language}',
         'universe_graphics' => 'universe/graphics/?datasource=tranquility',
         'universe_graphics_graphicId' => 'universe/graphics/{graphic_id}/?datasource=tranquility',
         'universe_groups' => 'universe/groups/?datasource=tranquility',
-        'universe_groups_groupId' => 'universe/groups/{group_id}/?datasource=tranquility',
-        'universe_ids' => 'universe/ids/?datasource=tranquility',
+        'universe_groups_groupId' => 'universe/groups/{group_id}/?datasource=tranquility&language={language}',
+        'universe_ids' => 'universe/ids/?datasource=tranquility&language={language}',
         'universe_moons_moonId' => 'universe/moons/{moon_id}/?datasource=tranquility',
         'universe_names' => 'universe/names/?datasource=tranquility',
         'universe_planets_planetId' => 'universe/planets/{planet_id}/?datasource=tranquility',
-        'universe_races' => 'universe/races/?datasource=tranquility',
+        'universe_races' => 'universe/races/?datasource=tranquility&language={language}',
         'universe_regions' => 'universe/regions/?datasource=tranquility',
-        'universe_regions_regionId' => 'universe/regions/{region_id}/?datasource=tranquility',
+        'universe_regions_regionId' => 'universe/regions/{region_id}/?datasource=tranquility&language={language}',
         'universe_stargates_stargateId' => 'universe/stargates/{stargate_id}/?datasource=tranquility',
         'universe_stars_starId' => 'universe/stars/{star_id}/?datasource=tranquility',
         'universe_stations_stationId' => 'universe/stations/{station_id}/?datasource=tranquility',
@@ -64,21 +64,30 @@ class UniverseRepository extends Swagger {
         'universe_systemJumps' => 'universe/system_jumps/?datasource=tranquility',
         'universe_systemKills' => 'universe/system_kills/?datasource=tranquility',
         'universe_systems' => 'universe/systems/?datasource=tranquility',
-        'universe_systems_systemId' => 'universe/systems/{system_id}/?datasource=tranquility',
+        'universe_systems_systemId' => 'universe/systems/{system_id}/?datasource=tranquility&language={language}',
         'universe_types' => 'universe/types/?datasource=tranquility',
-        'universe_types_typeId' => 'universe/types/{type_id}/?datasource=tranquility',
+        'universe_types_typeId' => 'universe/types/{type_id}/?datasource=tranquility&language={language}',
     ];
 
     /**
      * Get all character ancestries
      *
+     * @param string $language
      * @return array of \WordPress\EsiClient\Model\Universe\UniverseAncestries
      */
-    public function universeAncestries() {
+    public function universeAncestries(string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
+
         $returnValue = null;
 
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_ancestries']);
+        $this->setEsiRouteParameter([
+            '/{language}/' => $language
+        ]);
         $this->setEsiVersion('v1');
 
         $esiData = $this->callEsi();
@@ -119,15 +128,22 @@ class UniverseRepository extends Swagger {
      * Get information on a constellation
      *
      * @param int $constellationId An EVE constellation ID
+     * @param string $language
      * @return UniverseConstellationsConstellationId
      */
-    public function universeConstellationsConstellationId(int $constellationId) {
+    public function universeConstellationsConstellationId(int $constellationId, string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
+
         $returnValue = null;
 
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_constellations_constellationId']);
         $this->setEsiRouteParameter([
-            '/{constellation_id}/' => $constellationId
+            '/{constellation_id}/' => $constellationId,
+            '/{language}/' => $language
         ]);
         $this->setEsiVersion('v1');
 
@@ -144,15 +160,22 @@ class UniverseRepository extends Swagger {
      * Get information on an item group
      *
      * @param int $groupId An Eve item group ID
+     * @param string $language
      * @return UniverseGroupsGroupId
      */
-    public function universeGroupsGroupId(int $groupId) {
+    public function universeGroupsGroupId(int $groupId, string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
+
         $returnValue = null;
 
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_groups_groupId']);
         $this->setEsiRouteParameter([
-            '/{group_id}/' => $groupId
+            '/{group_id}/' => $groupId,
+            '/{language}/' => $language
         ]);
         $this->setEsiVersion('v1');
 
@@ -169,15 +192,22 @@ class UniverseRepository extends Swagger {
      * Get information on an item group
      *
      * @param int $categoryId An Eve item group ID
+     * @param string $language
      * @return UniverseGroupsGroupId
      */
-    public function universeCategoriesCategoryId(int $categoryId) {
+    public function universeCategoriesCategoryId(int $categoryId, string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
+
         $returnValue = null;
 
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_categories_categoryId']);
         $this->setEsiRouteParameter([
-            '/{category_id}/' => $categoryId
+            '/{category_id}/' => $categoryId,
+            '/{language}/' => $language
         ]);
         $this->setEsiVersion('v1');
 
@@ -199,14 +229,23 @@ class UniverseRepository extends Swagger {
      * All names searched for are cached for 12 hours
      *
      * @param array $names The names to resolve
+     * @param string $language
      * @return UniverseIds
      */
-    public function universeIds(array $names) {
+    public function universeIds(array $names, string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
+
         $returnValue = null;
 
         $this->setEsiMethod('post');
         $this->setEsiPostParameter($names);
         $this->setEsiRoute($this->esiEndpoints['universe_ids']);
+        $this->setEsiRouteParameter([
+            '/{language}/' => $language
+        ]);
         $this->setEsiVersion('v1');
 
         $esiData = $this->callEsi();
@@ -222,15 +261,22 @@ class UniverseRepository extends Swagger {
      * Get information on a region
      *
      * @param int $regionId An EVE region ID
+     * @param string $language
      * @return UniverseRegionsRegionId
      */
-    public function universeRegionsRegionId(int $regionId) {
+    public function universeRegionsRegionId(int $regionId, string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
+
         $returnValue = null;
 
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_regions_regionId']);
         $this->setEsiRouteParameter([
-            '/{region_id}/' => $regionId
+            '/{region_id}/' => $regionId,
+            '/{language}/' => $language
         ]);
         $this->setEsiVersion('v1');
 
@@ -293,15 +339,22 @@ class UniverseRepository extends Swagger {
      * Get information on a solar system
      *
      * @param int $systemId An EVE solar system ID
+     * @param string $language
      * @return UniverseSystemsSystemId
      */
-    public function universeSystemsSystemId(int $systemId) {
+    public function universeSystemsSystemId(int $systemId, string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
+
         $returnValue = null;
 
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_systems_systemId']);
         $this->setEsiRouteParameter([
-            '/{system_id}/' => $systemId
+            '/{system_id}/' => $systemId,
+            '/{language}/' => $language
         ]);
         $this->setEsiVersion('v4');
 
@@ -318,15 +371,22 @@ class UniverseRepository extends Swagger {
      * Get information on a type
      *
      * @param int $typeId An Eve item type ID
+     * @param string $language
      * @return UniverseTypesTypeId
      */
-    public function universeTypesTypeId(int $typeId) {
+    public function universeTypesTypeId(int $typeId, string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
+
         $returnValue = null;
 
         $this->setEsiMethod('get');
         $this->setEsiRoute($this->esiEndpoints['universe_types_typeId']);
         $this->setEsiRouteParameter([
-            '/{type_id}/' => $typeId
+            '/{type_id}/' => $typeId,
+            '/{language}/' => $language
         ]);
         $this->setEsiVersion('v3');
 

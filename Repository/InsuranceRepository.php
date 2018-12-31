@@ -30,16 +30,25 @@ class InsuranceRepository extends Swagger {
      * @var array ESI enpoints
      */
     protected $esiEndpoints = [
-        'insurance_prices' => 'insurance/prices/?datasource=tranquility'
+        'insurance_prices' => 'insurance/prices/?datasource=tranquility&language={language}'
     ];
 
     /**
      * Shows insurance prices for type Ids
      *
+     * @param string $language
      * @return \WordPress\EsiClient\Model\Insurance\InsurancePrices
      */
-    public function insurancePrices() {
+    public function insurancePrices(string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
+
         $this->setEsiRoute($this->esiEndpoints['insurance_prices']);
+        $this->setEsiRouteParameter([
+            '/{language}/' => $language
+        ]);
         $this->setEsiVersion('v1');
 
         $esiData = $this->callEsi();
