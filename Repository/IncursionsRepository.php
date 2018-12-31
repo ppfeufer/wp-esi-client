@@ -35,7 +35,7 @@ class IncursionsRepository extends Swagger {
     ];
 
     /**
-     * Shows sovereignty data for campaigns
+     * Shows incursion data
      *
      * @return Incursions
      */
