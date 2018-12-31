@@ -3,7 +3,10 @@
 
 ## [In Development](https://github.com/ppfeufer/wp-esi-client/tree/development)
 [Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181226...development)
-- in development
+### Added
+- Incursions
+- Insurance
+- Language support to endpoints
 
 ## [v20181226](https://github.com/ppfeufer/wp-esi-client/tag/v20181226) - 2018-12-26
 [Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181202...v20181226)
