@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Killmails\KillmailsKillmailId;
 
-use WordPress\EsiClient\Mapper\JsonMapper;
+use \WordPress\EsiClient\Mapper\JsonMapper;
 
 class Item {
     /**

@@ -1,7 +1,7 @@
 <?php
 
-/**
- * Copyright (C) 2017 Rounon Dax
+/*
+ * Copyright (C) 2018 ppfeufer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,44 +20,44 @@
 namespace WordPress\EsiClient\Repository;
 
 use \WordPress\EsiClient\ {
-    Model\Killmails\KillmailsKillmailId,
+    Model\Insurance\InsurancePrices,
     Swagger
 };
 
 \defined('ABSPATH') or die();
 
-class KillmailsRepository extends Swagger {
+class InsuranceRepository extends Swagger {
     /**
      * Used ESI enpoints in this class
      *
      * @var array ESI enpoints
      */
     protected $esiEndpoints = [
-        'killmails_killmailId_killmailHash' => 'killmails/{killmail_id}/{killmail_hash}/?datasource=tranquility'
+        'insurance_prices' => 'insurance/prices/?datasource=tranquility&language={language}'
     ];
 
     /**
-     * Return a single killmail from its ID and hash
+     * Shows insurance prices for type Ids
      *
-     * @param int $killmailID The killmail ID to be queried
-     * @param string $killmailHash The killmail hash for verification
-     * @return KillmailsKillmailId
+     * @param string $language
+     * @return InsurancePrices
      */
-    public function killmailsKillmailIdKillmailHash(int $killmailID, string $killmailHash) {
-        $returnValue = null;
+    public function insurancePrices(string $language = 'en-us') {
+        // just to make sure if some smarty pants tries to set an empty language
+        if(\is_null($language) || empty($language)) {
+            $language = 'en-us';
+        }
 
-        $this->setEsiMethod('get');
-        $this->setEsiRoute($this->esiEndpoints['killmails_killmailId_killmailHash']);
+        $this->setEsiRoute($this->esiEndpoints['insurance_prices']);
         $this->setEsiRouteParameter([
-            '/{killmail_id}/' => $killmailID,
-            '/{killmail_hash}/' => $killmailHash
+            '/{language}/' => $language
         ]);
         $this->setEsiVersion('v1');
 
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new KillmailsKillmailId);
+            $returnValue = $this->mapArray(\json_encode(['effects' => $esiData]), '\WordPress\EsiClient\Model\Insurance\InsurancePrices');
         }
 
         return $returnValue;

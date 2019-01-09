@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Character;
 
-use DateTime;
+use \DateTime;
 
 class CharactersCharacterIdCorporationhistory {
     /**

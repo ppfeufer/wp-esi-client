@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Alliance;
 
-use DateTime;
+use \DateTime;
 
 class AlliancesAllianceId {
     /**

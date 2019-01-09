@@ -2,8 +2,19 @@
 # Change Log
 
 ## [In Development](https://github.com/ppfeufer/wp-esi-client/tree/development)
-[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181226...development)
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190109...development)
 - in development
+
+## [v20190109](https://github.com/ppfeufer/wp-esi-client/tag/v20190109) - 2019-01-09
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181226...v20190109)
+### Added
+- Incursions
+- Insurance
+- Language support to endpoints
+- Getter method to obtain the current client version > ``getEsiClientVersion()`` instead of ``client_version`` file, which will be removed later on
+
+### Changed
+- More strict namespacing
 
 ## [v20181226](https://github.com/ppfeufer/wp-esi-client/tag/v20181226) - 2018-12-26
 [Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181202...v20181226)

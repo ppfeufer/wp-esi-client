@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2018 p.pfeufer
+ * Copyright (C) 2018 ppfeufer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,33 +17,49 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace WordPress\EsiClient\Model\Universe;
+namespace WordPress\EsiClient\Model\Insurance\InsurancePrices;
 
-use \WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId\Position;
+class Level {
+    /**
+     * cost
+     *
+     * @var float
+     */
+    protected $cost = null;
 
-class UniverseAsteroidBeltsAsteroidBeltId {
     /**
      * name
+     *
+     * Localized insurance level
      *
      * @var string
      */
     protected $name = null;
 
     /**
-     * position
+     * payout
      *
-     * @var Position
+     * @var float
      */
-    protected $position = null;
+    protected $payout = null;
 
     /**
-     * systemId
+     * getCost
      *
-     * The solar system this asteroid belt is in
-     *
-     * @var int
+     * @return float
      */
-    protected $systemId = null;
+    public function getCost() {
+        return $this->cost;
+    }
+
+    /**
+     * setCost
+     *
+     * @param float $cost
+     */
+    protected function setCost(float $cost) {
+        $this->cost = $cost;
+    }
 
     /**
      * getName
@@ -64,38 +80,20 @@ class UniverseAsteroidBeltsAsteroidBeltId {
     }
 
     /**
-     * getPosition
+     * getPayout
      *
-     * @return Position
+     * @return float
      */
-    public function getPosition() {
-        return $this->position;
+    public function getPayout() {
+        return $this->payout;
     }
 
     /**
-     * setPosition
+     * setPayout
      *
-     * @param Position $position
+     * @param float $payout
      */
-    protected function setPosition(Position $position) {
-        $this->position = $position;
-    }
-
-    /**
-     * getSystemId
-     *
-     * @return int
-     */
-    public function getSystemId() {
-        return $this->systemId;
-    }
-
-    /**
-     * setSystemId
-     *
-     * @param int $systemId
-     */
-    protected function setSystemId(int $systemId) {
-        $this->systemId = $systemId;
+    protected function setPayout(float $payout) {
+        $this->payout = $payout;
     }
 }

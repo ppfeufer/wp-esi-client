@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use WordPress\EsiClient\Swagger;
+use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
 

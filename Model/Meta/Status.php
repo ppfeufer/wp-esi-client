@@ -19,8 +19,6 @@
 
 namespace WordPress\EsiClient\Model\Meta;
 
-use WordPress\EsiClient\Mapper\JsonMapper;
-
 class Status {
     /**
      * endpoint

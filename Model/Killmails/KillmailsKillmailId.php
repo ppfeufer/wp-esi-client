@@ -19,9 +19,11 @@
 
 namespace WordPress\EsiClient\Model\Killmails;
 
-use DateTime;
-use WordPress\EsiClient\Mapper\JsonMapper;
-use WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\Victim;
+use \DateTime;
+use \WordPress\EsiClient\ {
+    Mapper\JsonMapper,
+    Model\Killmails\KillmailsKillmailId\Victim
+};
 
 class KillmailsKillmailId {
     /**

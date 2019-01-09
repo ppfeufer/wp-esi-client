@@ -19,9 +19,11 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use WordPress\EsiClient\Model\Corporation\CorporationsCorporationId;
-use WordPress\EsiClient\Model\Corporation\CorporationsCorporationIdIcons;
-use WordPress\EsiClient\Swagger;
+use \WordPress\EsiClient\ {
+    Model\Corporation\CorporationsCorporationId,
+    Model\Corporation\CorporationsCorporationIdIcons,
+    Swagger
+};
 
 \defined('ABSPATH') or die();
 

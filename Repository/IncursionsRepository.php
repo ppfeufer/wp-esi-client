@@ -1,7 +1,7 @@
 <?php
 
-/**
- * Copyright (C) 2017 Rounon Dax
+/*
+ * Copyright (C) 2018 ppfeufer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,44 +20,38 @@
 namespace WordPress\EsiClient\Repository;
 
 use \WordPress\EsiClient\ {
-    Model\Killmails\KillmailsKillmailId,
+    Model\Incursions\Incursions,
     Swagger
 };
 
 \defined('ABSPATH') or die();
 
-class KillmailsRepository extends Swagger {
+class IncursionsRepository extends Swagger {
     /**
      * Used ESI enpoints in this class
      *
      * @var array ESI enpoints
      */
     protected $esiEndpoints = [
-        'killmails_killmailId_killmailHash' => 'killmails/{killmail_id}/{killmail_hash}/?datasource=tranquility'
+        'incursions' => 'incursions/?datasource=tranquility'
     ];
 
     /**
-     * Return a single killmail from its ID and hash
+     * Shows incursion data
      *
-     * @param int $killmailID The killmail ID to be queried
-     * @param string $killmailHash The killmail hash for verification
-     * @return KillmailsKillmailId
+     * @return Incursions
      */
-    public function killmailsKillmailIdKillmailHash(int $killmailID, string $killmailHash) {
+    public function incursions() {
         $returnValue = null;
 
         $this->setEsiMethod('get');
-        $this->setEsiRoute($this->esiEndpoints['killmails_killmailId_killmailHash']);
-        $this->setEsiRouteParameter([
-            '/{killmail_id}/' => $killmailID,
-            '/{killmail_hash}/' => $killmailHash
-        ]);
+        $this->setEsiRoute($this->esiEndpoints['incursions']);
         $this->setEsiVersion('v1');
 
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new KillmailsKillmailId);
+            $returnValue = $this->map($esiData, new Incursions);
         }
 
         return $returnValue;
