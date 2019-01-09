@@ -44,13 +44,11 @@ function checkEsiClientForUpdates() {
     $esiClientCurrentVersion = null;
 
     /**
-     * Check for current ESI client version
+     * Check if the current ESI client needs to be updated
      */
-    if(file_exists(WP_CONTENT_DIR . '/EsiClient/client_version')) {
-        $esiClientCurrentVersion = trim(file_get_contents(WP_CONTENT_DIR . '/EsiClient/client_version'));
-    }
+    $esiClient = new \WordPress\EsiClient\Swagger;
 
-    if(version_compare($esiClientCurrentVersion, $esiClientVersion) < 0) {
+    if(version_compare($esiClient->getEsiClientVersion(), $esiClientVersion) < 0) {
         updateEsiClient();
     }
 }
