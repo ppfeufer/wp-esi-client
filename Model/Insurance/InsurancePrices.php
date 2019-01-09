@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Insurance;
 
-use WordPress\EsiClient\Mapper\JsonMapper;
+use \WordPress\EsiClient\Mapper\JsonMapper;
 
 /**
  * Return available insurance levels for all ship types

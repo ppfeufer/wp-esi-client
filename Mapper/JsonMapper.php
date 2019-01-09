@@ -19,11 +19,11 @@
 
 namespace WordPress\EsiClient\Mapper;
 
-use Exception;
-use InvalidArgumentException;
-use Psr\Log\LoggerInterface;
-use ReflectionClass;
-use ReflectionProperty;
+use \Exception;
+use \InvalidArgumentException;
+use \Psr\Log\LoggerInterface;
+use \ReflectionClass;
+use \ReflectionProperty;
 
 /**
  * Part of JsonMapper

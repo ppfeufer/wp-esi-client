@@ -19,12 +19,21 @@
 
 namespace WordPress\EsiClient;
 
-use WordPress\EsiClient\Helper\RemoteHelper;
-use WordPress\EsiClient\Mapper\JsonMapper;
+use \WordPress\EsiClient\ {
+    Helper\RemoteHelper,
+    Mapper\JsonMapper
+};
 
 \defined('ABSPATH') or die();
 
 class Swagger {
+    /**
+     * esiClientVersion
+     *
+     * @var int
+     */
+    private $esiClientVersion = 20190109;
+
     /**
      * ESI URL
      *
@@ -75,55 +84,12 @@ class Swagger {
     protected $remoteHelper = null;
 
     /**
-     * Constructor
-     */
-    public function __construct() {
-        $this->remoteHelper = new RemoteHelper;
-    }
-
-    /**
-     * Call ESI
+     * getEsiClientVersion
      *
-     * @return object ESI response as object
+     * @return int
      */
-    public function callEsi() {
-        $returnValue = null;
-
-        if(!\is_a($this->remoteHelper, '\WordPress\EsiClient\Helper\Helper\RemoteHelper')) {
-            $this->remoteHelper = new RemoteHelper;
-        }
-
-        $esiUrl = \trailingslashit($this->getEsiUrl() . $this->getEsiVersion());
-        $esiRoute = $this->getEsiRoute();
-
-        if(\count($this->getEsiRouteParameter()) > 0) {
-            $esiRoute = \preg_replace(\array_keys($this->getEsiRouteParameter()), \array_values($this->getEsiRouteParameter()), $this->getEsiRoute());
-        }
-
-        $callUrl = $esiUrl . $esiRoute;
-
-        switch($this->getEsiMethod()) {
-            case 'get':
-                $returnValue = $this->remoteHelper->getRemoteData($callUrl);
-                break;
-
-            case 'post':
-                $returnValue = $this->remoteHelper->getRemoteData($callUrl, $this->getEsiMethod(), $this->getEsiPostParameter());
-                break;
-        }
-
-        $this->resetFieldsToDefaults();
-
-        return $returnValue;
-    }
-
-    /**
-     * Resetting field values to defaults
-     */
-    private function resetFieldsToDefaults() {
-        foreach(\get_class_vars(\get_class($this)) as $field => $defaultValue) {
-            $this->$field = $defaultValue;
-        }
+    public function getEsiClientVersion() {
+        return $this->esiClientVersion;
     }
 
     /**
@@ -223,6 +189,51 @@ class Swagger {
      */
     public function setEsiVersion($esiVersion) {
         $this->esiVersion = $esiVersion;
+    }
+
+    /**
+     * Call ESI
+     *
+     * @return object ESI response as object
+     */
+    public function callEsi() {
+        $returnValue = null;
+
+        if(!\is_a($this->remoteHelper, '\WordPress\EsiClient\Helper\Helper\RemoteHelper')) {
+            $this->remoteHelper = new RemoteHelper;
+        }
+
+        $esiUrl = \trailingslashit($this->getEsiUrl() . $this->getEsiVersion());
+        $esiRoute = $this->getEsiRoute();
+
+        if(\count($this->getEsiRouteParameter()) > 0) {
+            $esiRoute = \preg_replace(\array_keys($this->getEsiRouteParameter()), \array_values($this->getEsiRouteParameter()), $this->getEsiRoute());
+        }
+
+        $callUrl = $esiUrl . $esiRoute;
+
+        switch($this->getEsiMethod()) {
+            case 'get':
+                $returnValue = $this->remoteHelper->getRemoteData($callUrl);
+                break;
+
+            case 'post':
+                $returnValue = $this->remoteHelper->getRemoteData($callUrl, $this->getEsiMethod(), $this->getEsiPostParameter());
+                break;
+        }
+
+        $this->resetFieldsToDefaults();
+
+        return $returnValue;
+    }
+
+    /**
+     * Resetting field values to defaults
+     */
+    private function resetFieldsToDefaults() {
+        foreach(\get_class_vars(\get_class($this)) as $field => $defaultValue) {
+            $this->$field = $defaultValue;
+        }
     }
 
     /**

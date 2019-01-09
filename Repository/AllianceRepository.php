@@ -18,11 +18,13 @@
  */
 namespace WordPress\EsiClient\Repository;
 
-use WordPress\EsiClient\Model\Alliance\Alliances;
-use WordPress\EsiClient\Model\Alliance\AlliancesAllianceId;
-use WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations;
-use WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdIcons;
-use WordPress\EsiClient\Swagger;
+use \WordPress\EsiClient\ {
+    Model\Alliance\Alliances,
+    Model\Alliance\AlliancesAllianceId,
+    Model\Alliance\AlliancesAllianceIdCorporations,
+    Model\Alliance\AlliancesAllianceIdIcons,
+    Swagger
+};
 
 \defined('ABSPATH') or die();
 

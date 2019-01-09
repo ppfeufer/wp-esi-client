@@ -19,10 +19,12 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use WordPress\EsiClient\Model\Dogma\DogmaAttributes;
-use WordPress\EsiClient\Model\Dogma\DogmaAttributesAttributeId;
-use WordPress\EsiClient\Model\Dogma\DogmaEffects;
-use WordPress\EsiClient\Swagger;
+use \WordPress\EsiClient\ {
+    Model\Dogma\DogmaAttributes,
+    Model\Dogma\DogmaAttributesAttributeId,
+    Model\Dogma\DogmaEffects,
+    Swagger
+};
 
 \defined('ABSPATH') or die();
 

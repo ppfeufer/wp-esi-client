@@ -19,15 +19,17 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use WordPress\EsiClient\Model\Universe\UniverseAsteroidBeltsAsteroidBeltId;
-use WordPress\EsiClient\Model\Universe\UniverseCategoriesCategoryId;
-use WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId;
-use WordPress\EsiClient\Model\Universe\UniverseGroupsGroupId;
-use WordPress\EsiClient\Model\Universe\UniverseIds;
-use WordPress\EsiClient\Model\Universe\UniverseRegionsRegionId;
-use WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId;
-use WordPress\EsiClient\Model\Universe\UniverseTypesTypeId;
-use WordPress\EsiClient\Swagger;
+use \WordPress\EsiClient\ {
+    Model\Universe\UniverseAsteroidBeltsAsteroidBeltId,
+    Model\Universe\UniverseCategoriesCategoryId,
+    Model\Universe\UniverseConstellationsConstellationId,
+    Model\Universe\UniverseGroupsGroupId,
+    Model\Universe\UniverseIds,
+    Model\Universe\UniverseRegionsRegionId,
+    Model\Universe\UniverseSystemsSystemId,
+    Model\Universe\UniverseTypesTypeId,
+    Swagger
+};
 
 \defined('ABSPATH') or die();
 

@@ -19,8 +19,10 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use WordPress\EsiClient\Model\Incursions\Incursions;
-use WordPress\EsiClient\Swagger;
+use \WordPress\EsiClient\ {
+    Model\Incursions\Incursions,
+    Swagger
+};
 
 \defined('ABSPATH') or die();
 

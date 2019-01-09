@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Universe;
 
-use WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position;
+use \WordPress\EsiClient\Model\Universe\UniverseConstellationsConstellationId\Position;
 
 class UniverseConstellationsConstellationId {
     /**

@@ -19,10 +19,12 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use WordPress\EsiClient\Model\Character\CharactersCharacterId;
-use WordPress\EsiClient\Model\Character\CharactersCharacterIdCorporationhistory;
-use WordPress\EsiClient\Model\Character\CharactersCharacterIdPortrait;
-use WordPress\EsiClient\Swagger;
+use \WordPress\EsiClient\ {
+    Model\Character\CharactersCharacterId,
+    Model\Character\CharactersCharacterIdCorporationhistory,
+    Model\Character\CharactersCharacterIdPortrait,
+    Swagger
+};
 
 \defined('ABSPATH') or die();
 

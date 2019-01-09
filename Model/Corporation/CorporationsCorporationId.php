@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Corporation;
 
-use DateTime;
+use \DateTime;
 
 class CorporationsCorporationId {
     /**

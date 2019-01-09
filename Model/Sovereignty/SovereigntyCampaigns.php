@@ -19,9 +19,11 @@
 
 namespace WordPress\EsiClient\Model\Sovereignty;
 
-use DateTime;
-use WordPress\EsiClient\Mapper\JsonMapper;
-use WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants;
+use \DateTime;
+use \WordPress\EsiClient\ {
+    Mapper\JsonMapper,
+    Model\Sovereignty\SovereigntyCampaigns\Participants
+};
 
 class SovereigntyCampaigns {
     /**

@@ -19,8 +19,10 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use WordPress\EsiClient\Model\Killmails\KillmailsKillmailId;
-use WordPress\EsiClient\Swagger;
+use \WordPress\EsiClient\ {
+    Model\Killmails\KillmailsKillmailId,
+    Swagger
+};
 
 \defined('ABSPATH') or die();
 

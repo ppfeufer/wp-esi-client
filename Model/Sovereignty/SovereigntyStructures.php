@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Sovereignty;
 
-use DateTime;
+use \DateTime;
 
 class SovereigntyStructures {
     /**

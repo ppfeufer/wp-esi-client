@@ -19,8 +19,10 @@
 
 namespace WordPress\EsiClient\Model\Universe;
 
-use WordPress\EsiClient\Mapper\JsonMapper;
-use WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Position;
+use \WordPress\EsiClient\ {
+    Mapper\JsonMapper,
+    Model\Universe\UniverseSystemsSystemId\Position
+};
 
 class UniverseSystemsSystemId {
     /**
