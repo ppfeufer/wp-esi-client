@@ -25,6 +25,7 @@ use \WordPress\EsiClient\ {
     Model\Universe\UniverseConstellationsConstellationId,
     Model\Universe\UniverseGroupsGroupId,
     Model\Universe\UniverseIds,
+    Model\Universe\UniverseNames,
     Model\Universe\UniverseRegionsRegionId,
     Model\Universe\UniverseSystemsSystemId,
     Model\Universe\UniverseTypesTypeId,
@@ -254,6 +255,38 @@ class UniverseRepository extends Swagger {
 
         if(!\is_null($esiData)) {
             $returnValue = $this->map($esiData, new UniverseIds);
+        }
+
+        return $returnValue;
+    }
+
+    /**
+     * Resolve a set of IDs to names and categories.
+     * Supported ID’s for resolving are:
+     *      Characters,
+     *      Corporations,
+     *      Alliances,
+     *      Stations,
+     *      Solar Systems,
+     *      Constellations,
+     *      Regions,
+     *      Types
+     *
+     * @param array $ids
+     * @return UniverseNames
+     */
+    public function universeNames(array $ids) {
+        $returnValue = null;
+
+        $this->setEsiMethod('post');
+        $this->setEsiPostParameter($ids);
+        $this->setEsiRoute($this->esiEndpoints['universe_names']);
+        $this->setEsiVersion('v2');
+
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            $returnValue = $this->map($esiData, new UniverseNames);
         }
 
         return $returnValue;
