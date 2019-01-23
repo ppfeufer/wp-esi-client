@@ -28,6 +28,13 @@ class EsiError {
     protected $error = null;
 
     /**
+     * responseCode
+     *
+     * @var int
+     */
+    protected $responseCode = null;
+
+    /**
      * ssoStatus
      *
      * @var int
@@ -67,27 +74,28 @@ class EsiError {
                 break;
 
             case 420:
-                $errorCode = 'Error limited';
+                $errorType = 'Error limited';
                 break;
 
             case 500:
-                $errorCode = 'Internal server error';
+                $errorType = 'Internal server error';
                 break;
 
             case 503:
-                $errorCode = 'Service unavailable';
+                $errorType = 'Service unavailable';
                 break;
 
             case 504:
-                $errorCode = 'Gateway timeout';
+                $errorType = 'Gateway timeout';
                 break;
 
             default:
-                $errorCode = 'General error';
+                $errorType = 'General error';
                 break;
         }
 
         $this->type = $this->setType($errorType);
+        $this->responseCode = $this->setResponseCode($errorCode);
     }
 
     /**
@@ -160,5 +168,23 @@ class EsiError {
      */
     protected function setType(string $type) {
         $this->type = $type;
+    }
+
+    /**
+     * getResponseCode
+     *
+     * @return int
+     */
+    public function getResponseCode() {
+        return $this->responseCode;
+    }
+
+    /**
+     * setResponseCode
+     *
+     * @param int $responsecode
+     */
+    protected function setResponseCode(int $responsecode) {
+        $this->responseCode = $responsecode;
     }
 }
