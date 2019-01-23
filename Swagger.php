@@ -201,7 +201,7 @@ class Swagger {
     public function createErrorObject(array $esiData) {
         $returnvalue = null;
 
-        if($esiData['responseCode' !== 200]) {
+        if($esiData['responseCode'] !== 200) {
             $returnvalue = $this->map($esiData['responseBody'], new EsiError($esiData['responseCode']));
         }
 
