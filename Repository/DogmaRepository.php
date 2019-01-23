@@ -54,7 +54,16 @@ class DogmaRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray(\json_encode(['attributes' => $esiData]), '\WordPress\EsiClient\Model\Dogma\DogmaAttributes');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray(\json_encode(['attributes' => $esiData['responseBody']]), '\WordPress\EsiClient\Model\Dogma\DogmaAttributes');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -79,7 +88,16 @@ class DogmaRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new DogmaAttributesAttributeId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new DogmaAttributesAttributeId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -97,7 +115,16 @@ class DogmaRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray(\json_encode(['effects' => $esiData]), '\WordPress\EsiClient\Model\Dogma\DogmaEffects');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray(\json_encode(['effects' => $esiData['responseBody']]), '\WordPress\EsiClient\Model\Dogma\DogmaEffects');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;

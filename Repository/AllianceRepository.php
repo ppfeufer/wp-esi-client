@@ -56,7 +56,16 @@ class AllianceRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray(\json_encode(['alliances' => $esiData]), '\\WordPress\EsiClient\Model\Alliance\Alliances');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray(\json_encode(['alliances' => $esiData['responseBody']]), '\\WordPress\EsiClient\Model\Alliance\Alliances');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -81,7 +90,16 @@ class AllianceRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new AlliancesAllianceId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new AlliancesAllianceId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -102,7 +120,16 @@ class AllianceRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray(\json_encode(['corporations' => $esiData]), '\\WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray(\json_encode(['corporations' => $esiData['responseBody']]), '\\WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -127,7 +154,16 @@ class AllianceRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            return $this->map($esiData, new AlliancesAllianceIdIcons);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new AlliancesAllianceIdIcons);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;

@@ -57,7 +57,16 @@ class InsuranceRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray(\json_encode(['effects' => $esiData]), '\WordPress\EsiClient\Model\Insurance\InsurancePrices');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray(\json_encode(['effects' => $esiData['responseBody']]), '\WordPress\EsiClient\Model\Insurance\InsurancePrices');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;

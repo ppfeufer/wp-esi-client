@@ -87,7 +87,7 @@ class EsiError {
                 break;
         }
 
-        $this->type = $errorType;
+        $this->type = $this->setType($errorType);
     }
 
     /**
@@ -151,5 +151,14 @@ class EsiError {
      */
     public function getType() {
         return $this->type;
+    }
+
+    /**
+     * setType
+     *
+     * @param string $type
+     */
+    protected function setType(string $type) {
+        $this->type = $type;
     }
 }
