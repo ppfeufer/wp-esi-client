@@ -82,7 +82,7 @@ class SovereigntyRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyMap');
+                    $returnValue = $this->map(\json_encode(['solar_systems' => \json_decode($esiData['responseBody'])]), new \WordPress\EsiClient\Model\Sovereignty\SovereigntyMap);
                     break;
 
                 // Error ...
