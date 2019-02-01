@@ -223,7 +223,7 @@ class SovereigntyCampaigns {
     protected function setParticipants(Participants $participants) {
         $mapper = new JsonMapper;
 
-        $this->agents = $mapper->mapArray($participants, [], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participants');
+        $this->participants = $mapper->mapArray($participants, [], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns\Participant');
     }
 
     /**

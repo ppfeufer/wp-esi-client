@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns;
 
-class Participants {
+class Participant {
     /**
      * allianceId
      *
