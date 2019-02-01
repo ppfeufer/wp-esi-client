@@ -43,13 +43,16 @@ function checkEsiClientForUpdates() {
     // it gets downloaded and installed
     $esiClientCurrentVersion = null;
 
+    if(class_exists('\WordPress\EsiClient\Swagger')) {
+        $esiClient = new \WordPress\EsiClient\Swagger;
+        $esiClientCurrentVersion = $esiClient->getEsiClientVersion();
+    }
+
     /**
      * Check if the current ESI client needs to be updated
      */
-    $esiClient = new \WordPress\EsiClient\Swagger;
-
-    if(version_compare($esiClient->getEsiClientVersion(), $esiClientVersion) < 0) {
-        updateEsiClient();
+    if(version_compare($esiClientCurrentVersion, $esiClientVersion) < 0) {
+        updateEsiClient($esiClientVersion);
     }
 }
 ```
