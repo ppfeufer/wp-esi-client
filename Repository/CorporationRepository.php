@@ -59,7 +59,16 @@ class CorporationRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new CorporationsCorporationId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new CorporationsCorporationId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -84,7 +93,16 @@ class CorporationRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new CorporationsCorporationIdIcons);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new CorporationsCorporationIdIcons);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;

@@ -57,7 +57,16 @@ class KillmailsRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new KillmailsKillmailId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new KillmailsKillmailId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;

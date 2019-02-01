@@ -50,7 +50,16 @@ class SovereigntyRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -71,7 +80,16 @@ class SovereigntyRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyMap');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map(\json_encode(['solar_systems' => \json_decode($esiData['responseBody'])]), new \WordPress\EsiClient\Model\Sovereignty\SovereigntyMap);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -92,7 +110,16 @@ class SovereigntyRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyStructures');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyStructures');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;

@@ -25,6 +25,7 @@ use \WordPress\EsiClient\ {
     Model\Universe\UniverseConstellationsConstellationId,
     Model\Universe\UniverseGroupsGroupId,
     Model\Universe\UniverseIds,
+    Model\Universe\UniverseNames,
     Model\Universe\UniverseRegionsRegionId,
     Model\Universe\UniverseSystemsSystemId,
     Model\Universe\UniverseTypesTypeId,
@@ -95,7 +96,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Universe\UniverseAncestries');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Universe\UniverseAncestries');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -120,7 +130,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new UniverseAsteroidBeltsAsteroidBeltId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new UniverseAsteroidBeltsAsteroidBeltId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -152,7 +171,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new UniverseConstellationsConstellationId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new UniverseConstellationsConstellationId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -184,7 +212,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new UniverseGroupsGroupId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new UniverseGroupsGroupId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -216,7 +253,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new UniverseCategoriesCategoryId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new UniverseCategoriesCategoryId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -253,7 +299,57 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new UniverseIds);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new UniverseIds);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
+        }
+
+        return $returnValue;
+    }
+
+    /**
+     * Resolve a set of IDs to names and categories.
+     * Supported ID’s for resolving are:
+     *      Characters,
+     *      Corporations,
+     *      Alliances,
+     *      Stations,
+     *      Solar Systems,
+     *      Constellations,
+     *      Regions,
+     *      Types
+     *
+     * @param array $ids
+     * @return UniverseNames
+     */
+    public function universeNames(array $ids) {
+        $returnValue = null;
+
+        $this->setEsiMethod('post');
+        $this->setEsiPostParameter($ids);
+        $this->setEsiRoute($this->esiEndpoints['universe_names']);
+        $this->setEsiVersion('v2');
+
+        $esiData = $this->callEsi();
+
+        if(!\is_null($esiData)) {
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new UniverseNames);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -285,7 +381,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new UniverseRegionsRegionId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new UniverseRegionsRegionId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -308,7 +413,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Universe\UniverseSystemJumps');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Universe\UniverseSystemJumps');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -331,7 +445,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Universe\UniverseSystemKills');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Universe\UniverseSystemKills');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -363,7 +486,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new UniverseSystemsSystemId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new UniverseSystemsSystemId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -395,7 +527,16 @@ class UniverseRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->map($esiData, new UniverseTypesTypeId);
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->map($esiData['responseBody'], new UniverseTypesTypeId);
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;

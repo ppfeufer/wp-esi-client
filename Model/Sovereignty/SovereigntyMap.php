@@ -19,104 +19,33 @@
 
 namespace WordPress\EsiClient\Model\Sovereignty;
 
+use \WordPress\EsiClient\Mapper\JsonMapper;
+
 class SovereigntyMap {
     /**
-     * allianceId
+     * solarSystems
      *
-     * @var int
+     * @var array
      */
-    protected $allianceId = null;
+    protected $solarSystems = null;
 
     /**
-     * corporationId
+     * getSolarSystems
      *
-     * @var int
+     * @return array
      */
-    protected $corporationId = null;
-
-    /**
-     * factionId
-     *
-     * @var int
-     */
-    protected $factionId = null;
-
-    /**
-     * systemId
-     *
-     * @var int
-     */
-    protected $systemId = null;
-
-    /**
-     * getAllianceId
-     *
-     * @return int
-     */
-    public function getAllianceId() {
-        return $this->allianceId;
+    public function getSolarSystems() {
+        return $this->solarSystems;
     }
 
     /**
-     * setAllianceId
+     * setSolarSystems
      *
-     * @param int $allianceId
+     * @param array $solarSystems
      */
-    protected function setAllianceId(int $allianceId) {
-        $this->allianceId = $allianceId;
-    }
+    protected function setSolarSystems(array $solarSystems) {
+        $mapper = new JsonMapper;
 
-    /**
-     * getCorporationId
-     *
-     * @return int
-     */
-    public function getCorporationId() {
-        return $this->corporationId;
-    }
-
-    /**
-     * setCorporationId
-     *
-     * @param int $corporationId
-     */
-    protected function setCorporationId(int $corporationId) {
-        $this->corporationId = $corporationId;
-    }
-
-    /**
-     * getFactionId
-     *
-     * @return int
-     */
-    public function getFactionId() {
-        return $this->factionId;
-    }
-
-    /**
-     * setFactionId
-     *
-     * @param int $factionId
-     */
-    protected function setFactionId(int $factionId) {
-        $this->factionId = $factionId;
-    }
-
-    /**
-     * getSystemId
-     *
-     * @return int
-     */
-    public function getSystemId() {
-        return $this->systemId;
-    }
-
-    /**
-     * setSystemId
-     *
-     * @param int $systemId
-     */
-    protected function setSystemId(int $systemId) {
-        $this->systemId = $systemId;
+        $this->solarSystems = $mapper->mapArray($solarSystems, [], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyMap\System');
     }
 }

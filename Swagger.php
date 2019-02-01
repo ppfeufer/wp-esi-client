@@ -21,7 +21,8 @@ namespace WordPress\EsiClient;
 
 use \WordPress\EsiClient\ {
     Helper\RemoteHelper,
-    Mapper\JsonMapper
+    Mapper\JsonMapper,
+    Model\Error\EsiError
 };
 
 \defined('ABSPATH') or die();
@@ -192,13 +193,27 @@ class Swagger {
     }
 
     /**
+     * creating the appropriate Error object
+     *
+     * @param array $esiData
+     * @return EsiError
+     */
+    public function createErrorObject(array $esiData) {
+        $returnvalue = null;
+
+        if($esiData['responseCode'] !== 200) {
+            $returnvalue = $this->map($esiData['responseBody'], new EsiError($esiData['responseCode']));
+        }
+
+        return $returnvalue;
+    }
+
+    /**
      * Call ESI
      *
      * @return object ESI response as object
      */
     public function callEsi() {
-        $returnValue = null;
-
         if(!\is_a($this->remoteHelper, '\WordPress\EsiClient\Helper\Helper\RemoteHelper')) {
             $this->remoteHelper = new RemoteHelper;
         }
@@ -214,17 +229,30 @@ class Swagger {
 
         switch($this->getEsiMethod()) {
             case 'get':
-                $returnValue = $this->remoteHelper->getRemoteData($callUrl);
+                $remoteData = $this->remoteHelper->getRemoteData($callUrl);
                 break;
 
             case 'post':
-                $returnValue = $this->remoteHelper->getRemoteData($callUrl, $this->getEsiMethod(), $this->getEsiPostParameter());
+                $remoteData = $this->remoteHelper->getRemoteData($callUrl, $this->getEsiMethod(), $this->getEsiPostParameter());
                 break;
         }
 
         $this->resetFieldsToDefaults();
 
-        return $returnValue;
+        return $this->getResponseCodeAndBody($remoteData);
+    }
+
+    /**
+     * Get array with response code and body
+     *
+     * @param array $remoteData
+     * @return array
+     */
+    private function getResponseCodeAndBody(array $remoteData) {
+        return [
+            'responseCode' => \wp_remote_retrieve_response_code($remoteData),
+            'responseBody' => \wp_remote_retrieve_body($remoteData)
+        ];
     }
 
     /**

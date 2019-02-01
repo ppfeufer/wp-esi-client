@@ -2,8 +2,14 @@
 # Change Log
 
 ## [In Development](https://github.com/ppfeufer/wp-esi-client/tree/development)
-[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190109...development)
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190201...development)
 - in development
+
+## [v20190201](https://github.com/ppfeufer/wp-esi-client/tag/v20190109) - 2019-02-01
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190109...v20190201)
+### Added
+- UniverseNames Model
+- Errorhandling now returning an error object in case of an error instead of nothing
 
 ## [v20190109](https://github.com/ppfeufer/wp-esi-client/tag/v20190109) - 2019-01-09
 [Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20181226...v20190109)

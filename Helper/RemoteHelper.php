@@ -53,8 +53,8 @@ class RemoteHelper {
                 break;
         }
 
-        if(\wp_remote_retrieve_response_code($remoteData) === 200) {
-            $returnValue = \wp_remote_retrieve_body($remoteData);
+        if(\is_array($remoteData)) {
+            $returnValue = $remoteData;
         }
 
         return $returnValue;

@@ -53,7 +53,16 @@ class MetaRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Meta\Status');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Meta\Status');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -74,7 +83,16 @@ class MetaRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Meta\Status');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Meta\Status');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -95,7 +113,16 @@ class MetaRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Meta\Status');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Meta\Status');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
@@ -116,7 +143,16 @@ class MetaRepository extends Swagger {
         $esiData = $this->callEsi();
 
         if(!\is_null($esiData)) {
-            $returnValue = $this->mapArray($esiData, '\\WordPress\EsiClient\Model\Meta\Status');
+            switch($esiData['responseCode']) {
+                case 200:
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Meta\Status');
+                    break;
+
+                // Error ...
+                default:
+                    $returnValue = $this->createErrorObject($esiData);
+                    break;
+            }
         }
 
         return $returnValue;
