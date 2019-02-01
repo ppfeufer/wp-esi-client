@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId;
 
-class Planets {
+class Planet {
     /**
      * asteroidBelts
      *

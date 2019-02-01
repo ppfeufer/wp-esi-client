@@ -150,7 +150,7 @@ class UniverseSystemsSystemId {
     protected function setPlanets(array $planets) {
         $mapper = new JsonMapper;
 
-        $this->planets = $mapper->mapArray($planets, [], '\\WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Planets');
+        $this->planets = $mapper->mapArray($planets, [], '\\WordPress\EsiClient\Model\Universe\UniverseSystemsSystemId\Planet');
     }
 
     /**
