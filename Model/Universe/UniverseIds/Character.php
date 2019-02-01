@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Universe\UniverseIds;
 
-class Factions {
+class Character {
     /**
      * id
      *

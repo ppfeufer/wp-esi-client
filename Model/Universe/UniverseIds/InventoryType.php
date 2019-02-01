@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Universe\UniverseIds;
 
-class Stations {
+class InventoryType {
     /**
      * id
      *
