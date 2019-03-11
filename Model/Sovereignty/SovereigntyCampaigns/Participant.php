@@ -17,56 +17,56 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace WordPress\EsiClient\Model\Universe\UniverseIds;
+namespace WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns;
 
-class Corporations {
+class Participant {
     /**
-     * id
+     * allianceId
      *
      * @var int
      */
-    protected $id = null;
+    protected $allianceId = null;
 
     /**
-     * name
+     * score
      *
-     * @var string
+     * @var float
      */
-    protected $name = null;
+    protected $score = null;
 
     /**
-     * getId
+     * getAllianceId
      *
      * @return int
      */
-    public function getId() {
-        return $this->id;
+    public function getAllianceId() {
+        return $this->allianceId;
     }
 
     /**
-     * setId
+     * setAllianceId
      *
-     * @param int $id
+     * @param int $allianceId
      */
-    protected function setId(int $id) {
-        $this->id = $id;
+    protected function setAllianceId(int $allianceId) {
+        $this->allianceId = $allianceId;
     }
 
     /**
-     * getName
+     * getScore
      *
-     * @return string
+     * @return float
      */
-    public function getName() {
-        return $this->name;
+    public function getScore() {
+        return $this->score;
     }
 
     /**
-     * setName
+     * setScore
      *
-     * @param string $name
+     * @param float $score
      */
-    protected function setName(string $name) {
-        $this->name = $name;
+    protected function setScore(float $score) {
+        $this->score = $score;
     }
 }

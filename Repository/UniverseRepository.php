@@ -335,7 +335,7 @@ class UniverseRepository extends Swagger {
         $this->setEsiMethod('post');
         $this->setEsiPostParameter($ids);
         $this->setEsiRoute($this->esiEndpoints['universe_names']);
-        $this->setEsiVersion('v2');
+        $this->setEsiVersion('v3');
 
         $esiData = $this->callEsi();
 

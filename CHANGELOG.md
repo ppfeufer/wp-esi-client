@@ -2,10 +2,15 @@
 # Change Log
 
 ## [In Development](https://github.com/ppfeufer/wp-esi-client/tree/development)
-[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190201...development)
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190311...development)
 - in development
 
-## [v20190201](https://github.com/ppfeufer/wp-esi-client/tag/v20190109) - 2019-02-01
+## [v20190311](https://github.com/ppfeufer/wp-esi-client/tag/v20190311) - 2019-03-11
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190201...v20190311)
+### Changed
+- UniverseNames promoted to v3 - https://github.com/esi/esi-issues/compare/esi:bf95f69...esi:d748435
+
+## [v20190201](https://github.com/ppfeufer/wp-esi-client/tag/v20190201) - 2019-02-01
 [Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190109...v20190201)
 ### Added
 - UniverseNames Model
