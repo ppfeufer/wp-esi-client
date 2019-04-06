@@ -239,7 +239,7 @@ class Swagger {
 
         $this->resetFieldsToDefaults();
 
-        return $this->getResponseCodeAndBody($remoteData);
+        return $this->getResponseArray($remoteData);
     }
 
     /**
@@ -248,9 +248,10 @@ class Swagger {
      * @param array $remoteData
      * @return array
      */
-    private function getResponseCodeAndBody(array $remoteData) {
+    private function getResponseArray(array $remoteData) {
         return [
             'responseCode' => \wp_remote_retrieve_response_code($remoteData),
+            'responseHeader' => \wp_remote_retrieve_headers($remoteData),
             'responseBody' => \wp_remote_retrieve_body($remoteData)
         ];
     }
