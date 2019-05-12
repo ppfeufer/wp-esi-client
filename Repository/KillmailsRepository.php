@@ -19,10 +19,8 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use \WordPress\EsiClient\ {
-    Model\Killmails\KillmailsKillmailId,
-    Swagger
-};
+use \WordPress\EsiClient\Model\Killmails\KillmailId\KillmailHash;
+use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
 
@@ -41,7 +39,7 @@ class KillmailsRepository extends Swagger {
      *
      * @param int $killmailID The killmail ID to be queried
      * @param string $killmailHash The killmail hash for verification
-     * @return KillmailsKillmailId
+     * @return KillmailHash
      */
     public function killmailsKillmailIdKillmailHash(int $killmailID, string $killmailHash) {
         $returnValue = null;
@@ -59,7 +57,7 @@ class KillmailsRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new KillmailsKillmailId);
+                    $returnValue = $this->map($esiData['responseBody'], new KillmailHash);
                     break;
 
                 // Error ...

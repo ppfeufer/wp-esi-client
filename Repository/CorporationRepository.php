@@ -19,11 +19,9 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use \WordPress\EsiClient\ {
-    Model\Corporation\CorporationsCorporationId,
-    Model\Corporation\CorporationsCorporationIdIcons,
-    Swagger
-};
+use \WordPress\EsiClient\Model\Corporation\Corporations\CorporationId;
+use \WordPress\EsiClient\Model\Corporation\Corporations\CorporationId\Icons;
+use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
 
@@ -44,7 +42,7 @@ class CorporationRepository extends Swagger {
      * Public information about a corporation
      *
      * @param int $corporationID An EVE corporation ID
-     * @return CorporationsCorporationId
+     * @return CorporationId
      */
     public function corporationsCorporationId(int $corporationID) {
         $returnValue = null;
@@ -61,7 +59,7 @@ class CorporationRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new CorporationsCorporationId);
+                    $returnValue = $this->map($esiData['responseBody'], new CorporationId);
                     break;
 
                 // Error ...
@@ -78,7 +76,7 @@ class CorporationRepository extends Swagger {
      * Get corporation logos
      *
      * @param int $corporationID An EVE corporation ID
-     * @return CorporationsCorporationIdIcons
+     * @return Icons
      */
     public function corporationsCorporationIdIcons(int $corporationID) {
         $returnValue = null;
@@ -95,7 +93,7 @@ class CorporationRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new CorporationsCorporationIdIcons);
+                    $returnValue = $this->map($esiData['responseBody'], new Icons);
                     break;
 
                 // Error ...

@@ -19,11 +19,9 @@
 
 namespace WordPress\EsiClient;
 
-use \WordPress\EsiClient\ {
-    Helper\RemoteHelper,
-    Mapper\JsonMapper,
-    Model\Error\EsiError
-};
+use \WordPress\EsiClient\Helper\RemoteHelper;
+use \WordPress\EsiClient\Mapper\JsonMapper;
+use \WordPress\EsiClient\Model\Error\EsiError;
 
 \defined('ABSPATH') or die();
 

@@ -19,10 +19,7 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use \WordPress\EsiClient\ {
-    Model\Insurance\InsurancePrices,
-    Swagger
-};
+use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
 
@@ -40,7 +37,7 @@ class InsuranceRepository extends Swagger {
      * Shows insurance prices for type Ids
      *
      * @param string $language
-     * @return InsurancePrices
+     * @return \WordPress\EsiClient\Model\Insurance\Prices
      */
     public function insurancePrices(string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -59,7 +56,7 @@ class InsuranceRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray(\json_encode(['effects' => $esiData['responseBody']]), '\WordPress\EsiClient\Model\Insurance\InsurancePrices');
+                    $returnValue = $this->mapArray(\json_encode(['effects' => $esiData['responseBody']]), '\WordPress\EsiClient\Model\Insurance\Prices');
                     break;
 
                 // Error ...

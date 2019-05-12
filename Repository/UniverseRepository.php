@@ -19,18 +19,15 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use \WordPress\EsiClient\ {
-    Model\Universe\UniverseAsteroidBeltsAsteroidBeltId,
-    Model\Universe\UniverseCategoriesCategoryId,
-    Model\Universe\UniverseConstellationsConstellationId,
-    Model\Universe\UniverseGroupsGroupId,
-    Model\Universe\UniverseIds,
-    Model\Universe\UniverseNames,
-    Model\Universe\UniverseRegionsRegionId,
-    Model\Universe\UniverseSystemsSystemId,
-    Model\Universe\UniverseTypesTypeId,
-    Swagger
-};
+use \WordPress\EsiClient\Model\Universe\Asteroidbelts\AsteroidbeltId;
+use \WordPress\EsiClient\Model\Universe\Categories\CategoryId;
+use \WordPress\EsiClient\Model\Universe\Constellations\ConstellationId;
+use \WordPress\EsiClient\Model\Universe\Groups\GroupId;
+use \WordPress\EsiClient\Model\Universe\Ids;
+use \WordPress\EsiClient\Model\Universe\Names;
+use \WordPress\EsiClient\Model\Universe\Regions\RegionId;
+use \WordPress\EsiClient\Model\Universe\Systems\SystemId;
+use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
 
@@ -76,7 +73,7 @@ class UniverseRepository extends Swagger {
      * Get all character ancestries
      *
      * @param string $language
-     * @return array of \WordPress\EsiClient\Model\Universe\UniverseAncestries
+     * @return array of \WordPress\EsiClient\Model\Universe\Ancestries
      */
     public function universeAncestries(string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -98,7 +95,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Universe\UniverseAncestries');
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Universe\Ancestries');
                     break;
 
                 // Error ...
@@ -115,7 +112,7 @@ class UniverseRepository extends Swagger {
      * Get information on an asteroid belt
      *
      * @param int $asteroidBeltId
-     * @return UniverseAsteroidBeltsAsteroidBeltId
+     * @return AsteroidbeltId
      */
     public function universeAsteroidBeltsAsteroidBeltId(int $asteroidBeltId) {
         $returnValue = null;
@@ -132,7 +129,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new UniverseAsteroidBeltsAsteroidBeltId);
+                    $returnValue = $this->map($esiData['responseBody'], new AsteroidbeltId);
                     break;
 
                 // Error ...
@@ -150,7 +147,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $constellationId An EVE constellation ID
      * @param string $language
-     * @return UniverseConstellationsConstellationId
+     * @return ConstellationId
      */
     public function universeConstellationsConstellationId(int $constellationId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -173,7 +170,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new UniverseConstellationsConstellationId);
+                    $returnValue = $this->map($esiData['responseBody'], new ConstellationId);
                     break;
 
                 // Error ...
@@ -191,7 +188,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $groupId An Eve item group ID
      * @param string $language
-     * @return UniverseGroupsGroupId
+     * @return GroupId
      */
     public function universeGroupsGroupId(int $groupId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -214,7 +211,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new UniverseGroupsGroupId);
+                    $returnValue = $this->map($esiData['responseBody'], new GroupId);
                     break;
 
                 // Error ...
@@ -232,7 +229,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $categoryId An Eve item group ID
      * @param string $language
-     * @return UniverseGroupsGroupId
+     * @return CategoryId
      */
     public function universeCategoriesCategoryId(int $categoryId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -255,7 +252,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new UniverseCategoriesCategoryId);
+                    $returnValue = $this->map($esiData['responseBody'], new CategoryId);
                     break;
 
                 // Error ...
@@ -278,7 +275,7 @@ class UniverseRepository extends Swagger {
      *
      * @param array $names The names to resolve
      * @param string $language
-     * @return UniverseIds
+     * @return Ids
      */
     public function universeIds(array $names, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -301,7 +298,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new UniverseIds);
+                    $returnValue = $this->map($esiData['responseBody'], new Ids);
                     break;
 
                 // Error ...
@@ -327,7 +324,7 @@ class UniverseRepository extends Swagger {
      *      Types
      *
      * @param array $ids
-     * @return UniverseNames
+     * @return Names
      */
     public function universeNames(array $ids) {
         $returnValue = null;
@@ -342,7 +339,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new UniverseNames);
+                    $returnValue = $this->map($esiData['responseBody'], new Names);
                     break;
 
                 // Error ...
@@ -360,7 +357,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $regionId An EVE region ID
      * @param string $language
-     * @return UniverseRegionsRegionId
+     * @return RegionId
      */
     public function universeRegionsRegionId(int $regionId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -383,7 +380,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new UniverseRegionsRegionId);
+                    $returnValue = $this->map($esiData['responseBody'], new RegionId);
                     break;
 
                 // Error ...
@@ -401,7 +398,7 @@ class UniverseRepository extends Swagger {
      * ending at the timestamp of the Last-Modified header, excluding
      * wormhole space. Only systems with jumps will be listed
      *
-     * @return array of \WordPress\EsiClient\Model\Universe\UniverseSystemJumps
+     * @return array of \WordPress\EsiClient\Model\Universe\SystemJumps
      */
     public function universeSystemJumps() {
         $returnValue = null;
@@ -415,7 +412,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Universe\UniverseSystemJumps');
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Universe\SystemJumps');
                     break;
 
                 // Error ...
@@ -433,7 +430,7 @@ class UniverseRepository extends Swagger {
      * the last hour ending at the timestamp of the Last-Modified header,
      * excluding wormhole space. Only systems with kills will be listed
      *
-     * @return array of \WordPress\EsiClient\Model\Universe\UniverseSystemKills
+     * @return array of \WordPress\EsiClient\Model\Universe\SystemKills
      */
     public function universeSystemKills() {
         $returnValue = null;
@@ -447,7 +444,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Universe\UniverseSystemKills');
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Universe\SystemKills');
                     break;
 
                 // Error ...
@@ -465,7 +462,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $systemId An EVE solar system ID
      * @param string $language
-     * @return UniverseSystemsSystemId
+     * @return SystemId
      */
     public function universeSystemsSystemId(int $systemId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -488,7 +485,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new UniverseSystemsSystemId);
+                    $returnValue = $this->map($esiData['responseBody'], new SystemId);
                     break;
 
                 // Error ...
@@ -506,7 +503,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $typeId An Eve item type ID
      * @param string $language
-     * @return UniverseTypesTypeId
+     * @return \WordPress\EsiClient\Model\Universe\Types\TypeId
      */
     public function universeTypesTypeId(int $typeId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -529,7 +526,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new UniverseTypesTypeId);
+                    $returnValue = $this->map($esiData['responseBody'], new \WordPress\EsiClient\Model\Universe\Types\TypeId);
                     break;
 
                 // Error ...
