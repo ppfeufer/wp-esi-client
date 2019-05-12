@@ -122,7 +122,7 @@ class Item {
     protected function setItems(array $items) {
         $mapper = new JsonMapper;
 
-        $this->items = $mapper->mapArray($items, [], '\\WordPress\EsiClient\Model\Killmails\KillmailsKillmailId\ItemItems');
+        $this->items = $mapper->mapArray($items, [], '\\WordPress\EsiClient\Model\Killmails\KillmailId\KillmailHash\Items');
     }
 
     /**

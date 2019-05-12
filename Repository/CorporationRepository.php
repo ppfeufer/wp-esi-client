@@ -19,8 +19,8 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use \WordPress\EsiClient\Model\Corporation\Corporations\CorporationId;
-use \WordPress\EsiClient\Model\Corporation\Corporations\CorporationId\Icons;
+use \WordPress\EsiClient\Model\Corporations\CorporationId;
+use \WordPress\EsiClient\Model\Corporations\CorporationId\Icons;
 use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();

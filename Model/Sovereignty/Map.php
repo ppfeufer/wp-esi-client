@@ -46,6 +46,6 @@ class Map {
     protected function setSolarSystems(array $solarSystems) {
         $mapper = new JsonMapper;
 
-        $this->solarSystems = $mapper->mapArray($solarSystems, [], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyMap\System');
+        $this->solarSystems = $mapper->mapArray($solarSystems, [], '\\WordPress\EsiClient\Model\Sovereignty\Map\Systems');
     }
 }

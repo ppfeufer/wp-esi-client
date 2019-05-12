@@ -19,7 +19,7 @@
 
 namespace WordPress\EsiClient\Model\Universe\Types\TypeId\Dogma;
 
-class Effect {
+class Effects {
     /**
      * effectId
      *

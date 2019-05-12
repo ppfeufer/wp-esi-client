@@ -21,7 +21,7 @@ namespace WordPress\EsiClient\Model\Killmails\KillmailId;
 
 use \DateTime;
 use \WordPress\EsiClient\Mapper\JsonMapper;
-use \WordPress\EsiClient\Model\Killmails\Killmail\Id\Killmail\Hash\Victim;
+use \WordPress\EsiClient\Model\Killmails\KillmailId\KillmailHash\Victim;
 
 class KillmailHash {
     /**
@@ -100,7 +100,7 @@ class KillmailHash {
     protected function setAttackers(array $attackers) {
         $mapper = new JsonMapper;
 
-        $this->attackers = $mapper->mapArray($attackers, [], '\\WordPress\EsiClient\Model\Killmails\Killmail\Id\Killmail\Attackers');
+        $this->attackers = $mapper->mapArray($attackers, [], '\\WordPress\EsiClient\Model\Killmails\KillmailId\KillmailHash\Attackers');
     }
 
     /**

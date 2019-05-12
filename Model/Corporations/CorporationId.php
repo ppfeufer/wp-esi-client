@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace WordPress\EsiClient\Model\Corporation\Corporations;
+namespace WordPress\EsiClient\Model\Corporations;
 
 use \DateTime;
 
