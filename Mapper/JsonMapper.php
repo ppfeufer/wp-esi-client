@@ -597,9 +597,14 @@ class JsonMapper {
      */
     public function createInstance(string $class, bool $useParameter = false, $jvalue = null) {
         if(isset($this->classMap[$class])) {
+            $isCallable = false;
+
             if(\is_callable($mapper = $this->classMap[$class])) {
+                $isCallable = true;
                 $class = $mapper($class, $jvalue);
-            } else {
+            }
+
+            if($isCallable === false) {
                 $class = $this->classMap[$class];
             }
         }
