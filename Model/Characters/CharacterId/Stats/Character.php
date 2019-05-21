@@ -20,5 +20,78 @@
 namespace WordPress\EsiClient\Model\Characters\CharacterId\Stats;
 
 class Character {
-    //put your code here
+    /**
+     * daysOfActivity
+     *
+     * @var int
+     */
+    protected $daysOfActivity = null;
+
+    /**
+     * minutes
+     *
+     * @var int
+     */
+    protected $minutes = null;
+
+    /**
+     * sessionsStarted
+     *
+     * @var int
+     */
+    protected $sessionsStarted = null;
+
+    /**
+     * getDaysOfActivity
+     *
+     * @return int
+     */
+    public function getDaysOfActivity() {
+        return $this->daysOfActivity;
+    }
+
+    /**
+     * getMinutes
+     *
+     * @return int
+     */
+    public function getMinutes() {
+        return $this->minutes;
+    }
+
+    /**
+     * getSessionsStarted
+     *
+     * @return int
+     */
+    public function getSessionsStarted() {
+        return $this->sessionsStarted;
+    }
+
+    /**
+     * setDaysOfActivity
+     *
+     * @param int $daysOfActivity
+     */
+    protected function setDaysOfActivity(int $daysOfActivity) {
+        $this->daysOfActivity = $daysOfActivity;
+    }
+
+    /**
+     * setMinutes
+     *
+     * @param int $minutes
+     */
+    protected function setMinutes(int $minutes) {
+        $this->minutes = $minutes;
+    }
+
+    /**
+     * setSessionsStarted
+     *
+     * @param int $sessionsStarted
+     */
+    protected function setSessionsStarted(int $sessionsStarted) {
+        $this->sessionsStarted = $sessionsStarted;
+    }
 }
