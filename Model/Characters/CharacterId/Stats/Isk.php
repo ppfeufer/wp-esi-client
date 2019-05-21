@@ -20,5 +20,53 @@
 namespace WordPress\EsiClient\Model\Characters\CharacterId\Stats;
 
 class Isk {
-    //put your code here
+    /**
+     * in
+     *
+     * @var int
+     */
+    protected $in = null;
+
+    /**
+     * out
+     *
+     * @var int
+     */
+    protected $out = null;
+
+    /**
+     * getIn
+     *
+     * @return int
+     */
+    public function getIn() {
+        return $this->in;
+    }
+
+    /**
+     * getOut
+     *
+     * @return int
+     */
+    public function getOut() {
+        return $this->out;
+    }
+
+    /**
+     * setIn
+     *
+     * @param int $in
+     */
+    protected function setIn(int $in) {
+        $this->in = $in;
+    }
+
+    /**
+     * setOut
+     *
+     * @param int $out
+     */
+    protected function setOut(int $out) {
+        $this->out = $out;
+    }
 }
