@@ -604,11 +604,11 @@ class JsonMapper {
             }
         }
 
-        if($useParameter) {
+        if($useParameter === true) {
             return new $class($jvalue);
-        } else {
-            return (new ReflectionClass($class))->newInstanceWithoutConstructor();
         }
+
+        return (new ReflectionClass($class))->newInstanceWithoutConstructor();
     }
 
     /**
