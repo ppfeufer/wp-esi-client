@@ -20,5 +20,53 @@
 namespace WordPress\EsiClient\Model\Characters\CharacterId\Stats;
 
 class Inventory {
-    //put your code here
+    /**
+     * abandonLootQuantity
+     *
+     * @var int
+     */
+    protected $abandonLootQuantity = null;
+
+    /**
+     * trashItemQuantity
+     *
+     * @var int
+     */
+    protected $trashItemQuantity = null;
+
+    /**
+     * getAbandonLootQuantity
+     *
+     * @return int
+     */
+    public function getAbandonLootQuantity() {
+        return $this->abandonLootQuantity;
+    }
+
+    /**
+     * getTrashItemQuantity
+     *
+     * @return int
+     */
+    public function getTrashItemQuantity() {
+        return $this->trashItemQuantity;
+    }
+
+    /**
+     * setAbandonLootQuantity
+     *
+     * @param int $abandonLootQuantity
+     */
+    protected function setAbandonLootQuantity(int $abandonLootQuantity) {
+        $this->abandonLootQuantity = $abandonLootQuantity;
+    }
+
+    /**
+     * setTrashItemQuantity
+     *
+     * @param int $trashItemQuantity
+     */
+    protected function setTrashItemQuantity(int $trashItemQuantity) {
+        $this->trashItemQuantity = $trashItemQuantity;
+    }
 }
