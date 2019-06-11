@@ -4,6 +4,10 @@ A simple and lightweight ESI client that can be used in WordPress plugins and pr
 
 To use this in your WordPress plugin, make sure your plugin fetches the master.zip file from this repo and extracts it, preferrably into `/wp-content/EsiClient`.
 
+## Requirements
+- PHP 7.2 or newer
+- WordPress 5.0 or newer
+
 ## How To
 Make sure that you implement a method in you register_activation_hook that checks the Esi Client version to the one you are using in your plugin.
 
