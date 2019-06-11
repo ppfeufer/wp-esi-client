@@ -334,7 +334,7 @@ class Stats {
      *
      * @param int $year
      */
-    protected function setYear($year) {
+    protected function setYear(int $year) {
         $this->year = $year;
     }
 }
