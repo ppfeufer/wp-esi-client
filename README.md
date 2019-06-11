@@ -7,6 +7,7 @@ To use this in your WordPress plugin, make sure your plugin fetches the master.z
 ## Requirements
 - PHP 7.2 or newer
 - WordPress 5.0 or newer
+- mySQL `max_allowed_packet=10M` or more
 
 ## How To
 Make sure that you implement a method in you register_activation_hook that checks the Esi Client version to the one you are using in your plugin.
