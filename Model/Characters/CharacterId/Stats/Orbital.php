@@ -20,5 +20,78 @@
 namespace WordPress\EsiClient\Model\Characters\CharacterId\Stats;
 
 class Orbital {
-    //put your code here
+    /**
+     * strikeCharactersKilled
+     *
+     * @var int
+     */
+    protected $strikeCharactersKilled = 0;
+
+    /**
+     * strikeDamageToPlayersArmorAmount
+     *
+     * @var int
+     */
+    protected $strikeDamageToPlayersArmorAmount = 0;
+
+    /**
+     * strikeDamageToPlayersShieldAmount
+     *
+     * @var int
+     */
+    protected $strikeDamageToPlayersShieldAmount = 0;
+
+    /**
+     * getStrikeCharactersKilled
+     *
+     * @return int
+     */
+    public function getStrikeCharactersKilled() {
+        return $this->strikeCharactersKilled;
+    }
+
+    /**
+     * getStrikeDamageToPlayersArmorAmount
+     *
+     * @return int
+     */
+    public function getStrikeDamageToPlayersArmorAmount() {
+        return $this->strikeDamageToPlayersArmorAmount;
+    }
+
+    /**
+     * getStrikeDamageToPlayersShieldAmount
+     *
+     * @return int
+     */
+    public function getStrikeDamageToPlayersShieldAmount() {
+        return $this->strikeDamageToPlayersShieldAmount;
+    }
+
+    /**
+     * setStrikeCharactersKilled
+     *
+     * @param int $strikeCharactersKilled
+     */
+    protected function setStrikeCharactersKilled(int $strikeCharactersKilled) {
+        $this->strikeCharactersKilled = $strikeCharactersKilled;
+    }
+
+    /**
+     * setStrikeDamageToPlayersArmorAmount
+     *
+     * @param int $strikeDamageToPlayersArmorAmount
+     */
+    protected function setStrikeDamageToPlayersArmorAmount(int $strikeDamageToPlayersArmorAmount) {
+        $this->strikeDamageToPlayersArmorAmount = $strikeDamageToPlayersArmorAmount;
+    }
+
+    /**
+     * setStrikeDamageToPlayersShieldAmount
+     *
+     * @param int $strikeDamageToPlayersShieldAmount
+     */
+    protected function setStrikeDamageToPlayersShieldAmount(int $strikeDamageToPlayersShieldAmount) {
+        $this->strikeDamageToPlayersShieldAmount = $strikeDamageToPlayersShieldAmount;
+    }
 }
