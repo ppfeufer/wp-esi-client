@@ -20,5 +20,103 @@
 namespace WordPress\EsiClient\Model\Characters\CharacterId\Stats;
 
 class Pve {
-    //put your code here
+    /**
+     * dungeonsCompletedAgent
+     *
+     * @var int
+     */
+    protected $dungeonsCompletedAgent = 0;
+
+    /**
+     * dungeonsCompletedDistribution
+     *
+     * @var int
+     */
+    protected $dungeonsCompletedDistribution = 0;
+
+    /**
+     * missionsSucceeded
+     *
+     * @var int
+     */
+    protected $missionsSucceeded = 0;
+
+    /**
+     * missionsSucceededEpicArc
+     *
+     * @var int
+     */
+    protected $missionsSucceededEpicArc = 0;
+
+    /**
+     * getDungeonsCompletedAgent
+     *
+     * @return int
+     */
+    public function getDungeonsCompletedAgent() {
+        return $this->dungeonsCompletedAgent;
+    }
+
+    /**
+     * getDungeonsCompletedDistribution
+     *
+     * @return int
+     */
+    public function getDungeonsCompletedDistribution() {
+        return $this->dungeonsCompletedDistribution;
+    }
+
+    /**
+     * getMissionsSucceeded
+     *
+     * @return int
+     */
+    public function getMissionsSucceeded() {
+        return $this->missionsSucceeded;
+    }
+
+    /**
+     * getMissionsSucceededEpicArc
+     *
+     * @return int
+     */
+    public function getMissionsSucceededEpicArc() {
+        return $this->missionsSucceededEpicArc;
+    }
+
+    /**
+     * setDungeonsCompletedAgent
+     *
+     * @param int $dungeonsCompletedAgent
+     */
+    protected function setDungeonsCompletedAgent(int $dungeonsCompletedAgent) {
+        $this->dungeonsCompletedAgent = $dungeonsCompletedAgent;
+    }
+
+    /**
+     * setDungeonsCompletedDistribution
+     *
+     * @param int $dungeonsCompletedDistribution
+     */
+    protected function setDungeonsCompletedDistribution(int $dungeonsCompletedDistribution) {
+        $this->dungeonsCompletedDistribution = $dungeonsCompletedDistribution;
+    }
+
+    /**
+     * setMissionsSucceeded
+     *
+     * @param int $missionsSucceeded
+     */
+    protected function setMissionsSucceeded(int $missionsSucceeded) {
+        $this->missionsSucceeded = $missionsSucceeded;
+    }
+
+    /**
+     * setMissionsSucceededEpicArc
+     *
+     * @param int $missionsSucceededEpicArc
+     */
+    protected function setMissionsSucceededEpicArc(int $missionsSucceededEpicArc) {
+        $this->missionsSucceededEpicArc = $missionsSucceededEpicArc;
+    }
 }
