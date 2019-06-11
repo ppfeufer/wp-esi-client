@@ -31,7 +31,7 @@ class Swagger {
      *
      * @var int
      */
-    private $esiClientVersion = 20190311;
+    private $esiClientVersion = 20190611;
 
     /**
      * ESI URL

@@ -2,8 +2,13 @@
 # Change Log
 
 ## [In Development](https://github.com/ppfeufer/wp-esi-client/tree/development)
-[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190311...development)
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190611...development)
 - in development
+
+## [v20190611](https://github.com/ppfeufer/wp-esi-client/tag/v20190611) - 2019-06-11
+[Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190311...v20190611)
+### Changed
+- Complete rewrite of all Modells and Repositories. **!! This is a breaking change !!**
 
 ## [v20190311](https://github.com/ppfeufer/wp-esi-client/tag/v20190311) - 2019-03-11
 [Full Changelog](https://github.com/ppfeufer/wp-esi-client/compare/v20190201...v20190311)
