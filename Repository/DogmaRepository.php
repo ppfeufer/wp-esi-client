@@ -19,12 +19,10 @@
 
 namespace WordPress\EsiClient\Repository;
 
-use \WordPress\EsiClient\ {
-    Model\Dogma\DogmaAttributes,
-    Model\Dogma\DogmaAttributesAttributeId,
-    Model\Dogma\DogmaEffects,
-    Swagger
-};
+use \WordPress\EsiClient\Model\Dogma\Attributes;
+use \WordPress\EsiClient\Model\Dogma\Attributes\AttributeId;
+use \WordPress\EsiClient\Model\Dogma\Effects;
+use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
 
@@ -45,7 +43,7 @@ class DogmaRepository extends Swagger {
     /**
      * Get a list of dogma attribute ids
      *
-     * @return DogmaAttributes
+     * @return Attributes
      */
     public function dogmaAttributes() {
         $this->setEsiRoute($this->esiEndpoints['dogma_attributes']);
@@ -56,7 +54,7 @@ class DogmaRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray(\json_encode(['attributes' => $esiData['responseBody']]), '\WordPress\EsiClient\Model\Dogma\DogmaAttributes');
+                    $returnValue = $this->mapArray(\json_encode(['attributes' => $esiData['responseBody']]), '\WordPress\EsiClient\Model\Dogma\Attributes');
                     break;
 
                 // Error ...
@@ -73,7 +71,7 @@ class DogmaRepository extends Swagger {
      * Get information on a dogma attribute
      *
      * @param int $attributeId A dogma attribute ID
-     * @return DogmaAttributesAttributeId
+     * @return AttributeId
      */
     public function dogmaAttributesAttributeId(int $attributeId) {
         $returnValue = null;
@@ -90,7 +88,7 @@ class DogmaRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new DogmaAttributesAttributeId);
+                    $returnValue = $this->map($esiData['responseBody'], new AttributeId);
                     break;
 
                 // Error ...
@@ -106,7 +104,7 @@ class DogmaRepository extends Swagger {
     /**
      * Get a list of dogma attribute ids
      *
-     * @return DogmaEffects
+     * @return Effects
      */
     public function dogmaEffects() {
         $this->setEsiRoute($this->esiEndpoints['dogma_effects']);
@@ -117,7 +115,7 @@ class DogmaRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray(\json_encode(['effects' => $esiData['responseBody']]), '\WordPress\EsiClient\Model\Dogma\DogmaEffects');
+                    $returnValue = $this->mapArray(\json_encode(['effects' => $esiData['responseBody']]), '\WordPress\EsiClient\Model\Dogma\Effects');
                     break;
 
                 // Error ...

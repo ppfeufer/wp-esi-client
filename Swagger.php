@@ -19,11 +19,9 @@
 
 namespace WordPress\EsiClient;
 
-use \WordPress\EsiClient\ {
-    Helper\RemoteHelper,
-    Mapper\JsonMapper,
-    Model\Error\EsiError
-};
+use \WordPress\EsiClient\Helper\RemoteHelper;
+use \WordPress\EsiClient\Mapper\JsonMapper;
+use \WordPress\EsiClient\Model\Error\EsiError;
 
 \defined('ABSPATH') or die();
 
@@ -33,7 +31,7 @@ class Swagger {
      *
      * @var int
      */
-    private $esiClientVersion = 20190311;
+    private $esiClientVersion = 20190611;
 
     /**
      * ESI URL
@@ -239,7 +237,7 @@ class Swagger {
 
         $this->resetFieldsToDefaults();
 
-        return $this->getResponseCodeAndBody($remoteData);
+        return $this->getResponseArray($remoteData);
     }
 
     /**
@@ -248,9 +246,10 @@ class Swagger {
      * @param array $remoteData
      * @return array
      */
-    private function getResponseCodeAndBody(array $remoteData) {
+    private function getResponseArray(array $remoteData) {
         return [
             'responseCode' => \wp_remote_retrieve_response_code($remoteData),
+            'responseHeader' => \wp_remote_retrieve_headers($remoteData),
             'responseBody' => \wp_remote_retrieve_body($remoteData)
         ];
     }

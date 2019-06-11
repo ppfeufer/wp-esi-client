@@ -19,6 +19,7 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use \WordPress\EsiClient\Model\Sovereignty\Map;
 use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
@@ -38,7 +39,7 @@ class SovereigntyRepository extends Swagger {
     /**
      * Shows sovereignty data for campaigns
      *
-     * @return array of \WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns
+     * @return array of \WordPress\EsiClient\Model\Sovereignty\Campaigns
      */
     public function sovereigntyCampaigns() {
         $returnValue = null;
@@ -52,7 +53,7 @@ class SovereigntyRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyCampaigns');
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Sovereignty\Campaigns');
                     break;
 
                 // Error ...
@@ -68,7 +69,7 @@ class SovereigntyRepository extends Swagger {
     /**
      * Shows sovereignty information for solar systems
      *
-     * @return array of \WordPress\EsiClient\Model\Sovereignty\SovereigntyMap
+     * @return array of \WordPress\EsiClient\Model\Sovereignty\Map
      */
     public function sovereigntyMap() {
         $returnValue = null;
@@ -82,7 +83,7 @@ class SovereigntyRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map(\json_encode(['solar_systems' => \json_decode($esiData['responseBody'])]), new \WordPress\EsiClient\Model\Sovereignty\SovereigntyMap);
+                    $returnValue = $this->map(\json_encode(['solar_systems' => \json_decode($esiData['responseBody'])]), new Map);
                     break;
 
                 // Error ...
@@ -98,7 +99,7 @@ class SovereigntyRepository extends Swagger {
     /**
      * Shows sovereignty data for structures
      *
-     * @return array of \WordPress\EsiClient\Model\Sovereignty\SovereigntyStructures
+     * @return array of \WordPress\EsiClient\Model\Sovereignty\Structures
      */
     public function sovereigntyStructures() {
         $returnValue = null;
@@ -112,7 +113,7 @@ class SovereigntyRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Sovereignty\SovereigntyStructures');
+                    $returnValue = $this->mapArray($esiData['responseBody'], '\\WordPress\EsiClient\Model\Sovereignty\Structures');
                     break;
 
                 // Error ...

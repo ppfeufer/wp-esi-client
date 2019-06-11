@@ -18,13 +18,11 @@
  */
 namespace WordPress\EsiClient\Repository;
 
-use \WordPress\EsiClient\ {
-    Model\Alliance\Alliances,
-    Model\Alliance\AlliancesAllianceId,
-    Model\Alliance\AlliancesAllianceIdCorporations,
-    Model\Alliance\AlliancesAllianceIdIcons,
-    Swagger
-};
+use \WordPress\EsiClient\Model\Alliance\Alliances;
+use \WordPress\EsiClient\Model\Alliances\AllianceId;
+use \WordPress\EsiClient\Model\Alliances\AllianceId\Corporations;
+use \WordPress\EsiClient\Model\Alliances\AllianceId\Icons;
+use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
 
@@ -75,7 +73,7 @@ class AllianceRepository extends Swagger {
      * Public information about an alliance
      *
      * @param int $allianceID An EVE alliance ID
-     * @return AlliancesAllianceId
+     * @return AllianceId
      */
     public function alliancesAllianceId(int $allianceID) {
         $returnValue = null;
@@ -92,7 +90,7 @@ class AllianceRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new AlliancesAllianceId);
+                    $returnValue = $this->map($esiData['responseBody'], new AllianceId);
                     break;
 
                 // Error ...
@@ -108,7 +106,7 @@ class AllianceRepository extends Swagger {
     /**
      * List all current member corporations of an alliance
      *
-     * @return AlliancesAllianceIdCorporations
+     * @return Corporations
      */
     public function alliancesAllianceIdCorporations() {
         $returnValue = null;
@@ -122,7 +120,7 @@ class AllianceRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->mapArray(\json_encode(['corporations' => $esiData['responseBody']]), '\\WordPress\EsiClient\Model\Alliance\AlliancesAllianceIdCorporations');
+                    $returnValue = $this->mapArray(\json_encode(['corporations' => $esiData['responseBody']]), '\\WordPress\EsiClient\Model\Alliance\Alliances\AllianceId\Corporations');
                     break;
 
                 // Error ...
@@ -139,7 +137,7 @@ class AllianceRepository extends Swagger {
      * Get alliance logos
      *
      * @param int $allianceID An EVE alliance ID
-     * @return AlliancesAllianceIdIcons
+     * @return Icons
      */
     public function alliancesAllianceIdIcons(int $allianceID) {
         $returnValue = null;
@@ -156,7 +154,7 @@ class AllianceRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new AlliancesAllianceIdIcons);
+                    $returnValue = $this->map($esiData['responseBody'], new Icons);
                     break;
 
                 // Error ...
