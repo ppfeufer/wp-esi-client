@@ -25,657 +25,658 @@ class Combat {
      *
      * @var int
      */
-    protected $capDrainedbyNpc = null;
+    protected $capDrainedbyNpc = 0;
 
     /**
      * capDrainedbyPc
+     *
      * @var int
      */
-    protected $capDrainedbyPc = null;
+    protected $capDrainedbyPc = 0;
 
     /**
      * capDrainingPc
      *
      * @var int
      */
-    protected $capDrainingPc = null;
+    protected $capDrainingPc = 0;
 
     /**
      * criminalFlagSet
      *
      * @var int
      */
-    protected $criminalFlagSet = null;
+    protected $criminalFlagSet = 0;
 
     /**
      * damageFromNpcCsAmount
      *
      * @var int
      */
-    protected $damageFromNpcCsAmount = null;
+    protected $damageFromNpcCsAmount = 0;
 
     /**
      * damageFromNpcCsNumShots
      *
      * @var int
      */
-    protected $damageFromNpcCsNumShots = null;
+    protected $damageFromNpcCsNumShots = 0;
 
     /**
      * damageFromPlayersBombAmount
      *
      * @var int
      */
-    protected $damageFromPlayersBombAmount = null;
+    protected $damageFromPlayersBombAmount = 0;
 
     /**
      * damageFromPlayersBombNumShots
      *
      * @var int
      */
-    protected $damageFromPlayersBombNumShots = null;
+    protected $damageFromPlayersBombNumShots = 0;
 
     /**
      * damageFromPlayersCombatDroneAmount
      *
      * @var int
      */
-    protected $damageFromPlayersCombatDroneAmount = null;
+    protected $damageFromPlayersCombatDroneAmount = 0;
 
     /**
      * damageFromPlayersCombatDroneNumShots
      *
      * @var int
      */
-    protected $damageFromPlayersCombatDroneNumShots = null;
+    protected $damageFromPlayersCombatDroneNumShots = 0;
 
     /**
      * damageFromPlayersEnergyAmount
      *
      * @var int
      */
-    protected $damageFromPlayersEnergyAmount = null;
+    protected $damageFromPlayersEnergyAmount = 0;
 
     /**
      * damageFromPlayersEnergyNumShots
      *
      * @var int
      */
-    protected $damageFromPlayersEnergyNumShots = null;
+    protected $damageFromPlayersEnergyNumShots = 0;
 
     /**
      * damageFromPlayersFighterBomberAmount
      *
      * @var int
      */
-    protected $damageFromPlayersFighterBomberAmount = null;
+    protected $damageFromPlayersFighterBomberAmount = 0;
 
     /**
      * damageFromPlayersFighterBomberNumShots
      *
      * @var int
      */
-    protected $damageFromPlayersFighterBomberNumShots = null;
+    protected $damageFromPlayersFighterBomberNumShots = 0;
 
     /**
      * damageFromPlayersFighterDrone
      *
      * @var int
      */
-    protected $damageFromPlayersFighterDroneAmount = null;
+    protected $damageFromPlayersFighterDroneAmount = 0;
 
     /**
      * damageFromPlayersFighterDroneNumShots
      *
      * @var int
      */
-    protected $damageFromPlayersFighterDroneNumShots = null;
+    protected $damageFromPlayersFighterDroneNumShots = 0;
 
     /**
      * damageFromPlayersHybrid
      *
      * @var int
      */
-    protected $damageFromPlayersHybridAmount = null;
+    protected $damageFromPlayersHybridAmount = 0;
 
     /**
      * damageFromPlayersHybridNumShots
      *
      * @var int
      */
-    protected $damageFromPlayersHybridNumShots = null;
+    protected $damageFromPlayersHybridNumShots = 0;
 
     /**
      * damageByPlayersMissileAmount
      *
      * @var int
      */
-    protected $damageByPlayersMissileAmount = null;
+    protected $damageByPlayersMissileAmount = 0;
 
     /**
      * damageByPlayersMissileNumShots
      *
      * @var int
      */
-    protected $damageByPlayersMissileNumShots = null;
+    protected $damageByPlayersMissileNumShots = 0;
 
     /**
      * damageByPlayersProjectileAmount
      *
      * @var int
      */
-    protected $damageByPlayersProjectileAmount = null;
+    protected $damageByPlayersProjectileAmount = 0;
 
     /**
      * damageByPlayersProjectileNumShots
      *
      * @var int
      */
-    protected $damageByPlayersProjectileNumShots = null;
+    protected $damageByPlayersProjectileNumShots = 0;
 
     /**
      * damageByPlayersSmartBombAmount
      *
      * @var int
      */
-    protected $damageByPlayersSmartBombAmount = null;
+    protected $damageByPlayersSmartBombAmount = 0;
 
     /**
      * damageByPlayersSmartBombNumShots
      *
      * @var int
      */
-    protected $damageByPlayersSmartBombNumShots = null;
+    protected $damageByPlayersSmartBombNumShots = 0;
 
     /**
      * damageByPlayersSuperAmount
      *
      * @var int
      */
-    protected $damageByPlayersSuperAmount = null;
+    protected $damageByPlayersSuperAmount = 0;
 
     /**
      * damageByPlayersSuperNumShots
      *
      * @var int
      */
-    protected $damageByPlayersSuperNumShots = null;
+    protected $damageByPlayersSuperNumShots = 0;
 
     /**
      * damageFromStructureTotalAmount
      *
      * @var int
      */
-    protected $damageFromStructureTotalAmount = null;
+    protected $damageFromStructureTotalAmount = 0;
 
     /**
      * damageFromStructureTotalNumShots
      *
      * @var int
      */
-    protected $damageFromStructureTotalNumShots = null;
+    protected $damageFromStructureTotalNumShots = 0;
 
     /**
      * damageToPlayersBombAmount
      *
      * @var int
      */
-    protected $damageToPlayersBombAmount = null;
+    protected $damageToPlayersBombAmount = 0;
 
     /**
      * damageToPlayersBombNumShots
      *
      * @var int
      */
-    protected $damageToPlayersBombNumShots = null;
+    protected $damageToPlayersBombNumShots = 0;
 
     /**
      * damageToPlayersCombatDroneAmount
      *
      * @var int
      */
-    protected $damageToPlayersCombatDroneAmount = null;
+    protected $damageToPlayersCombatDroneAmount = 0;
 
     /**
      * damageToPlayersCombatDroneNumShots
      *
      * @var int
      */
-    protected $damageToPlayersCombatDroneNumShots = null;
+    protected $damageToPlayersCombatDroneNumShots = 0;
 
     /**
      * damageToPlayersEnergyAmount
      *
      * @var int
      */
-    protected $damageToPlayersEnergyAmount = null;
+    protected $damageToPlayersEnergyAmount = 0;
 
     /**
      * damageToPlayersEnergyNumShots
      *
      * @var int
      */
-    protected $damageToPlayersEnergyNumShots = null;
+    protected $damageToPlayersEnergyNumShots = 0;
 
     /**
      * damageToPlayersFighterBomberAmount
      *
      * @var int
      */
-    protected $damageToPlayersFighterBomberAmount = null;
+    protected $damageToPlayersFighterBomberAmount = 0;
 
     /**
      * damageToPlayersFighterBomberNumShots
      *
      * @var int
      */
-    protected $damageToPlayersFighterBomberNumShots = null;
+    protected $damageToPlayersFighterBomberNumShots = 0;
 
     /**
      * damageToPlayersFighterDroneAmount
      *
      * @var int
      */
-    protected $damageToPlayersFighterDroneAmount = null;
+    protected $damageToPlayersFighterDroneAmount = 0;
 
     /**
      * damageToPlayersFighterDroneNumShots
      *
      * @var int
      */
-    protected $damageToPlayersFighterDroneNumShots = null;
+    protected $damageToPlayersFighterDroneNumShots = 0;
 
     /**
      * damageToPlayersHybridAmount
      *
      * @var int
      */
-    protected $damageToPlayersHybridAmount = null;
+    protected $damageToPlayersHybridAmount = 0;
 
     /**
      * damageToPlayersHybridNumShots
      *
      * @var int
      */
-    protected $damageToPlayersHybridNumShots = null;
+    protected $damageToPlayersHybridNumShots = 0;
 
     /**
      * damageToPlayersMissileAmount
      *
      * @var int
      */
-    protected $damageToPlayersMissileAmount = null;
+    protected $damageToPlayersMissileAmount = 0;
 
     /**
      * damageToPlayersMissileNumShots
      *
      * @var int
      */
-    protected $damageToPlayersMissileNumShots = null;
+    protected $damageToPlayersMissileNumShots = 0;
 
     /**
      * damageToPlayersProjectileAmount
      *
      * @var int
      */
-    protected $damageToPlayersProjectileAmount = null;
+    protected $damageToPlayersProjectileAmount = 0;
 
     /**
      * damageToPlayersProjectileNumShots
      *
      * @var int
      */
-    protected $damageToPlayersProjectileNumShots = null;
+    protected $damageToPlayersProjectileNumShots = 0;
 
     /**
      * damageToPlayersSmartBombAmount
      *
      * @var int
      */
-    protected $damageToPlayersSmartBombAmount = null;
+    protected $damageToPlayersSmartBombAmount = 0;
 
     /**
      * damageToPlayersSmartBombNumShots
      *
      * @var int
      */
-    protected $damageToPlayersSmartBombNumShots = null;
+    protected $damageToPlayersSmartBombNumShots = 0;
 
     /**
      * damageToPlayersSuperAmount
      *
      * @var int
      */
-    protected $damageToPlayersSuperAmount = null;
+    protected $damageToPlayersSuperAmount = 0;
 
     /**
      * damageToPlayersSuperNumShots
      *
      * @var int
      */
-    protected $damageToPlayersSuperNumShots = null;
+    protected $damageToPlayersSuperNumShots = 0;
 
     /**
      * damageToStructuresTotalAmount
      *
      * @var int
      */
-    protected $damageToStructuresTotalAmount = null;
+    protected $damageToStructuresTotalAmount = 0;
 
     /**
      * damageToStructuresTotalNumShots
      *
      * @var int
      */
-    protected $damageToStructuresTotalNumShots = null;
+    protected $damageToStructuresTotalNumShots = 0;
 
     /**
      * deathsHighSec
      *
      * @var int
      */
-    protected $deathsHighSec = null;
+    protected $deathsHighSec = 0;
 
     /**
      * deathsPodHighSec
      *
      * @var int
      */
-    protected $deathsPodHighSec = null;
+    protected $deathsPodHighSec = 0;
 
     /**
      * deathsLowSec
      *
      * @var int
      */
-    protected $deathsLowSec = null;
+    protected $deathsLowSec = 0;
 
     /**
      * deathsPodLowSec
      *
      * @var int
      */
-    protected $deathsPodLowSec = null;
+    protected $deathsPodLowSec = 0;
 
     /**
      * deathsNullSec
      *
      * @var int
      */
-    protected $deathsNullSec = null;
+    protected $deathsNullSec = 0;
 
     /**
      * deathsPodNullSec
      *
      * @var int
      */
-    protected $deathsPodNullSec = null;
+    protected $deathsPodNullSec = 0;
 
     /**
      * deathsWormhole
      *
      * @var int
      */
-    protected $deathsWormhole = null;
+    protected $deathsWormhole = 0;
 
     /**
      * deathsPodWormhole
      *
      * @var int
      */
-    protected $deathsPodWormhole = null;
+    protected $deathsPodWormhole = 0;
 
     /**
      * droneEngage
      *
      * @var int
      */
-    protected $droneEngage = null;
+    protected $droneEngage = 0;
 
     /**
      * dscans
      *
      * @var int
      */
-    protected $dscans = null;
+    protected $dscans = 0;
 
     /**
      * dueRequested
      *
      * @var int
      */
-    protected $duelRequested = null;
+    protected $duelRequested = 0;
 
     /**
      * engagementRegister
      *
      * @var int
      */
-    protected $engagementRegister = null;
+    protected $engagementRegister = 0;
 
     /**
      * killsAssists
      *
      * @var int
      */
-    protected $killsAssists = null;
+    protected $killsAssists = 0;
 
     /**
      * killsHighSec
      *
      * @var int
      */
-    protected $killsHighSec = null;
+    protected $killsHighSec = 0;
 
     /**
      * killsPodHighSec
      *
      * @var int
      */
-    protected $killsPodHighSec = null;
+    protected $killsPodHighSec = 0;
 
     /**
      * killsLowSec
      *
      * @var int
      */
-    protected $killsLowSec = null;
+    protected $killsLowSec = 0;
 
     /**
      * killsPodLowSec
      *
      * @var int
      */
-    protected $killsPodLowSec = null;
+    protected $killsPodLowSec = 0;
 
     /**
      * killsNullSec
      *
      * @var int
      */
-    protected $killsNullSec = null;
+    protected $killsNullSec = 0;
 
     /**
      * killsPodNullSec
      *
      * @var int
      */
-    protected $killsPodNullSec = null;
+    protected $killsPodNullSec = 0;
 
     /**
      * killsWormhole
      *
      * @var int
      */
-    protected $killsWormhole = null;
+    protected $killsWormhole = 0;
 
     /**
      * killPodWormhole
      *
      * @var int
      */
-    protected $killsPodWormhole = null;
+    protected $killsPodWormhole = 0;
 
     /**
      * npcFlagSet
      *
      * @var int
      */
-    protected $npcFlagSet = null;
+    protected $npcFlagSet = 0;
 
     /**
      * probeScans
      *
      * @var int
      */
-    protected $probeScans = null;
+    protected $probeScans = 0;
 
     /**
      * pvpFlagSet
      *
      * @var int
      */
-    protected $pvpFlagSet = null;
+    protected $pvpFlagSet = 0;
 
     /**
      * repairArmorByRemoteAmount
      *
      * @var int
      */
-    protected $repairArmorByRemoteAmount = null;
+    protected $repairArmorByRemoteAmount = 0;
 
     /**
      * repairArmorRemoteAmount
      *
      * @var int
      */
-    protected $repairArmorRemoteAmount = null;
+    protected $repairArmorRemoteAmount = 0;
 
     /**
      * repairArmorSelfAmount
      *
      * @var int
      */
-    protected $repairArmorSelfAmount = null;
+    protected $repairArmorSelfAmount = 0;
 
     /**
      * repairCapacitorByRemoteAmount
      *
      * @var int
      */
-    protected $repairCapacitorByRemoteAmount = null;
+    protected $repairCapacitorByRemoteAmount = 0;
 
     /**
      * repairCapacitorRemoteAmount
      *
      * @var int
      */
-    protected $repairCapacitorRemoteAmount = null;
+    protected $repairCapacitorRemoteAmount = 0;
 
     /**
      * repairCapacitorSelfAmount
      *
      * @var int
      */
-    protected $repairCapacitorSelfAmount = null;
+    protected $repairCapacitorSelfAmount = 0;
 
     /**
      * repairHullByRemoteAmount
      *
      * @var int
      */
-    protected $repairHullByRemoteAmount = null;
+    protected $repairHullByRemoteAmount = 0;
 
     /**
      * repairHullRemoteAmount
      *
      * @var int
      */
-    protected $repairHullRemoteAmount = null;
+    protected $repairHullRemoteAmount = 0;
 
     /**
      * repairHullSelfAmount
      *
      * @var int
      */
-    protected $repairHullSelfAmount = null;
+    protected $repairHullSelfAmount = 0;
 
     /**
      * repairShieldByRemoteAmount
      *
      * @var int
      */
-    protected $repairShieldByRemoteAmount = null;
+    protected $repairShieldByRemoteAmount = 0;
 
     /**
      * repairShieldRemoteAmount
      *
      * @var int
      */
-    protected $repairShieldRemoteAmount = null;
+    protected $repairShieldRemoteAmount = 0;
 
     /**
      * repairShieldSelfAmount
      *
      * @var int
      */
-    protected $repairShieldSelfAmount = null;
+    protected $repairShieldSelfAmount = 0;
 
     /**
      * selfDestructs
      *
      * @var int
      */
-    protected $selfDestructs = null;
+    protected $selfDestructs = 0;
 
     /**
      * warpScramblePc
      *
      * @var int
      */
-    protected $warpScramblePc = null;
+    protected $warpScramblePc = 0;
 
     /**
      * warpScrambledbyNpc
      *
      * @var int
      */
-    protected $warpScrambledbyNpc = null;
+    protected $warpScrambledbyNpc = 0;
 
     /**
      * warpScrambledbyPc
      *
      * @var int
      */
-    protected $warpScrambledbyPc = null;
+    protected $warpScrambledbyPc = 0;
 
     /**
      * weaponFlagSet
      *
      * @var int
      */
-    protected $weaponFlagSet = null;
+    protected $weaponFlagSet = 0;
 
     /**
      * webifiedbyNpc
      *
      * @var int
      */
-    protected $webifiedbyNpc = null;
+    protected $webifiedbyNpc = 0;
 
     /**
      * webifiedbyPc
      *
      * @var int
      */
-    protected $webifiedbyPc = null;
+    protected $webifiedbyPc = 0;
 
     /**
      * webifyingPc
      *
      * @var int
      */
-    protected $webifyingPc = null;
+    protected $webifyingPc = 0;
 
     /**
      * getCapDrainedbyNpc
