@@ -117,7 +117,7 @@ class Stats {
      *
      * @var int
      */
-    protected $year = null;
+    protected $year = 0;
 
     /**
      * getCharacter
