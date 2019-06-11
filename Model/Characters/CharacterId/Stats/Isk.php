@@ -25,14 +25,14 @@ class Isk {
      *
      * @var int
      */
-    protected $in = null;
+    protected $in = 0;
 
     /**
      * out
      *
      * @var int
      */
-    protected $out = null;
+    protected $out = 0;
 
     /**
      * getIn

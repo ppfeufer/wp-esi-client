@@ -25,14 +25,14 @@ class Inventory {
      *
      * @var int
      */
-    protected $abandonLootQuantity = null;
+    protected $abandonLootQuantity = 0;
 
     /**
      * trashItemQuantity
      *
      * @var int
      */
-    protected $trashItemQuantity = null;
+    protected $trashItemQuantity = 0;
 
     /**
      * getAbandonLootQuantity

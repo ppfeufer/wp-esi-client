@@ -25,21 +25,21 @@ class Character {
      *
      * @var int
      */
-    protected $daysOfActivity = null;
+    protected $daysOfActivity = 0;
 
     /**
      * minutes
      *
      * @var int
      */
-    protected $minutes = null;
+    protected $minutes = 0;
 
     /**
      * sessionsStarted
      *
      * @var int
      */
-    protected $sessionsStarted = null;
+    protected $sessionsStarted = 0;
 
     /**
      * getDaysOfActivity
