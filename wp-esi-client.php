@@ -2,8 +2,8 @@
 
 /**
  * Plugin Name: WP ESI Client
- * Plugin URI: https://github.com/ppfeufer/wp-debug-utiliy
- * Git URI: https://github.com/ppfeufer/wp-debug-utiliy
+ * Plugin URI: https://github.com/ppfeufer/wp-esi-client
+ * Git URI: https://github.com/ppfeufer/wp-esi-client
  * Description: Simple WordPress ESI Client for public endpoints
  * Version: 0.0.1
  * Author: Peter Pfeufer
