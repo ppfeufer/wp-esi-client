@@ -1,4 +1,4 @@
-# ESI Client for WordPress
+# ESI Client for WordPress (WPMU Plugin)
 
 A simple and lightweight ESI client that can be used in WordPress plugins and provides access to the public ESI endpoints. Meaning, the endpoints that don't requiere any form of authentication.
 
@@ -144,64 +144,6 @@ function rrmdir(string $dir) {
         }
 
         rmdir($dir);
-    }
-}
-```
-
-### Use in your Plugin
-#### Autoloader
-You have to make sure that the ESI classes will be loaded when you call them
-
-```php
-/**
- * Autoloading ESI classes
- */
-\spl_autoload_register('autoloadEsiClient');
-
-function autoloadEsiClient($className) {
-    // If the specified $className does not include our namespace, duck out.
-    if(strpos($className, 'WordPress\EsiClient') === false) {
-        return;
-    }
-
-    // Split the class name into an array to read the namespace and class.
-    $fileParts = explode('\\', $className);
-
-    // Do a reverse loop through $fileParts to build the path to the file.
-    $namespace = '';
-    for($i = count($fileParts) - 1; $i > 0; $i--) {
-        // Read the current component of the file part.
-        $current = str_ireplace('_', '-', $fileParts[$i]);
-
-        $namespace = '/' . $current . $namespace;
-
-        // If we're at the first entry, then we're at the filename.
-        if(count($fileParts) - 1 === $i) {
-            $namespace = '';
-            $fileName = $current . '.php';
-
-            /* If 'interface' is contained in the parts of the file name, then
-             * define the $file_name differently so that it's properly loaded.
-             * Otherwise, just set the $file_name equal to that of the class
-             * filename structure.
-             */
-            if(strpos(strtolower($fileParts[count($fileParts) - 1]), 'interface')) {
-                // Grab the name of the interface from its qualified name.
-                $interfaceNameParts = explode('_', $fileParts[count($fileParts) - 1]);
-                $interfaceName = $interfaceNameParts[0];
-
-                $fileName = $interfaceName . '.php';
-            }
-        }
-
-        // Now build a path to the file using mapping to the file location.
-        $filepath = trailingslashit(WP_CONTENT_DIR . '/EsiClient' . $namespace);
-        $filepath .= $fileName;
-
-        // If the file exists in the specified path, then include it.
-        if(file_exists($filepath)) {
-            include_once($filepath);
-        }
     }
 }
 ```
