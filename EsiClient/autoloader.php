@@ -26,6 +26,8 @@ namespace WordPress\EsiClient;
  */
 \spl_autoload_register('\WordPress\EsiClient\autoload');
 
+const WP_ESI_CLIENT_LOADED = true;
+
 function autoload($className) {
     // If the specified $className does not include our namespace, duck out.
     if(\strpos($className, 'WordPress\EsiClient') === false) {
@@ -63,7 +65,6 @@ function autoload($className) {
         }
 
         // Now build a path to the file using mapping to the file location.
-//        $filepath = \trailingslashit(\WP_CONTENT_DIR . '/EsiClient' . $namespace);
         $filepath = \trailingslashit(\dirname(__FILE__) . $namespace);
         $filepath .= $fileName;
 
