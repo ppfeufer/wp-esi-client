@@ -20,6 +20,7 @@
 namespace WordPress\EsiClient\Repository;
 
 use \WordPress\EsiClient\Model\Incursions;
+use \WordPress\EsiClient\Model\Error\EsiError;
 use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
@@ -37,7 +38,7 @@ class IncursionsRepository extends Swagger {
     /**
      * Shows incursion data
      *
-     * @return Incursions
+     * @return Incursions|EsiError
      */
     public function incursions() {
         $returnValue = null;

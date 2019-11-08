@@ -19,6 +19,7 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use \WordPress\EsiClient\Model\Error\EsiError;
 use \WordPress\EsiClient\Model\Universe\Asteroidbelts\AsteroidbeltId;
 use \WordPress\EsiClient\Model\Universe\Categories\CategoryId;
 use \WordPress\EsiClient\Model\Universe\Constellations\ConstellationId;
@@ -27,6 +28,7 @@ use \WordPress\EsiClient\Model\Universe\Ids;
 use \WordPress\EsiClient\Model\Universe\Names;
 use \WordPress\EsiClient\Model\Universe\Regions\RegionId;
 use \WordPress\EsiClient\Model\Universe\Systems\SystemId;
+use \WordPress\EsiClient\Model\Universe\Types\TypeId;
 use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
@@ -73,7 +75,7 @@ class UniverseRepository extends Swagger {
      * Get all character ancestries
      *
      * @param string $language
-     * @return array of \WordPress\EsiClient\Model\Universe\Ancestries
+     * @return array of \WordPress\EsiClient\Model\Universe\Ancestries|EsiError
      */
     public function universeAncestries(string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -112,7 +114,7 @@ class UniverseRepository extends Swagger {
      * Get information on an asteroid belt
      *
      * @param int $asteroidBeltId
-     * @return AsteroidbeltId
+     * @return AsteroidbeltId|EsiError
      */
     public function universeAsteroidBeltsAsteroidBeltId(int $asteroidBeltId) {
         $returnValue = null;
@@ -147,7 +149,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $constellationId An EVE constellation ID
      * @param string $language
-     * @return ConstellationId
+     * @return ConstellationId|EsiError
      */
     public function universeConstellationsConstellationId(int $constellationId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -188,7 +190,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $groupId An Eve item group ID
      * @param string $language
-     * @return GroupId
+     * @return GroupId|EsiError
      */
     public function universeGroupsGroupId(int $groupId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -229,7 +231,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $categoryId An Eve item group ID
      * @param string $language
-     * @return CategoryId
+     * @return CategoryId|EsiError
      */
     public function universeCategoriesCategoryId(int $categoryId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -275,7 +277,7 @@ class UniverseRepository extends Swagger {
      *
      * @param array $names The names to resolve
      * @param string $language
-     * @return Ids
+     * @return Ids|EsiError
      */
     public function universeIds(array $names, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -324,7 +326,7 @@ class UniverseRepository extends Swagger {
      *      Types
      *
      * @param array $ids
-     * @return Names
+     * @return Names|EsiError
      */
     public function universeNames(array $ids) {
         $returnValue = null;
@@ -357,7 +359,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $regionId An EVE region ID
      * @param string $language
-     * @return RegionId
+     * @return RegionId|EsiError
      */
     public function universeRegionsRegionId(int $regionId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -398,7 +400,7 @@ class UniverseRepository extends Swagger {
      * ending at the timestamp of the Last-Modified header, excluding
      * wormhole space. Only systems with jumps will be listed
      *
-     * @return array of \WordPress\EsiClient\Model\Universe\SystemJumps
+     * @return array of \WordPress\EsiClient\Model\Universe\SystemJumps|EsiError
      */
     public function universeSystemJumps() {
         $returnValue = null;
@@ -430,7 +432,7 @@ class UniverseRepository extends Swagger {
      * the last hour ending at the timestamp of the Last-Modified header,
      * excluding wormhole space. Only systems with kills will be listed
      *
-     * @return array of \WordPress\EsiClient\Model\Universe\SystemKills
+     * @return array of \WordPress\EsiClient\Model\Universe\SystemKills|EsiError
      */
     public function universeSystemKills() {
         $returnValue = null;
@@ -462,7 +464,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $systemId An EVE solar system ID
      * @param string $language
-     * @return SystemId
+     * @return SystemId|EsiError
      */
     public function universeSystemsSystemId(int $systemId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -503,7 +505,7 @@ class UniverseRepository extends Swagger {
      *
      * @param int $typeId An Eve item type ID
      * @param string $language
-     * @return \WordPress\EsiClient\Model\Universe\Types\TypeId
+     * @return TypeId|EsiError
      */
     public function universeTypesTypeId(int $typeId, string $language = 'en-us') {
         // just to make sure if some smarty pants tries to set an empty language
@@ -526,7 +528,7 @@ class UniverseRepository extends Swagger {
         if(!\is_null($esiData)) {
             switch($esiData['responseCode']) {
                 case 200:
-                    $returnValue = $this->map($esiData['responseBody'], new \WordPress\EsiClient\Model\Universe\Types\TypeId);
+                    $returnValue = $this->map($esiData['responseBody'], new TypeId);
                     break;
 
                 // Error ...

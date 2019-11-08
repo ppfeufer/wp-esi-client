@@ -19,6 +19,7 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use \WordPress\EsiClient\Model\Error\EsiError;
 use \WordPress\EsiClient\Model\Killmails\KillmailId\KillmailHash;
 use \WordPress\EsiClient\Swagger;
 
@@ -39,7 +40,7 @@ class KillmailsRepository extends Swagger {
      *
      * @param int $killmailID The killmail ID to be queried
      * @param string $killmailHash The killmail hash for verification
-     * @return KillmailHash
+     * @return KillmailHash|EsiError
      */
     public function killmailsKillmailIdKillmailHash(int $killmailID, string $killmailHash) {
         $returnValue = null;

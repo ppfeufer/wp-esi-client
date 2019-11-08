@@ -19,6 +19,7 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use \WordPress\EsiClient\Model\Error\EsiError;
 use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
@@ -41,7 +42,7 @@ class MetaRepository extends Swagger {
     /**
      * Provides a general health indicator per route and method
      *
-     * @return array of \WordPress\EsiClient\Model\Meta\Status
+     * @return array of \WordPress\EsiClient\Model\Meta\Status|EsiError
      */
     public function statusJsonLatest() {
         $returnValue = null;
@@ -71,7 +72,7 @@ class MetaRepository extends Swagger {
     /**
      * Provides a general health indicator per route and method
      *
-     * @return array of \WordPress\EsiClient\Model\Meta\Status
+     * @return array of \WordPress\EsiClient\Model\Meta\Status|EsiError
      */
     public function statusJsonDev() {
         $returnValue = null;
@@ -101,7 +102,7 @@ class MetaRepository extends Swagger {
     /**
      * Provides a general health indicator per route and method
      *
-     * @return array of \WordPress\EsiClient\Model\Meta\Status
+     * @return array of \WordPress\EsiClient\Model\Meta\Status|EsiError
      */
     public function statusJsonLagecy() {
         $returnValue = null;
@@ -131,7 +132,7 @@ class MetaRepository extends Swagger {
     /**
      * Provides a general health indicator per route and method
      *
-     * @return array of \WordPress\EsiClient\Model\Meta\Status
+     * @return array of \WordPress\EsiClient\Model\Meta\Status|EsiError
      */
     public function statusJsonMeta() {
         $returnValue = null;

@@ -22,6 +22,7 @@ use \WordPress\EsiClient\Model\Alliance\Alliances;
 use \WordPress\EsiClient\Model\Alliances\AllianceId;
 use \WordPress\EsiClient\Model\Alliances\AllianceId\Corporations;
 use \WordPress\EsiClient\Model\Alliances\AllianceId\Icons;
+use \WordPress\EsiClient\Model\Error\EsiError;
 use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
@@ -42,7 +43,7 @@ class AllianceRepository extends Swagger {
     /**
      * List all active player alliances
      *
-     * @return Alliances
+     * @return Alliances|EsiError
      */
     public function alliances() {
         $returnValue = null;
@@ -73,7 +74,7 @@ class AllianceRepository extends Swagger {
      * Public information about an alliance
      *
      * @param int $allianceID An EVE alliance ID
-     * @return AllianceId
+     * @return AllianceId|EsiError
      */
     public function alliancesAllianceId(int $allianceID) {
         $returnValue = null;
@@ -106,7 +107,7 @@ class AllianceRepository extends Swagger {
     /**
      * List all current member corporations of an alliance
      *
-     * @return Corporations
+     * @return Corporations|EsiError
      */
     public function alliancesAllianceIdCorporations() {
         $returnValue = null;
@@ -137,7 +138,7 @@ class AllianceRepository extends Swagger {
      * Get alliance logos
      *
      * @param int $allianceID An EVE alliance ID
-     * @return Icons
+     * @return Icons|EsiError
      */
     public function alliancesAllianceIdIcons(int $allianceID) {
         $returnValue = null;

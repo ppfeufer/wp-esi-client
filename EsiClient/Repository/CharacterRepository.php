@@ -22,6 +22,7 @@ namespace WordPress\EsiClient\Repository;
 use \WordPress\EsiClient\Model\Characters\CharacterId;
 use \WordPress\EsiClient\Model\Characters\CharacterId\Corporationhistory;
 use \WordPress\EsiClient\Model\Characters\CharacterId\Portrait;
+use \WordPress\EsiClient\Model\Error\EsiError;
 use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
@@ -43,7 +44,7 @@ class CharacterRepository extends Swagger {
      * Public information about a character
      *
      * @param int $characterID An EVE character ID
-     * @return CharacterId
+     * @return CharacterId|EsiError
      */
     public function charactersCharacterId(int $characterID) {
         $returnValue = null;
@@ -77,7 +78,7 @@ class CharacterRepository extends Swagger {
      * Get a list of all the corporations a character has been a member of
      *
      * @param int $characterID An EVE character ID
-     * @return Corporationhistory
+     * @return Corporationhistory|EsiError
      */
     public function charactersCharacterIdCorporationhistory(int $characterID) {
         $returnValue = null;
@@ -111,7 +112,7 @@ class CharacterRepository extends Swagger {
      * Bulk lookup of character IDs to corporation, alliance and faction
      *
      * @param array $characterIds The character IDs to fetch affiliations for. All characters must exist, or none will be returned
-     * @return array of WordPress\EsiClient\Model\Characters\Affiliation\Characters
+     * @return array of WordPress\EsiClient\Model\Characters\Affiliation\Characters|EsiError
      */
     public function charactersAffiliation(array $characterIds = []) {
         $returnValue = null;
@@ -143,7 +144,7 @@ class CharacterRepository extends Swagger {
      * Get character portraits
      *
      * @param int $characterID An EVE character ID
-     * @return Portrait
+     * @return Portrait|EsiError
      */
     public function charactersCharacterIdPortrait(int $characterID) {
         $returnValue = null;

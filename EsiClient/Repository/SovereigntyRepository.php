@@ -19,6 +19,7 @@
 
 namespace WordPress\EsiClient\Repository;
 
+use \WordPress\EsiClient\Model\Error\EsiError;
 use \WordPress\EsiClient\Model\Sovereignty\Map;
 use \WordPress\EsiClient\Swagger;
 
@@ -39,7 +40,7 @@ class SovereigntyRepository extends Swagger {
     /**
      * Shows sovereignty data for campaigns
      *
-     * @return array of \WordPress\EsiClient\Model\Sovereignty\Campaigns
+     * @return array of \WordPress\EsiClient\Model\Sovereignty\Campaigns|EsiError
      */
     public function sovereigntyCampaigns() {
         $returnValue = null;
@@ -69,7 +70,7 @@ class SovereigntyRepository extends Swagger {
     /**
      * Shows sovereignty information for solar systems
      *
-     * @return array of \WordPress\EsiClient\Model\Sovereignty\Map
+     * @return array of \WordPress\EsiClient\Model\Sovereignty\Map|EsiError
      */
     public function sovereigntyMap() {
         $returnValue = null;
@@ -99,7 +100,7 @@ class SovereigntyRepository extends Swagger {
     /**
      * Shows sovereignty data for structures
      *
-     * @return array of \WordPress\EsiClient\Model\Sovereignty\Structures
+     * @return array of \WordPress\EsiClient\Model\Sovereignty\Structures|EsiError
      */
     public function sovereigntyStructures() {
         $returnValue = null;

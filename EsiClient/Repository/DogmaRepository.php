@@ -22,6 +22,7 @@ namespace WordPress\EsiClient\Repository;
 use \WordPress\EsiClient\Model\Dogma\Attributes;
 use \WordPress\EsiClient\Model\Dogma\Attributes\AttributeId;
 use \WordPress\EsiClient\Model\Dogma\Effects;
+use \WordPress\EsiClient\Model\Error\EsiError;
 use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
@@ -43,7 +44,7 @@ class DogmaRepository extends Swagger {
     /**
      * Get a list of dogma attribute ids
      *
-     * @return Attributes
+     * @return Attributes|EsiError
      */
     public function dogmaAttributes() {
         $this->setEsiRoute($this->esiEndpoints['dogma_attributes']);
@@ -71,7 +72,7 @@ class DogmaRepository extends Swagger {
      * Get information on a dogma attribute
      *
      * @param int $attributeId A dogma attribute ID
-     * @return AttributeId
+     * @return AttributeId|EsiError
      */
     public function dogmaAttributesAttributeId(int $attributeId) {
         $returnValue = null;
@@ -104,7 +105,7 @@ class DogmaRepository extends Swagger {
     /**
      * Get a list of dogma attribute ids
      *
-     * @return Effects
+     * @return Effects|EsiError
      */
     public function dogmaEffects() {
         $this->setEsiRoute($this->esiEndpoints['dogma_effects']);

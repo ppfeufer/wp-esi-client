@@ -21,6 +21,7 @@ namespace WordPress\EsiClient\Repository;
 
 use \WordPress\EsiClient\Model\Corporations\CorporationId;
 use \WordPress\EsiClient\Model\Corporations\CorporationId\Icons;
+use \WordPress\EsiClient\Model\Error\EsiError;
 use \WordPress\EsiClient\Swagger;
 
 \defined('ABSPATH') or die();
@@ -42,7 +43,7 @@ class CorporationRepository extends Swagger {
      * Public information about a corporation
      *
      * @param int $corporationID An EVE corporation ID
-     * @return CorporationId
+     * @return CorporationId|EsiError
      */
     public function corporationsCorporationId(int $corporationID) {
         $returnValue = null;
@@ -76,7 +77,7 @@ class CorporationRepository extends Swagger {
      * Get corporation logos
      *
      * @param int $corporationID An EVE corporation ID
-     * @return Icons
+     * @return Icons|EsiError
      */
     public function corporationsCorporationIdIcons(int $corporationID) {
         $returnValue = null;
