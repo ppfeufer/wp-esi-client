@@ -253,6 +253,7 @@ class JsonMapper {
                 }
 
                 $array = [];
+
                 if($proptype !== 'array') {
                     $array = $this->createInstance($proptype, false, $jvalue);
                 }
@@ -316,6 +317,7 @@ class JsonMapper {
                 $type = '\\' . $strNs . '\\' . $type;
             }
         }
+
         return $type;
     }
 
@@ -362,9 +364,7 @@ class JsonMapper {
             if($class === null) {
                 $array[$key] = $jvalue;
             } else if($this->isArrayOfType($class)) {
-                $array[$key] = $this->mapArray(
-                    $jvalue, [], \substr($class, 0, -2)
-                );
+                $array[$key] = $this->mapArray($jvalue, [], \substr($class, 0, -2));
             } else if($this->isFlatType(\gettype($jvalue))) {
                 // use constructor parameter if we have a class
                 // but only a flat type (i.e. string, int)
@@ -382,13 +382,9 @@ class JsonMapper {
             } else if($this->isFlatType($class)) {
                 throw new Exception('JSON property "' . ($parent_key ? $parent_key : '?') . '" is an array of type "' . $class . '" but contained a value of type "' . \gettype($jvalue) . '"');
             } else if(\is_a($class, 'ArrayObject', true)) {
-                $array[$key] = $this->mapArray(
-                    $jvalue, $this->createInstance($class)
-                );
+                $array[$key] = $this->mapArray($jvalue, $this->createInstance($class));
             } else {
-                $array[$key] = $this->map(
-                    $jvalue, $this->createInstance($class, false, $jvalue)
-                );
+                $array[$key] = $this->map($jvalue, $this->createInstance($class, false, $jvalue));
             }
         }
 
@@ -486,6 +482,7 @@ class JsonMapper {
             foreach($rc->getProperties() as $p) {
                 if((\strcasecmp($p->name, $name) === 0)) {
                     $rprop = $p;
+
                     break;
                 }
             }
