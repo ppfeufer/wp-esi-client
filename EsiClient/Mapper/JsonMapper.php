@@ -311,7 +311,7 @@ class JsonMapper {
      * @return string Fully-qualified type name with namespace
      */
     protected function getFullNamespace(string $type, string $strNs) {
-        if($type !== '' && $type{0} != '\\') {
+        if($type !== '' && $type[0] != '\\') {
             // create a full qualified namespace
             if($strNs !== '') {
                 $type = '\\' . $strNs . '\\' . $type;
