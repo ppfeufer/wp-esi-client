@@ -53,7 +53,7 @@ class CharacterRepository extends Swagger {
         $this->setEsiRouteParameter([
             '/{character_id}/' => $characterID
         ]);
-        $this->setEsiVersion('v4');
+        $this->setEsiVersion('v5');
 
         $esiData = $this->callEsi();
 

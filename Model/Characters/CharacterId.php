@@ -32,13 +32,6 @@ class CharacterId {
     protected $allianceId = null;
 
     /**
-     * ancestryId
-     *
-     * @var int
-     */
-    protected $ancestryId = null;
-
-    /**
      * birthday
      *
      * Creation date of the character
@@ -130,24 +123,6 @@ class CharacterId {
      */
     protected function setAllianceId(int $allianceId) {
         $this->allianceId = $allianceId;
-    }
-
-    /**
-     * getAncestryId
-     *
-     * @return int
-     */
-    public function getAncestryId() {
-        return $this->ancestryId;
-    }
-
-    /**
-     * setAncestryId
-     *
-     * @param int $ancestryId
-     */
-    protected function setAncestryId(int $ancestryId) {
-        $this->ancestryId = $ancestryId;
     }
 
     /**
