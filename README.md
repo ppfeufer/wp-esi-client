@@ -1,25 +1,50 @@
-# ESI Client for WordPress
+# ESI Client for WordPress<a name="esi-client-for-wordpress"></a>
 
 A simple and lightweight ESI client that can be used in WordPress plugins and provides access to the public ESI endpoints. Meaning, the endpoints that don't requiere any form of authentication.
 
 To use this in your WordPress plugin, make sure your plugin fetches the master.zip file from this repo and extracts it, preferrably into `/wp-content/EsiClient`.
 
-## Requirements
+______________________________________________________________________
+
+<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
+
+- [ESI Client for WordPress](#esi-client-for-wordpress)
+  - [Requirements](#requirements)
+  - [How To](#how-to)
+    - [Preparation in your plugin](#preparation-in-your-plugin)
+    - [Hook it up with WordPress](#hook-it-up-with-wordpress)
+    - [The Update Function(s)](#the-update-functions)
+      - [Check if an update is needed](#check-if-an-update-is-needed)
+      - [Update](#update)
+      - [Helper](#helper)
+    - [Use in your Plugin](#use-in-your-plugin)
+      - [Autoloader](#autoloader)
+      - [Work with the Esi client](#work-with-the-esi-client)
+
+<!-- mdformat-toc end -->
+
+______________________________________________________________________
+
+## Requirements<a name="requirements"></a>
+
 - PHP 7.2 or newer
 - WordPress 5.0 or newer
 - mySQL `max_allowed_packet=10M` or more
 
-## How To
+## How To<a name="how-to"></a>
+
 Make sure that you implement a method in you register_activation_hook that checks the Esi Client version to the one you are using in your plugin.
 
-### Preparation in your plugin
+### Preparation in your plugin<a name="preparation-in-your-plugin"></a>
+
 To do so, first define a variable/constand that holds the Esi Client version you are using.
 
 ```php
 $esiClientVersion = 20181005;
 ```
 
-### Hook it up with WordPress
+### Hook it up with WordPress<a name="hook-it-up-with-wordpress"></a>
+
 Now you need to make sure WordPress is checking if the ESI client is locally available in at least the version you are using.
 
 ```php
@@ -33,10 +58,12 @@ add_action('plugins_loaded', 'checkEsiClientForUpdates');
 
 With these 2 lines you make sure your plugin is calling the `checkEsiClientForUpdates` function on activation and every time the plugin is loaded. The second line is needed because the activation hook is not called on plugin updates.
 
-### The Update Function(s)
+### The Update Function(s)<a name="the-update-functions"></a>
+
 With your hooks and actions registered, you now need the update function. This is a multiple step process.
 
-#### Check if an update is needed
+#### Check if an update is needed<a name="check-if-an-update-is-needed"></a>
+
 First we call a general update check function to check if an update is actually needed.
 
 ```php
@@ -62,7 +89,8 @@ function checkEsiClientForUpdates() {
 }
 ```
 
-#### Update
+#### Update<a name="update"></a>
+
 Now the actual update function ...
 
 ```php
@@ -125,7 +153,8 @@ function updateEsiClient(string $version = null) {
 }
 ```
 
-#### Helper
+#### Helper<a name="helper"></a>
+
 We also need a little helper function in order to remove the old ESI client directory.
 
 ```php
@@ -148,8 +177,10 @@ function rrmdir(string $dir) {
 }
 ```
 
-### Use in your Plugin
-#### Autoloader
+### Use in your Plugin<a name="use-in-your-plugin"></a>
+
+#### Autoloader<a name="autoloader"></a>
+
 You have to make sure that the ESI classes will be loaded when you call them
 
 ```php
@@ -206,7 +237,8 @@ function autoloadEsiClient($className) {
 }
 ```
 
-#### Work with the Esi client
+#### Work with the Esi client<a name="work-with-the-esi-client"></a>
+
 This ESI client has a couple of Repository classes that will do all themagic for you. You just have to call them and, if needed, give them some arguments.
 
 Example for getting alliance information from an alliance ID:
