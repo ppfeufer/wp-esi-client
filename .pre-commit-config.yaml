@@ -49,23 +49,13 @@ repos:
           - --markdown-linebreak-ext=md
         exclude: |
           (?x)(
-            .min(.css|.css.map|.js|.js.map)|
-            .(po|mo|gitmodules)|
-            wp-admin/|
-            wp-content/|
-            wp-includes/|
-            wp-vendor/
+            .min(.css|.css.map|.js|.js.map)
           )
       - id: check-executables-have-shebangs
       - id: end-of-file-fixer
         exclude: |
           (?x)(
-            .min(.css|.css.map|.js|.js.map)|
-            .(po|mo|gitmodules)|
-            wp-admin/|
-            wp-content/|
-            wp-includes/|
-            wp-vendor/
+            .min(.css|.css.map|.js|.js.map)
           )
 
   - repo: https://github.com/pre-commit/mirrors-eslint
@@ -74,11 +64,7 @@ repos:
       - id: eslint
         exclude: |
           (?x)(
-            .min(.js|.js.map)|
-            wp-admin/|
-            wp-content/|
-            wp-includes/|
-            wp-vendor/
+            .min(.js|.js.map)
           )
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
@@ -87,11 +73,7 @@ repos:
       - id: stylelint
         exclude: |
           (?x)(
-            .min(.css|.css.map)|
-            wp-admin/|
-            wp-content/|
-            wp-includes/|
-            wp-vendor/
+            .min(.css|.css.map)
           )
         args:
           - --formatter=compact
@@ -106,12 +88,7 @@ repos:
         exclude: |
           (?x)(
             LICENSE|
-            .min(.css|.css.map|.js|.js.map)|
-            .(po|mo|gitmodules)|
-            wp-admin/|
-            wp-content/|
-            wp-includes/|
-            wp-vendor/
+            .min(.css|.css.map|.js|.js.map)
           )
 
   - repo: https://github.com/executablebooks/mdformat
@@ -120,11 +97,7 @@ repos:
       - id: mdformat
         exclude: |
           (?x)(
-            .github/|
-            wp-admin/|
-            wp-content/|
-            wp-includes/|
-            wp-vendor/
+            .github/
           )
         additional_dependencies:
           - mdformat-gfm==0.3.5  # Mdformat plugin for GitHub Flavored Markdown compatibility » https://github.com/hukkin/mdformat-gfm/tags
